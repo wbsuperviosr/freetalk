@@ -109,5 +109,10 @@
     {{ if and .IsPage $IsPostPage (not $IsSecrets) }}
     {{- partial "partials/_prevnext.html" . -}}
     {{ end }}
+
+    {{ if .Site.Params.share_style }}
+    {{ partial "share.html" }}
+    {{ end }}
+
 </div>
 {{ end }}

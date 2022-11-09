@@ -37,6 +37,10 @@ enableGitInfo = true
 
     slogan = 'Win a debate with a better argument, not by force.'        # your site slogan below title
 
+    share_style = true
+    custom_css = ["/css/share.min.css"]
+    custom_js = ["/js/social-share.min.js"]
+
     # like the following items that you need create a relative markdown file
     # Search - search.md
     # Nav - nav.md 
@@ -45,12 +49,13 @@ enableGitInfo = true
     # Idea posts/idea.md 
     # Wiki - posts/wiki.md
     [params.menu]
-        search = true
+        search = false
         nav = false
         archive = true
         idea = false
         wiki = false
         about = true
+    
 
 
     [params.svg]
@@ -70,7 +75,7 @@ enableGitInfo = true
     [params.contact]
         # icp = '豫ICP备2022002918号'          # beian number
         icplink = '//beian.miit.gov.cn'
-        weibo = '6867589681'                # e.g. https://weibo.com/u/6867589681
+        weibo = 'https://weibo.com/u/6461602234'                # e.g. https://weibo.com/u/6867589681
         wechat = 'imgs/bg/wechat.jpg'       # Wechat QR, choose your path
         email = 'loveminimal@outlook.com'
         github = 'loveminimal'              # e.g. https://github.com/loveminimal
