@@ -84,6 +84,10 @@ img {
     border: 1px solid $img-border-color;
 }
 
+p img {
+    border: 1px solid black;
+}
+
 a {
     color: $link-color;
 
@@ -177,9 +181,16 @@ ol {
     font-family: $font-family--some;
 }
 
-h2, h3, h4, h5, h6, 
-strong, u, em, 
-.oh-hl, .oh-essay {
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+u,
+em,
+.oh-hl,
+.oh-essay {
     code {
         color: $code-inline-color;
     }
@@ -216,22 +227,20 @@ strong, u, em,
 .oh-rainbow {
     margin: 16px 0;
     color: #ccc;
-    background-image: linear-gradient(
-        to right,
-        red,
-        orange,
-        yellow,
-        green,
-        yellow,
-        orange,
-        red,
-        orange,
-        yellow,
-        green,
-        yellow,
-        orange,
-        red
-    );
+    background-image: linear-gradient(to right,
+            red,
+            orange,
+            yellow,
+            green,
+            yellow,
+            orange,
+            red,
+            orange,
+            yellow,
+            green,
+            yellow,
+            orange,
+            red);
     -webkit-background-clip: text;
     animation: move 5s infinite;
     color: transparent;
@@ -241,9 +250,11 @@ strong, u, em,
     0% {
         background-position: 0 0;
     }
+
     50% {
         background-position: -500px 0;
     }
+
     100% {
         background-position: 0 0;
     }
