@@ -57,6 +57,7 @@ h3 {
 
 h4 {
     font-size: 0.2rem;
+    padding-left: 20px;
 
     &:before {
         content: '♪⁴ ';
@@ -167,7 +168,7 @@ pre code {
 ul,
 ol {
     list-style-position: outside;
-    padding-left: 20px;
+    padding-left: 40px;
     margin-bottom: 16px;
 
     li p {
@@ -259,5 +260,15 @@ em,
 
     100% {
         background-position: 0 0;
+    }
+}
+
+.ctgtag-all {
+    padding-top: 5px;
+    padding-left: 0px;
+    display: flex;
+
+    .count {
+        padding-right: 5px;
     }
 }

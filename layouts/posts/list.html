@@ -4,6 +4,22 @@
         {{ .Content }}
     </div>
 
+
+
+
+    <div class="ctgtag-all">
+        <div class="count">按作者查看:</div>
+        <div class="container-ctgtag">
+            <div class="taxonomy">
+                {{range $name, $taxonomy := .Site.Taxonomies.authors}}
+                <div class="tag"><a href="/authors/{{ $name | urlize }}">{{$name}}</a></div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+
+    <br>
+
     {{ if ne .Kind "taxonomy"}}
     <div class="count">{{ if .Site.Params.en }}Total{{ else }}共有{{ end }} {{ len .Pages }} {{ if .Site.Params.en
         }}pages{{ else }}篇文章{{ end }}</div>

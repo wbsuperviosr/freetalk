@@ -28,16 +28,16 @@ body.cool {
 		top: 0;
 		left: 0;
 		z-index: -1;
-		background-color: rgba(255, 255, 255, .81);	// $white-900;
+		background-color: rgba(255, 255, 255, .81); // $white-900;
 		// background: $white-700;
 		// backdrop-filter: saturate(180%) blur(3px);
 
 	}
-	
+
 	// #header, #content, #footer {
 	// 	background-color: $white-800;
-    //     backdrop-filter: saturate(180%) blur(5px); // saturate(180%)
-    // }
+	//     backdrop-filter: saturate(180%) blur(5px); // saturate(180%)
+	// }
 
 	#header {
 		.container-header {
@@ -45,7 +45,7 @@ body.cool {
 				@include bg-cool;
 			}
 		}
-	} 
+	}
 
 	#content {
 		.container-home {
@@ -60,7 +60,7 @@ body.cool {
 						@include bg-cool;
 					}
 				}
-			} 
+			}
 		}
 
 		.container-nav {
@@ -78,9 +78,9 @@ body.cool {
 				.bookmark li {
 					&:nth-child(even) {
 						@include bg-cool;
-                    }
+					}
 				}
-			} 
+			}
 		}
 
 		.container-archive {
@@ -91,14 +91,15 @@ body.cool {
 				}
 			}
 
-			.categories, .tags {
+			.categories,
+			.tags {
 				.arc-item {
 					@include bg-cool;
-					
+
 					sup {
 						color: $gray-500;
 					}
-					
+
 					.arc-post-item a {
 						@include bg-cool;
 					}
@@ -109,7 +110,10 @@ body.cool {
 		.container-search,
 		.container-list {
 			.list {
-				.item, .item-term {
+				padding-left: 10px;
+
+				.item,
+				.item-term {
 					@include bg-cool;
 				}
 			}
@@ -121,7 +125,9 @@ body.cool {
 
 		.container-ctgtag {
 			.taxonomy {
-				.ctg, .tag {
+
+				.ctg,
+				.tag {
 					a {
 						@include bg-cool;
 					}
@@ -146,9 +152,10 @@ body.cool {
 	pre {
 		background-color: $white-300 !important;
 	}
+
 	// 以下是为了保证 darkreader 暗色模式下，代码块样式也是透明
 	// [data-darkreader-inline-bgcolor] {
 	// 	background-color: $white-300 !important;
 	// }
-	
+
 }
