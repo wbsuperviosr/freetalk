@@ -84,8 +84,10 @@ img {
     border: 1px solid $img-border-color;
 }
 
-p img {
-    border: 1px solid black;
+.content {
+    img {
+        border: 1px solid black;
+    }
 }
 
 a {

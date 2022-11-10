@@ -12,5 +12,7 @@
     {{ $built := resources.Get "main.js" | js.Build "main.js" }}
     <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
     <link rel="stylesheet" href={{"css/share.min.css" | relURL }} />
-    <script src={{"js/social-share.min.js" | relURL }}></script>
+    {{/*
+    <script src={{"js/social-share.min.js" | relURL }}></script> */}}
+    <script src="https://hugo-picture.oss-cn-beijing.aliyuncs.com/social-share.min.js"></script>
 </head>
