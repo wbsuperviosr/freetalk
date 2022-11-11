@@ -8,6 +8,9 @@ body {
     font-family: $font-family--base;
     font-size: 0.16rem;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
     &.active-animate {
         animation: fadeIn 2s;
@@ -178,6 +181,11 @@ ol {
 
 ol {
     // padding-left: 28px;
+}
+
+#footer {
+    padding: 16px 8px;
+    margin-top: auto;
 }
 
 .some {

@@ -73,7 +73,7 @@ enableGitInfo = true
         # words = "多少事，从来急；天地转，光阴迫。一万年太久，只争朝夕。 -- 教员"
 
     [params.contact]
-        # icp = '豫ICP备2022002918号'          # beian number
+        icp = '豫ICP备2022002918号'          # beian number
         icplink = '//beian.miit.gov.cn'
         weibo = 'https://weibo.com/u/6461602234'                # e.g. https://weibo.com/u/6867589681
         wechat = 'imgs/bg/wechat.jpg'       # Wechat QR, choose your path

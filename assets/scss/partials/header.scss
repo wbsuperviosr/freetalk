@@ -3,15 +3,16 @@
     border-top: 4px solid;
     border-image-source: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
     border-image-slice: 1;
-    
+
     -webkit-border-top: 4px solid;
     -webkit-border-image-source: linear-gradient(90deg, #0d6efd, #8ed6fb 50%, #d32e9d);
     -webkit-border-image-slice: 1;
     // --- doks header-bar ---
 
-    z-index: 1000;
-    position: sticky;
-    top: -66px;
+    // z-index: 1000;
+    // position: sticky;
+    // top: -66px;
+    // top: -11%;
     // background: $header-bg-color;
     // backdrop-filter: blur(5px);
 
@@ -25,14 +26,15 @@
     }
 
     .container-header {
-        
+
         .some {
             position: relative;
             padding: 4px 0px 6px 24px;
+
             #light-dark {
-                cursor: pointer; 
-                position: absolute; 
-                left: 4px; 
+                cursor: pointer;
+                position: absolute;
+                left: 4px;
                 top: 4px;
             }
         }
@@ -51,7 +53,7 @@
                     height: 18px;
 
                     display: block;
-                    color: rgba(90,41,228, .8);
+                    color: rgba(90, 41, 228, .8);
                     background: $gray-white-300;
                     margin-right: 8px;
                     padding: 4px 8px;
