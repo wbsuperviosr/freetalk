@@ -1,6 +1,7 @@
 @media screen and (max-width: 1026px) {
     body {
         $site-padding-lr: 0;
+
         img {
             // max-width: fit-content;
         }
@@ -10,8 +11,10 @@
             // background: $white-900;
 
             .title {
-                white-space: nowrap;
-                overflow: hidden;
+                // white-space: nowrap;
+                overflow-wrap: break-word;
+                width: 100%;
+
                 &:hover {
                     overflow: auto;
                 }
@@ -19,29 +22,31 @@
 
             .container-header {
                 .container-breadcrumb-nav {
-                    img { 
+                    img {
                         max-width: fit-content;
                     }
                 }
 
                 #toc {
-                   position: absolute;
-                   right: 8px;
-                   top: 81px;
-                   display: initial;
-               }
+                    position: absolute;
+                    right: 8px;
+                    top: 81px;
+                    display: initial;
+                }
             }
 
         }
 
         #content {
             padding: 0;
+
             .container-main {
                 overflow: hidden;
             }
 
             .container-search {
                 padding: 0 8px;
+
                 #search {
                     .sc-icon {
                         display: none;
@@ -74,6 +79,7 @@
             .container-home {
                 .menu {
                     position: initial;
+
                     .item a:hover {
                         padding: 8px;
                     }
@@ -96,7 +102,7 @@
                     padding: 54px 16px;
                     // columns: 30px 2;
                 }
-                
+
             }
 
             .container-nav {
@@ -105,10 +111,11 @@
                 .toc {
                     display: none;
                 }
-                
+
                 .content-nav {
                     .nav ul {
                         justify-content: space-between;
+
                         li {
                             width: 50%;
                         }
@@ -122,7 +129,9 @@
                 }
 
                 .list {
-                    .item, .item-term {
+
+                    .item,
+                    .item-term {
                         margin: 12px;
                         background: $post-item-bg-color;
                         // border-radius: 0 16px 0 16px;
@@ -163,7 +172,9 @@
             }
 
             .container-archive {
-                .categories, .tags {
+
+                .categories,
+                .tags {
                     .arc-item {
                         width: 96%;
                     }
