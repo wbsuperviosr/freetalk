@@ -5,14 +5,14 @@
     </div>
 
 
-
-
     <div class="ctgtag-all">
         <div class="count">按作者查看:</div>
         <div class="container-ctgtag">
             <div class="taxonomy">
                 {{range $name, $taxonomy := .Site.Taxonomies.authors}}
+                {{if ne $name "刘鑫"}}
                 <div class="tag"><a href="/authors/{{ $name | urlize }}">{{$name}}</a></div>
+                {{end}}
                 {{end}}
             </div>
         </div>
@@ -20,14 +20,23 @@
 
     <br>
 
+
+    {{ $count := newScratch}}
+    {{$count.Set "i" 0}}
+
+    {{range .Paginator.Pages}}
+    {{if ne .Params.author "刘鑫"}}
+    {{ $count.Add "i" 1}}
+    {{end}}
+    {{end}}
+
     {{ if ne .Kind "taxonomy"}}
-    <div class="count">{{ if .Site.Params.en }}Total{{ else }}共有{{ end }} {{ len .Pages }} {{ if .Site.Params.en
-        }}pages{{ else }}篇文章{{ end }}</div>
+    <div class="count">共有 {{ $count.Get "i"}} 篇文章</div>
     {{ end }}
 
     <div class="list">
         {{ range .Paginator.Pages }}
-        {{if ne .Title "Secrets" }}
+        {{if and (ne .Title "Secrets") (ne .Params.author "刘鑫") }}
         <!-- 📄 ➣ 📂 -->
         <div class="{{with .IsPage}}item{{ else }}item-term{{end}}">
 
