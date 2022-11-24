@@ -41,14 +41,14 @@ authors: ["刘鑫"]
 所以那几天跟三叔联系超级频繁，她也知道了我的情况。三叔知道后跟我说等她妈妈回国，让我去她家里住，本来住在**阿姨（料理店店长）**家里离着学校近不折腾，也方便日后找房子，但是一想到毕竟跟三叔亲，她也叫我去了，我就没多想高高兴兴的就去住了。一个星期之后我就付了三叔一半的房租，因为水电费每个月平摊算钱很麻烦，而且我也打算再找房子，一放寒假（元旦）就搬走，所以两人商量，等我走的那个月水电算清，我付一半。
 
 平时生活上我俩也是相互照应，能在国外找到老乡很难得，曾经又是校友，突然很有话题聊。我把三叔当亲姐姐一样，**她身体不舒服我照顾她，我身体不舒服了就撒撒娇。三叔打工的地方是居酒屋，很累，几乎每天晚上回家都要在后背上贴膏药，我每次帮她贴完膏药之后，还帮她捶捶背**。我在拉面店打工的时候总跟前辈说我的姐姐有多好多好，我从来没有对身边的人说过她的话坏，这个所有认识我俩的人都心里清楚。
-
-<img src="https://db3pap007files.storage.live.com/y4mTcme5ARwn2kxZXuM7NyJmlkTqKQuXKxVPzYAnnUpFTZL3QI1eJecee61gOteVUzSRfWnwX5V1Q1aBmOX5l2m-7S2E8tIJ4kRFdJFdWm_29D5d15WXijFTqQxvNC1r6dW5KBEL8uJbk3XNm_W6ysHcYFYCFGONbr3l3PYoaGcZT5tfWJACKcR4hn0IZX-VAzE?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mApl0Ihtxrl7kafqESUFRN6SJDid3SZmweMQAb5cCBADM7If2_BuUFLIs_TbY27Gl6oB-LvBV-ReQWDXH_eF3Nu0JSUjLrtv-f5JWFC7UfhQxsXBwSss_qj7A3RpSWHHlUY0v8YuvHx9Szqg4o8KJS70IbTeeRx8SGYor-uiQv4q9xUaiQ6BFDEJzfMfI47Hn?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mBxlU3lzd_bgf7eJi-RFtDyzXYrPKQbP1HYrwHmL-QBov-3Qo90ag6PCTO1r9ZZvpCJNABsSo_1Ch4tuXqBlWc00xwXwCKkI15nn7qIxlUUHs6U-h28DgtNspqpdZqcPKW6klPGyWokTdzy2PCPYhKT68nNf_Ogvtq1HwJRyO7AZzzgmHeEfzdx9O1WM_2ai_?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m7WwvMFnywmG7kDDGgGnE78h-lg0dseIg-P5AytdWyMh-UwXd66xAZ4_il84Iaey1LaZeWLDRupKbudgqyDMZqpWtwGQD3rKeYIlHifUfjQ4X8JmXS3_pm4DjJ6-ZQxKkzmcObtH9WmAzL0mek8Vsi09YziRYDrHkLCaVzsdy4E8dn7glmzAS9CQjS1E8pmKM?width=576&height=1024&cropmode=none"/>
+<!-- ![图1](/img/posts/lx_170830_case_facts/01.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4myQUqLJIWGRiE-RVTs4nqxNCuAouogrksZINYWAE7fpdYHqfq-qkfNChaEq9dU1OZlRnrP6t21gR4gQN2sLYT3Mm5Scz6Uo_etgVfwFRkVIK9x9SsclDqoLWxWeC1L1kV3FsvAUG9jwUcoQgbrahNqquFtI__79RYB62mDP9Tb0mp50-sapNuQftJz972V4dq?width=576&height=1024&cropmode=none" />
+<!-- ![图2](/img/posts/lx_170830_case_facts/02.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mOohbEBOxMwmCVY8bJ79-hShrBP9x-BhGQK-G-LAFF4qy5tUz4nWowvl0ovH4ZDPE4lc3CoT5_7NOqC-UDSFBZbp5MVU5fgVmd4zHGxiHSD3sCr0DhLbfYDG4IdiCSWBfmKIgpF3dACqjeCU9wGrAzDcjdhK6FSKyHiOrcmy6xyW7NINmr7tH9ylxbNbOJtSO?width=576&height=1024&cropmode=none" />
+<!-- ![图3](/img/posts/lx_170830_case_facts/03.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mxSEnVoJbAWGgN61wYTnj3QjgefRyju7WVypiMbDlQ6JQi9LyIPCzvMiJc5goPh7OpRgLfKMwoSr_mPnrwtCCRwNt5CSC9SSz2b2gauHmBTPRXBtCtxBNMswJ5pdQckiEM--N9SPQ9eJfFUMWrU8g4-uMnB-qaKserAEWTzHYid5-DnB9IRC85c9hLfLs_Bbs?width=576&height=1024&cropmode=none" />
+<!-- ![图4](/img/posts/lx_170830_case_facts/04.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mbtMrS2847nFLrEhXmqg-JEVkxkMshR7hUPoTBBxgPdShdqs5XAcmcLtGLsC8trurilPe_mkuTV2C7z-IlOR9pzvy-AXme7jykPmUqNFuEsQmyRGcAaH4H2TN_8Lreg2NrsqL2aVyVYpLEnQ0jWq1FdHAt_KFHL0sszmx8AV7izaKbyPamX-c9WYzPCwXEIJp?width=576&height=1024&cropmode=none" />
 
 住在一起一共两个月，第一个月我确实很忙。因为打工店前辈的老婆要生孩子，他请假回家照顾，我就替他打工，店长给我排了很多原来没有的夜班，所以那半个月三叔回家早，她总是帮我买着第二天的早饭，是我俩经常买的面包和杯面，我很感激。那半个月忙完了以后我也每天回家时候都带上两人的晚饭和第二天的早饭。我学校附近有个市场水果很便宜，所以我经常绕路去买，带回去俩人一起吃。因为我知道三叔不是不喜欢吃而是不舍得买。我也想对她好点，仅此而已。
 
@@ -63,44 +63,43 @@ authors: ["刘鑫"]
 **三叔是学经营学的，我之前刚去日本迷茫不知道学什么的时候，在塾（日本辅导班）里学了一年的经济学，后来觉得自己不适合学就放弃，但是留了很多笔记。**
 
 **住在一起之前，我把经济学的书给了三叔。住在一起后，她说她们的作业大多时候会涉及经济学，笔记也都直接给了三叔。**
-
-<img src="https://db3pap007files.storage.live.com/y4mlwjD1bclFBJnOIaEx9xoj7x0WjahSduOgUTwEVLM3fVt0vvMBFkLCqFWoyxwmQl6lIAU1dvksfHobjzcJS-3M-aLPvVZBVvGexpL0ON-6UiEuh-FIc-nZ6nuVHSbtYjMmUaS4bGhqDGmSTw4_dnh1hq-UyYId77dmDbeZCMqda4qbRBW5z9tpm88FoVai0j3?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mayPLt6NPTiQo24-Ab0mHPc_gI58hZTj8EyWMosJvGH1l6n-9DO85A2jkEXTCEbaTGNVf9umjGEic2NHiv3IlH1josvPmknf1FYukdxn8co-Bv7msV3tVKJ_em48euelgPnFfAwLPsnANS7NXs1uWO8o5x7kv-f_DsZVr7Z0EC7AIbMOgYT4b6bLKBoantnPa?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m-HtPPXMPbK5erAZul3E8I59j14_1YZqKlC9MB9LDh9zSUtKm1JwUKQIPDRWt_54tkbNSC44dYY3bigN8_Nrzmpy92zw9OO1CKWAtk0niDUCehF9911cTrqrohbmIvaPmPWmoCxgQtmoZJqmnOgk_iyIX0jP48n4I9EIkPePU5Pp6GuyFIfXEPCEJPs8csIfe?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mqp5wC15D3cuYy0WIxefhTDQOyU83rG_ya10hi1VcdTUxGuzk9GjQAyqlNp_80ZwUipU8BxM4vOC5Mk_T_9GT4KYKGkW1pJAqo9lp_fWmIlp2YXWOUUusUvgayIsxFr80S5EXE0Do2a5hfc3Z2R1rKb0-DW_EWlO6LCi0hXCuS9nv2pTVyo7sHaYAD8x7s7iC?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mt6WuqtuF1RTT96RWXkEyuv0hlvS7HEbST6GsB5nvgII01w23tS3PP5nTJRou1YY8BwmR1vZiWBypg2m3-PtztE87jmBDSJx5G7mpQ-GyCagJ9o3KWmSW7qeubHhXyEO8ae5BGR6cuIb9Um_mZzE8mO3JAYSF1m72dmoxqOuOwsCItnywRPHxVcupF9DcOWAo?width=304&height=540&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mPUz9Je56y9koJESc3rs1Naynt3MWLmjX7zL0Qsv-gx8R_ss0bl6H6s3LOdYKKHffEtzhnIBaxR1rqBGwDhEE_NdefssuOED1NrDFlW-sLhsElM2yV6lFwH0HhemkmRJUHoldUJ_OdKZ6AMFZG1EHokepHNiJgU8l1lYYyjOSUP3_5cJLMRL-w05EBznM0sVY?width=351&height=623&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m2hRzybSfn0J2GuLmElm1dS4tCn0JMUmS7X_TVAyaNLW4Yv1ST_R2SWPokmH5tBfmqVQtLBzQBOlBetLztuMqFeH5MUv3T4ESEXCWZdGzs_6Ux2KNKo8DxoqvehHvlZUudipRwgtjVgN9cOXKbN5OTeH4rlJUJwFFGMlfNei7GPbiy-TyP_PqEAyYwm_1DLX6?width=351&height=623&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mVIujGaSM4iTR0FIaZ9CsZfaAIkQ8pKNIAk_wPDw7T5Uq4LEAwUVDv76cMBWpNpfWFizyqlC0KWW1_DlJjf-GlQCQMY-f7ql3vVqLOkcvLYTUNod3r64hjtu0AeU52lawx9WE7gUe1PIXrT-PS_5hhJnN7Udx-ELUzEVIek8LiqyOKuW3Cbmra3yPTiy6qJME?width=524&height=931&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mtpXiXiGghYrvB1L74mOi74W5goQk_gD4Qhe_tUPBjjykQPu4VWsj3AQFYQVS-7CAnuiXySG8YnHLHoTH2KWlYDvhcs6pPT-G0o8xT84QwHh0M8yFCbfyf1RxbCHf7GnEWvB54Xo0LgseDl-J-YDKJQqlyTv9WK5aBufoOYqLCBvOZRZifaERyqRTfHkK5Ilt?width=398&height=707&cropmode=none"/>
+<!-- ![图5](/img/posts/lx_170830_case_facts/05.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mb_goiCsf7dtVM6XeAhn8cZltpgNc3z_SsJOUIyyU5bR5mVot-D6tkVY45FSrSKCirQEHi1dt_PJOAIao4e2dGmpMfO4m8N4AFOwkYuzw7xsnlZ9vvBqEZYXUaS77__lwSeIdCegJA_Q7BgXz86RZtLCfw3zB-cYBO7fa6y1mwqefc2CZ_12ESm_4-MvENstD?width=576&height=1024&cropmode=none" />
+<!-- ![图6](/img/posts/lx_170830_case_facts/06.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4m15nNLaUa_2eKSmkOBKhrbPeHbosHvyRboWkRfz8Tqb-fVZnhDfzUWL--WAb4we_7ArM2wTCCPmrnLeu5w7dBBwn4NUKyuy-WwXAWxTsmVGcF7BrIdw9EaeSXF_xHYhsvntDwnMU86zfQsuU1DTam9VuW5PdRc282XHtWGNUVpcLLiGFGflbOpmdTfcQjo0uS?width=576&height=1024&cropmode=none" />
+<!-- ![图7](/img/posts/lx_170830_case_facts/07.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mGyRfIfI2cm-4tGYUn0rtTf5i4vMcixzuan4jRC_uNAllo5K7x0emr7J0nnTIEOZXJSV64WDvuYBlKbIe_9pwFc-eEzbkzmmd2fJXvO0qCH_IZeorbYWdGJkijT67xlPXZgQytQWFKBqoLnJwEQoKouLhTDlutM875abOcGI3ICpzrDwBqQpYN7IZ9WijPHwj?width=576&height=1024&cropmode=none" />
+<!-- ![图8](/img/posts/lx_170830_case_facts/08.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mCGRKBWJYOZcLe41LEcBUgkeVLS0t4f75KZ83fd92oDE7LIwNb06oHx9PhOTMvrIOTkkrzm3liQci_DnaqX1lduebQGQ7OOY-RkcOyc64ilBRpIIrJrHRJCJL4Vz4mlC-Hbu5-DDR91Yg641ailL-90Hd6xeATZ51rODl_dURXhvYlHlCjNxaIdVa959bS6RP?width=576&height=1024&cropmode=none" />
+<!-- ![图9](/img/posts/lx_170830_case_facts/09.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mxU6jzoe8ZsZk-tOD5hNReO-Gtfv7i5KnFZy_WFPpE2JVtIrwE4p_8VD9fmmRfshmxgGBaIXgUH5azlaBBVUeFXI5RtZCzqTIWD1Ffijd3zA67dJgB7R99ZCN0at4e4r5JEwVYVFbXHcHLKOrc1EWNlCUzqw__ZTOzUKZc4kGwa9i_ZSD_FymixhgXoNCDEC-?width=304&height=540&cropmode=none" />
+<!-- ![图10](/img/posts/lx_170830_case_facts/10.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mOHkaipadm4i8HHM2JdGRMmItPRSZ-fDjqaMwXm1E9gHaSGVpXwB0Hkvht3EtOtf_g2HAUe5OTa9ER1DLRTe43XxtGGCjULQkYnYo8v5ZvD_Qhd-462qIhB5iA8P0sl55E5pcYi874LwIiKlsSMc1lXd07qoO_hM9AllK5mX2OhtKlOPay3duTXjml4Kak2RY?width=351&height=623&cropmode=none" />
+<!-- ![图11](/img/posts/lx_170830_case_facts/11.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mkPKZv4jW4urPWpLYyOllML5tYrNlaG0OOQnm6624IyfYzSv8R8CIDmH2AJ9o8cJxtEUB9agy-XAigVfOzCyG6aUt2w1zy58Rb730Ve2gFqX_4Mw7Jg8Oh3dPcKFE6iGUCiSUYdE_5tVCXdCLxs5FRyznmG_MZmPmGhlH1o-WgAfuN8TE2PvXtJbjMxvufWXd?width=351&height=623&cropmode=none" />
+<!-- ![图12](/img/posts/lx_170830_case_facts/12.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mzmV7FhYZZf2kZDQAy1HAcODHaB4uDZKxuClWhB6IJtBnUATYFRaqKILkGw15TuPRoImcjS9_RKwtVg1u-XpwN6QC_Ou4nQsIC5-giAOx9mk1cchVeeMXwX2VrCCTlTcFwVhtuRtyJVSEf6jEVurNij4yfeFH1HVfW_a0Nt9mkb3UkkDiy0g75mz0xttKxtJt?width=524&height=931&cropmode=none" />
+<!-- ![图13](/img/posts/lx_170830_case_facts/13.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mDrlyostuq4397YKmbEgUQINMlANiKik41mAU7ezO7YaEZwMV2MxrM-lynvyUEfekb2LxJ2m4PAGyx59m_2NusfBKJNrkrDCmul72WYR4Sfl-t54brBoLj7hSuSe2ODTWUmZXcu31akoehw1OMdUhboJFbA0KRyV75Y5E_SZwKh2veC9CpRuO7HcigzlJfV0q?width=398&height=707&cropmode=none" />
 
 ### 案发当天下午
 
 我在家睡觉，因为那时候学校文化节+北京大学的老师来做学术交流，放假三天。当时我在家睡，睡醒和三叔通过微信聊天。
-
-<img src="https://db3pap007files.storage.live.com/y4mcTJmMrtK3KwwlTD2s8pgEYMkLxVOxBC9q1Z61ZklyRofoo2jfXLnkolnOQbDcv9by-VshXe347YGlYLd-UnlibjiwvIa9CdSQKB02xN_DMoT9fJXgeSMAdn2x9znsJexBn3I2AZWBgDne1BhjFqo_FbcvLStvVo9xXIbPT8_TCdmc8dV7FZB71StNz574jLh?width=523&height=930&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m4tsBapo2uyvu0mSkT1jdCyv8srHVyB3qwdlR0TOPMp95XuTfs4rg8s6_E4fGPAlfyFqdFN85KktSAm0TQQAl-oeHrrjvUXmsCfONvD6xC7h2Sd-gY6rfTclPZYz7lYgtE2AtAjoryvI6p6pgo0-XSXtFgKdw-h5qZ8GKZTf5Yhm86bkn14dYOJ6JWDHIpHYf?width=257&height=458&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mGEpQ2qV6HUqbMd31bOKAfDoghLl-WRgfYfoE4E2Hhuc7jQlZmj9NH31g15vUf7wf2Wps-F_OQrNTTjtO050ZhF2WsngHBwa-3gMCPgyVIgUnzHwRxV78WMNER54Rc-BL8JXFlh1qGZseMtikbYk6g7fn95n-KWv4WNmAlYKg8L8tu0Nc_m0yzEqyaTi47S8C?width=503&height=894&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4my4fkbGO7cxTZgyeQWWCGCiuzwJY5UAqQT-Ejd6kvjNB3bcdFEvo3KG9TlPgeYll8Enw_5xpRuhZjPLljS-y3WXFhLHTVrcJnaWhpUGtNr6BwLmgUMRoIPowrWOWjlYW4XGVBdZ1z2K5rEXVBRKes0ElSzrBRWjFvHGmSKib69FdmfTfgix3oqe444x97CZ_D?width=523&height=930&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mqvFSNATeJGsTjKTZiDTQEC0njnupzfNlGJ12fdySPcdhTSGbtHZD_BLtLnJ1PgvK2amN8QoADWLOMy7EHurdUutE4Y-sS6VA-H_YbtZ3GUMHt_omPl_Y2zEW-UcGGRbmM-PptjiBTnPuIYtynVgH-cPdFk1v9fIWe2JNvE_iTEDB03S6j6hPawmt2B6Fgicz?width=187&height=333&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mUryPpwWe12d0XqL7nSmk1U5O7phZPv_JVA70tmlp0fdrHpPvx45e1-3u20YzXvpuVgFGJ06jSeK5jai22Sm4bj4x_NjhSIsbZeTtkAn4MmsIjroP8FFHXkSk_Cfnme4Fg41RgKIl4cVg3ZgNP9l18UWXSZGsWpmj9qRffdyZcdiDvmpaRjz0IbUn87sHeiM7?width=363&height=645&cropmode=none"/>
-
+<!-- ![图14](/img/posts/lx_170830_case_facts/14.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mBwHcCrPTQqsGwDOVuKTJlm39GmxIQruj_odZDnuJknEG6cCbu5K9ozYWh90fzM62Ilde-_DHeR18ndcGpvUG2Bau2q7I8yl9YPp5EQuAeVdaP7NStExh-NjSdajuObHqESrb2dLEeVwkQWJESNJBehSbqSbJaJ9LaORGYYcScSjKXzzTBKNh3UR3QPWF7Pxo?width=523&height=930&cropmode=none" />
+<!-- ![图15](/img/posts/lx_170830_case_facts/15.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mbTpsTHwXezgVD9abW-ymuxKMAAAA1D9MNuJrbK8B7m24ccKivevjTesZtWvzF0AIynpyEVNiS75uy3tkaVWnmTxLyJRqePjq6fL2lm_oDBbTkYc54_5891koT2e4fnO7sWCrN1LySafc4fL1jaMA2fiQF7bonWA4aL_f5YTWEi7LqUFR_NdfwsIOI8hfajdr?width=257&height=458&cropmode=none" />
+<!-- ![图16](/img/posts/lx_170830_case_facts/16.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4m015yoIojIUBm2wZFPaEFZf0wAnijjo-Ylgke4XfIjiAmWuczpVFTp6z2a3NIzT8ymW0CrbjkZNmbNH0qo8CcJxliLDP05GCHSOLP_AOu0nhETkoExW_UCi6jujaglRzdGpFcqGT3_iTP6LGXbDCbLzMtg4bUQ95Ixog56dikUwOYodcjirU27db_FAx_WF7e?width=503&height=894&cropmode=none" />
+<!-- ![图17](/img/posts/lx_170830_case_facts/17.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mZ7WqY04trKxL-gG7JE_90iow3_1gHs2IyY6VWs0Y6xHVdTfVzTKNk-nXpyESS95OXxOUmC1Zkvprk4FLdnZFUQ1DkCDeUFWufJPWqwSKOeX0KYbU4mgZ3YbeVQVLhjhpjLlnqZiUM_b7tKRsGcAOXRGrbhOIW4FO6-bi8Pazwv8d9kNx2d3t6I5VVUHg2Qdy?width=523&height=930&cropmode=none" />
+<!-- ![图18](/img/posts/lx_170830_case_facts/18.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mQGKeXNa0uU5kbTK_dJL3bfGVyd7_EekwnOFkt4AxviFGgJ3tUBASOjZVWCb-nworpgfz2WYoPlsQ04Bu2TaDPX-dh4iDb6cMwISEBqmkuPCFs5BWGMmQ1sqBOIsu0P-sJU_rFDSFw1JdaiLvMg2HZIupuS-GrNOnjJBJ2M5ISzSOuaUlZmlHMGZzwK6D56u0?width=187&height=333&cropmode=none" />
+<!-- ![图19](/img/posts/lx_170830_case_facts/19.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mlOVyNzamoxN0z3ahqBGBfWjMeHKakI6P_lHWUCdukR9hW1Zc-0DWS0h-DG8J3-0AALO3esYekRB7wYqk0Nm23FB8IOerd--CpOfbqy4BMQbD6ubMtlaINhXM9kjKtoPAJsrYnPig7Zkb0YQ_dr-AFRj74paLfPBl87um57wONDTacvj8HYYb1LljOUp-XSQ7?width=363&height=645&cropmode=none" />
 nhk日本电台，经常上门收费
-
-<img src="https://db3pap007files.storage.live.com/y4m3_peMToB8E8JM-Ci1WGJFL8D5fR2sJQ7ntB-0NmiKPAhyy292ZoPzPTC-Kn18NH4MxEkEageeS7bxNIuVL7oZs1b51m5iqr6fFcFbv1f9RUT_BEVRhOzcsbXk9OS_r_u3OOKo1J12rrCnewr6FfwTN6w8ogLUctCCDuNw7qqMi346vInBX_6AeXrjPHDWjm0?width=515&height=915&cropmode=none"/>
+<!-- ![图20](/img/posts/lx_170830_case_facts/20.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mBu9nCmebkoKAIM9uy8gTK2rQGvv3XA-ZOPryP29M8SbRyMlpDEeToPuOqIjP4m3zvWYPFZVEJvD6uw0bECu_F3G4q5bSPqqzZYTLj-ai2VplkVMqoZYmYAo0_rrlr_3ye07Q2ECQI6FQ-s_WWZricqQVyZcxZnQi3usuMA8MYO-6fzMeXZ8JyODcNGNJShqz?width=515&height=915&cropmode=none" />
 
 然后三叔说刚好打完工在回家的途中，要回家拿书去上课+聚餐，我就继续躺了一会儿就开始准备去打工。
 
@@ -111,10 +110,10 @@ nhk日本电台，经常上门收费
 我们两个的聊天记录都在。
 
 那天晚上我打工，三叔外出研讨+聚餐，下着小雨。**我在电车上的时候三叔刚好也在车站，还没到家，所以我就说你等我一下吧。**
-
-<img src="https://db3pap007files.storage.live.com/y4mGJIuJoy0ggOeIzkrbinoRG6Oev9iTGIFltgS2SPH0KK_1PRjaz_7xAWjDuVCos_XcCTZdeqVuUuJcxQ6qzibnvBqnUYQQ1vuI5ASJ3PdTPham8_lTpgQptHI9mDXU-OSBAcYjaSNo3Gc99WiZ7G6qyYNuHeO3GCNrr4CYV7DVPeXWQj8WyT5hMxcHKg0xXWd?width=523&height=930&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m0EOO4dId0ToxKWND3I-kxXp4DU0p48joeR_4i4taO4Vsm0r88TGrnHiL1K5wUUX3q8o0S18QPSxHDHBfjvUaIwh089-oReN--u09U2rB60fQ_3qFnBhhhFCmSJz5EYKzdeDV75qR-wbnEV7NmghWEcZ3Dm7klJqyOFqQy4aiaDsmah3poq9KUFR0eibEf_EW?width=515&height=915&cropmode=none"/>
+<!-- ![图21](/img/posts/lx_170830_case_facts/21.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mKzJQpyqBoYbD0il2lZDULAcBmpiRHq8vvcmOUyW6JrvcWsPgscL71zmpiCkDKBBZnUPZMcytiA-CNWerUSsSw-DntDry27XuONABCeEEHoGYJ7DK77i6oIjpeAFbg7U1irhuqwj9pWlFMJASmCkJaP9QM67VKzzwzwrMGOCoSekhbqIeOcPAwPwSnYLtcqU3?width=523&height=930&cropmode=none" />
+<!-- ![图22](/img/posts/lx_170830_case_facts/22.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mVI2qGXenZr2HeMNlw0tILDjuiBEPjJPdcel9GDUmUCI6Qg3x-hiozrQYu7j2xEbmWdAGndRPB3d8Ea119rC9YF_g1HaJATNWnTjtugkxYXVOhZ0ZWZ8bGkgP6x0UcovIYWFhnSMclWdbvpM1YpDpILbEMqWjljJpOEfuWUES9VIZE76NSfjn7mZdEcicm1Eu?width=515&height=915&cropmode=none" />
 
 **因为平时她下班晚或者突然下雨，我也会什么都不说的去接她。住在一起，我们俩之间相互等一下是很习惯的事。**从地铁的A3出口出来以后，并没有异常，（我坐的就是末班车，所以当时那样一想就觉得更加安心了）
 
@@ -145,18 +144,18 @@ nhk日本电台，经常上门收费
 ### 关于作证
 
 **微博里面说我不报警，我不作证，那这些证据为什么都盖着我的章，签了我的字。为什么一有结果警察就给我寄信通知我？**是的，我拿不出警察局的笔录，无法证实我所做的一切，但是你们在网上看到的一切就是真的吗？我一直都在和日本警察保持联系。
-
-<img src="https://db3pap007files.storage.live.com/y4mVuQ0uBOXVdXXg4-TvYoRWm8Ww4sX9Ufp2V3Vy5WfsWQ3Keq-LxkLxSWMv7_hRaT82B_K_sgVO9FgNuu8xFsDluSMB5hrzkmQ_NlhDJ846NKdzZCVWETZ9bZWOIbaloTmunYCE8ZRih3mG6w8eMPOz0jW6xxYe2ZmtobzkeWu4mb38yGRfQ9tsvxT1SCZPawQ?width=381&height=206&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mRVkRG4RbLCEYRIwXOaQ6cSv8yLqLkk_NuokMGcwkrtQb8VHK_uM9-UkBTabaMegjikEX4F9S_J1EZU4TCfWJSOJj549luopKC0P_I2X_WIDyb8PgZpZFZWcC74HMhki8Nxj19Qi7y0du1yeB_XURHCXtcDsXiqzCGpYfJ7aNW78yensx9RgD-wJPGtbRtIuy?width=553&height=415&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mXBA32AIgazHvnb79eP9mqus4OnFBBxjv4TL7AVbN1lSOjlzyNS-WHgrAevYrQjKbenNGl9NnW-qXaRTjGglO7I5PD1VmJ0a1-rGNeZ721SdVQIjAf-7Kfo_9Qk66unSLvxbgkS_H3gNrpRV8A-q5VNqPXvi8yiROAclGK-TM5ultvvgJAI4kkc-7NXFmWaDR?width=427&height=408&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m-mvwT2uEpzeigjIvbKRVNnTeqgUCBnBChVh4r4lrsFe0Is25M9Yxl64R7Lt72nN9aJjgbYxywskS_KlY4s8aB4DgSWRclRN8Uy4EhoxtUVcNGuavy8TXfZY9lGfKUKlTAXs5CAvj2ReIxFtgh6d927KMhBnxNDmO9XQ2RYE4KYsLqnwE9rhbOYO6X7BZ7B4n?width=515&height=477&cropmode=none"/>
+<!-- ![图23](/img/posts/lx_170830_case_facts/23.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mVuQ0uBOXVdXXg4-TvYoRWm8Ww4sX9Ufp2V3Vy5WfsWQ3Keq-LxkLxSWMv7_hRaT82B_K_sgVO9FgNuu8xFsDluSMB5hrzkmQ_NlhDJ846NKdzZCVWETZ9bZWOIbaloTmunYCE8ZRih3mG6w8eMPOz0jW6xxYe2ZmtobzkeWu4mb38yGRfQ9tsvxT1SCZPawQ?width=381&height=206&cropmode=none" />
+<!-- ![图24](/img/posts/lx_170830_case_facts/24.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mTwxfBqh_XWjSk7Cgr9MR5jN4Dso_E5E-o2GX70XRjw7ZenDo4iJ_JlX9GLokZAQGCDVctYivMuKjIkWhLa6gMwgDKjzBymV655Igppi7tDQ0k-tKYlgeNtqDyGRAzl8HAT5Asb5n4iOhIRhAU1tRoVh5jiZJpRHI0kkKyFQrz1QWuzRSpPQ4LcGoue2sRyoq?width=553&height=415&cropmode=none" />
+<!-- ![图25](/img/posts/lx_170830_case_facts/25.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mXBA32AIgazHvnb79eP9mqus4OnFBBxjv4TL7AVbN1lSOjlzyNS-WHgrAevYrQjKbenNGl9NnW-qXaRTjGglO7I5PD1VmJ0a1-rGNeZ721SdVQIjAf-7Kfo_9Qk66unSLvxbgkS_H3gNrpRV8A-q5VNqPXvi8yiROAclGK-TM5ultvvgJAI4kkc-7NXFmWaDR?width=427&height=408&cropmode=none" />
+<!-- ![图26](/img/posts/lx_170830_case_facts/26.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4m7QrZ5RXyLK7KI_4vkl6ywyEma7F1Py8UUwf1Mc3JQ5_z7L_rjm7DmU5WkVZ4Jl0Zusq7bpNvE4IPA96VAuVIEVdr9fF4uPs14VjtCG5EjBr1pXfH7vtINnrVtQM8qGIPzyTEJCF7Ri3HiniXBgw55x6BUjfeX6ht0XjZxTycr-PEYcVN5qpW3G70eKcpUl1k?width=515&height=477&cropmode=none" />
 
 一开始我真没想到杀人犯是身边的人，都是通过日后一些监控录像的指证（给我看一些东西→让我指证→警察再去私下核对）这样慢慢确定下来的，一直到12.14日定罪。警察曾经推测“**下午吵架，晚上行凶的例子不在少数**”、我也不是傻子，我也能感觉出来谁的动机比较大，但是光凭我一张嘴，没有足够的证据警察没法抓人。后来我就说我有一些跟他的聊天记录，字里行间有威胁的意思，**然后我们抠字眼儿，警察给他判了个威胁罪暂时拘留。一直到判罪。**
-
-<img src="https://db3pap007files.storage.live.com/y4mEaOZoE49mrRCeESHv3oOJiM2uHuoWUIuP5Xm1K6XSHQOIAvl7-cZtuCbOkZkupfQSNB1hQqjk7gtArLnhqBc4L2N21-J0URO60bj0hxSNbnP5bkX3mAoqwQUb073DWixa47xO1F0XH2pgLoiZbzULaastzD8y23OdjslcPA1WS8_KXjZkoBQCTWOSNqDibN4?width=553&height=415&cropmode=none"/>
+<!-- ![图27](/img/posts/lx_170830_case_facts/27.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mLvhquPNq1tu8VWpvCeJ1Tp-C6Vt7hq-GyXD0UW7tx1SwkdJLWT13HyyX-b8a8ih1pUMtAX9At0WtkgPSXb2vXI4wZkum0aWXx1AZBLVgx70kkISs693k89YxMR6f0xhpevF2YhcBaH_tPqmo_9k4OlXt8w4pE9vM7gfSsLn4HnLQ0flEhMMV0fjxGjkGu5GI?width=553&height=415&cropmode=none" />
 
 从2016年11月3日到现在，我一直都没有在公众面前说过什么，失去的是一条生命，是我曾经在东京最亲近的人，我真不知道说什么，**第一次感觉到悲伤至极是无法用语言表达的**，一张嘴就只会哭，我感觉说什么都是错的，到头来全是谩骂。所以选择了沉默。曾经也有过亲人过世，但是生老病死，不能与这种痛苦相比。这件事情之后我并没有过得心安理得，潇洒自在什么的，我的痛苦能跟谁说，只能憋着自己哭。
 
@@ -196,16 +195,17 @@ nhk日本电台，经常上门收费
 
 言语可以煽动群众，证据难道只是摆设？
 
-<img src="https://db3pap007files.storage.live.com/y4m7Wbr4uWkmmC9VZ3k9fekQKNWub3nwe8ED9Pcx140pCS7lCsXwyqUzI9fS5b4anTurPBoS5zntRpvKHNHhmJ9N_kzGcvRdhi3SyEz7ttmE4FuigAImE8wcDwD3djTOnFN4EEnGdK8ySrhzwOsrc_SqqdQG7suvaqLRPOhpjIu6MmDPccFhPviBTTRUUMR6qlm?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m_UkwnryTulEXpkVBXSFwUTjmFG1DknRI4rpBuGQwSCmCf3lnupo7d_SHUcEdHdvlvXqz-1QyhFsGms8M344djeMlvOJq0chyFnd6zknuvAGHHJEM2kF5lYtyPh5yDYGR-M9tILxR32h7E_kS1AWabuguroO_ya7YnhS_KliF0YhXb66Sex9aVcNxrFhM6QCU?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m2lnz0uYJD_QVUUAjLb2OfCEMDKzPPTlZnIVGr155vqtSdyUkVAoQiNXVYMEEBhJtHa_erZ4jSacIg6tnimnvFKTiFjpBI6P6xWXMRI-qxh_yHvhhFb3KKtiOhwmWy0umS4-coAoC2Mm0fkHwYkOwBbhF723Ny6j9p1fDqMBKlvJKNmMynXXtHRmiTb7STjV0?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mUu81ChZKv8gZIsOSgdCTOVEta5dcDE7WTePD2fngMKMZOjXo3g1H2eWRBA0xn6SxBd2eyl9Rn9w_WBBhgtIPaC9Uj_PN_rgc1Lb7niKSZAZJua0BnYUm_MDfvP7nk6TQRETx0kji89V8007rzaIc-7ii5jKiU9vHTkqLCGtWm5PQhnaAJt7DppfKrT_8Js02?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mB2tY2GQKwzGBAwZySwiC-Wbr3u8FPxkGSOQfzVYnvlp2HpiCnFTxMm1RzECt9igJJ-em863Pn-UkZ7sA328CihiHcNIbW3vDqdWA2p6vcxmRilMryH24ZBxM-WOP8Ay9mwkuQbLvbyX9__Npzl4Tx9zhn8LmbVTNZ5XtTYXY4Ij_JjUrpuEGStTyDylag_v7?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4m_cq2THmAsFw9FLGTkZWf3Qbda5v2LU8Av4GkEOOA73OfzRKqrFCWqH-FET0n-aHD9kyx8iaaz4xJSXfWCvx1nX_DQ9G7IcOTojNfGq86ILwovIpbBUk2CNNJht0zrq0VPJ_hLZHZ9YbbrCPSUwb3f1mjo5kJmeJVah7VvQhvszp3WfbxahMFqkCHJen-I-bq?width=576&height=1024&cropmode=none"/>
-
-<img src="https://db3pap007files.storage.live.com/y4mYnyxjzZOi1akkEUzRzGtbzkUl6E57v8ctdNp8VSDsDLQ7HLOna3iDiFDNneviCxDDjSzhZ7k085EWnNZTYCBj0-Gw0DT6O0EYT6HemFHWyrz1KIUgv988s5StnDKJ5OQI3vpSazVgcRC-pmlvZ4kPbXtxipmGhluCXx60HO2tMu8rHAIjXnHYwBnrHtG8our?width=576&height=1024&cropmode=none"/>
+<!-- ![图28](/img/posts/lx_170830_case_facts/28.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mk4plhXK9s9VYLcqOD-ldhbx9irMrVzbLhImfOJ1oBDbkH-Y3u7yElmQKenYSIpHe_lHgFG1MlajkXqcX_S5urnX7M8SBDkSTc_VFX7S6HKVALyGYvSzlfHV9njGCBVm3tBEyk44r-bQ8fANYFIcbPWmwSjGKvToqkWoCsB_MtpZp7YzbbwSFb22fxWvLsjG8?width=750&height=1334&cropmode=none" />
+<!-- ![图29](/img/posts/lx_170830_case_facts/29.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4m8o17hzgeidquI8cv-ZPV8WJp1t2_8G43dK85BpEKTtNbcDWVA1OGnlZho3WflEsu9-PCaA5irjebFrs-IUcSjLeaPo64xmTfHbCEP1hv2EAKvvoe51NSieUygymvKtHIZJgSnTUvgrW0hczfxV12QtJsHLfrMd7ingayPMBQ37oaB2HyFxZR5-gHxVNt-8VC?width=750&height=1334&cropmode=none" />
+<!-- ![图30](/img/posts/lx_170830_case_facts/30.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mZi4RwaIJ90Cp5N_1qh5iqg4BrMOcxPu_LlHuQk1T4GcwAuPagOIiatNvARQtTCm0el5MPOjI9q1e8guiGOWD7fNQl_QNgAVcuC1jQZ75Tpy9EKytlUckRMg2qE6mjjrYquA3gD_H4VlwG6ygaRWsrbqsYRh0JFn9Xo9Fnbn5A-g1-fHg2L70EnZ1ULlK34pB?width=750&height=1334&cropmode=none" />
+<!-- ![图31](/img/posts/lx_170830_case_facts/31.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mnbvGt3vuogaFGwTYa82g0_EAD1TAyLAY-709f5yQyy1-Fn9c0T8Jwlw6yrV_eKBoRUuj3TUa7lOH5fBnp8r01dzPsmGfunnyDYgnG_R33Fb0dPlJxORJp_GRSDSsJxwGsowIpKEjalnI8Lc00fsZqs1TM5978wAedBqknajNu0bFc0SouP8xcR47-r3t-akA?width=750&height=1334&cropmode=none" />
+<!-- ![图32](/img/posts/lx_170830_case_facts/32.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mPkv6nrPuDFCruMbugOOKWCKDBh29nbEzyzHRgNU8gYDCs3ZLEmkB_oiqvqXT18Trtf_nwdLZCaNKCJPi0Kwm05M5Yk12A0tOyKeC79Mbu5VMJ0-TsNbjxqa2EzvwuMPKxWshDTGgxVjQWdkXg0je8fB9wwDVtnyBsZbnwOWizzw-lhJkewVZgSminGbiXGMY?width=750&height=1334&cropmode=none" />
+<!-- ![图33](/img/posts/lx_170830_case_facts/33.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4m03oW75nr3VogyM_EuTz5zmgYzhcHHy8UJ45XoxuIPDdlQBfDxJxQSvsdYhDcLrNsw3KuOlc90qr5tkviuJE1N1XuPbA5B1C2cXSCmkcRv6wUjmpRQqN6Du3AnffyNx4G71WUGWBnWo_0X6XCCjugF1zF3qSFN7itaqu6dvb_aubqArKQW5b4hnZdfX4YaNo0?width=750&height=1334&cropmode=none" />
+<!-- ![图34](/img/posts/lx_170830_case_facts/34.jpg)  -->
+<img src="https://db3pap007files.storage.live.com/y4mvINCgK2kbbYUCasedzX8RUIAAMVGH1WUTzdGsNTYi9IiyfAzVEuZNowwps4tMKVP9cBBqhcz8gyp--6R0cU9_qQZHa0d3dlECd7AscWN9FbBI4T-EXUJGINqFlVX5C_ptpywj-NAGgtQLeBqrDMiblpgPxpA0BCLTqXpXQWLSPghh4e60g-Y1s95YcmOkamP?width=750&height=1334&cropmode=none" />
