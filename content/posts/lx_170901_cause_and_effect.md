@@ -4,7 +4,7 @@ date: 2017-09-01T19:52:26+08:00
 featured: true
 tags: ["事件澄清"]
 author: 刘鑫
-authors: ["liuxin"]
+authors: ["刘鑫"]
 ---
 
 海报都贴在我爷爷家、姥爷家、我家的附近的大街小巷上、还问我家在哪儿？醉翁之意不在酒
