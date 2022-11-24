@@ -6,7 +6,7 @@ featured: true
 thumbnail: "/img/posts/1.jpg"
 tags: ["案发现场"]
 author: 刘鑫
-authors: ["liuxin"]
+authors: ["刘鑫"]
 ---
 
 2017年12月10日到达日本东京，12月13日出庭作证！
