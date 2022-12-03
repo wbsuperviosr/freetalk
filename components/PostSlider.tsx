@@ -4,7 +4,6 @@ import { Post } from '../models/sanityModel'
 
 
 export function slideButtons({ headlinePosts }: { headlinePosts: Post[] }) {
-    console.log("hello world")
     return headlinePosts.map((post, index) => {
         return (<button
             type="button"

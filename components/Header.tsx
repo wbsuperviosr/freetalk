@@ -115,7 +115,6 @@ export function MobileMenu({ categories }: { categories: Category[] }) {
 
 function Header({ categories }: { categories: Category[] }) {
 
-    // console.log(categories)
     return (
         <div className="w-full h-20 flex justify-between items-center px-6 md:justify-start">
             <Link href="/">

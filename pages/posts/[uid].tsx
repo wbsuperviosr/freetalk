@@ -31,7 +31,6 @@ const myPortableTextComponents: PTC = {
 
 export default function PostPage({ posts }: StaticProps) {
     const post = posts[0]
-    console.log(post)
     return <div className="max-w-6xl mx-auto">
         <img className='w-full max-w-6xl mx-auto h-40 object-cover object-center justify-center'
             src={post.mainImageUrl} alt="" />

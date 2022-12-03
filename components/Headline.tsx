@@ -59,7 +59,6 @@ function Card({ post, show_description }: CardProps) {
 
 
 function Headline({ data }: PostsResponse) {
-    // console.log(data[0])
     return (
         <div className='flex flex-col md:grid grid-rows-3 grid-cols-2 gap-12 p-10 bg-yellow-400 '>
             <div className='row-span-3'>
