@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 
+*.xlsx
 env.local
 # testing
 /coverage

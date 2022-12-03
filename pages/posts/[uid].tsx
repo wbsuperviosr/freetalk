@@ -7,8 +7,7 @@ import { PortableText, PortableTextComponents } from '@portabletext/react'
 // import { Player } from 'video-react';
 
 
-type PTC = PortableTextComponents | {
-    marks: any;
+interface PTC extends PortableTextComponents {
     block: any
 }
 
@@ -25,7 +24,7 @@ const myPortableTextComponents: PTC = {
             return <img src={props.value.href} alt={props.text} />
         },
         internalLink: (props: any) => {
-            // console.log(props) 
+            return <span>{props.children}</span>
         },
         videolink: (props: any) => {
             // return <Player autoPlay>
@@ -39,10 +38,39 @@ const myPortableTextComponents: PTC = {
             return <u>{props.children}</u>
         }
     },
+    list: {
+        bullet: ({ children }) => <ul className="py-2 ml-1 list-sisc list-inside">{children}</ul>,
+        number: ({ children }) => <ol className="py-2 ml-1 list-decimal list-inside">{children}</ol>,
+    },
+    listItem: {
+        bullet: ({ children }) => <li className="pb-2">{children}</li>,
+        number: ({ children }) => <li className="pb-2">{children}</li>
+    },
     block: {
         blockquote: ({ children }: { children: string }) => {
             return <blockquote className="text-gray-500 px-2 border-l-2">{children}</blockquote>
-        }
+        },
+        h1: ({ children }: { children: string }) => {
+            return <h1 className="text-4xl font-bold py-2">{children}</h1>
+        },
+        h2: ({ children }: { children: string }) => {
+            return <h2 className="text-3xl font-bold py-2">{children}</h2>
+        },
+        h3: ({ children }: { children: string }) => {
+            return <h3 className="text-2xl font-bold py-2">{children}</h3>
+        },
+        h4: ({ children }: { children: string }) => {
+            return <h4 className="text-xl font-bold py-2">{children}</h4>
+        },
+        h5: ({ children }: { children: string }) => {
+            return <h5 className="text-lg font-bold py-2">{children}</h5>
+        },
+        h6: ({ children }: { children: string }) => {
+            return <h6 className="text-md font-bold py-2">{children}</h6>
+        },
+
+
+
     }
 }
 
