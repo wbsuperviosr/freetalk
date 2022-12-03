@@ -123,8 +123,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       body,
     }
   `
-
-
     const posts: Post[] = await client.fetch(post_query, { slug: params?.uid })
     return {
         props: {

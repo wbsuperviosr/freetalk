@@ -96,10 +96,10 @@ export function MobileMenu({ categories }: { categories: Category[] }) {
                 <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right  rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div>
                         {categories.map((category, index) => {
-                            return <Fragment >
+                            return <Fragment key={index}>
                                 <div key={index} className="text-md font-noto ">「{category.title}」</div>
                                 {category.subcategory.map((subcategory, index1) => {
-                                    return <MobileSubMenu key={index1} subcategory={subcategory} />
+                                    return <MobileSubMenu key={`${index}-${index1}`} subcategory={subcategory} />
                                 })}
                             </Fragment>
                         })}
@@ -123,8 +123,8 @@ function Header({ categories }: { categories: Category[] }) {
             <ul className="hidden md:flex items-center ">
                 <li key='home' className="p-5 text-sm font-medium text-gray-700">首页</li>
 
-                {categories.map((category) => {
-                    return <MainMenu category={category} key={category.slug.current} />
+                {categories.map((category, index) => {
+                    return <MainMenu category={category} key={index} />
                 })}
             </ul>
 

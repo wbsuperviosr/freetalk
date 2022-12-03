@@ -7,6 +7,7 @@ export function slideButtons({ headlinePosts }: { headlinePosts: Post[] }) {
     return headlinePosts.map((post, index) => {
         return (<button
             type="button"
+            key={post.slug.current}
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to={`${index}`}
             className={!index ? "active" : ""}
@@ -46,11 +47,12 @@ export function slidePicture({ headlinePosts }: { headlinePosts: Post[] }) {
 
 export default function PostSlider({ headlinePosts }: { headlinePosts: Post[] }) {
     return (
-        <div id="carouselExampleIndicators" className="carousel slide carousel-dark relative h-80 border m-4 rounded-xl" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" className="carousel slide carousel-dark relative h-80 border m-4 rounded-xl pointer-event" data-bs-ride="carousel">
             <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
                 {headlinePosts.map((post, index) => {
                     return (<button
                         type="button"
+                        key={post.slug.current}
                         data-bs-target="#carouselExampleIndicators"
                         data-bs-slide-to={`${index}`}
                         className={!index ? "active w-5" : "w-5"}
@@ -65,7 +67,7 @@ export default function PostSlider({ headlinePosts }: { headlinePosts: Post[] })
                 {headlinePosts.map((post, index) => {
                     return (
 
-                        <div className={`carousel-item float-left w-full ${index == 0 ? 'active' : ''}`}>
+                        <div className={`carousel-item float-left w-full ${index == 0 ? 'active' : ''}`} key={index}>
                             <Link href={`/posts/${post.slug.current}`}>
                                 <img
                                     src={post.mainImageUrl}
