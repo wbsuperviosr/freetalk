@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { getClient } from "../../utils/sanity";
 import { Category, Post, StaticProps } from "../../models/sanityModel"
 import { PortableText, PortableTextComponents } from '@portabletext/react'
-
+// import { Player } from 'video-react';
 
 
 type PTC = PortableTextComponents | {
@@ -18,8 +18,25 @@ const myPortableTextComponents: PTC = {
     marks: {
         link: (props: any) => {
             return (
-                <img src={props.value.href} alt={props.children} />
+                <a className={"text-teal-300 underline"} href={props.value.href}>{props.children}</a>
             )
+        },
+        imagelink: (props: any) => {
+            return <img src={props.value.href} alt={props.text} />
+        },
+        internalLink: (props: any) => {
+            // console.log(props) 
+        },
+        videolink: (props: any) => {
+            // return <Player autoPlay>
+            //     <source src={props.value.href}></source>
+            // </Player>
+            return <video controls autoPlay>
+                <source src={props.value.href} type="video/mp4" />
+            </video>
+        },
+        u: (props: any) => {
+            return <u>{props.children}</u>
         }
     },
     block: {
@@ -31,6 +48,7 @@ const myPortableTextComponents: PTC = {
 
 export default function PostPage({ posts }: StaticProps) {
     const post = posts[0]
+    // console.log(post)
     return <div className="max-w-6xl mx-auto">
         <img className='w-full max-w-6xl mx-auto h-40 object-cover object-center justify-center'
             src={post.mainImageUrl} alt="" />
