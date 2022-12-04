@@ -21,7 +21,7 @@ categories.forEach(category => {
 
 function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <>
+        <div className='max-w-3xl mx-auto'>
             <Head>
                 <title>Express</title>
                 <link rel="icon" href="/coca-leaves.png" />
@@ -46,7 +46,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             />
             <Header categories={categories} />
             <main>{children}</main>
-        </>
+        </div>
     )
 }
 

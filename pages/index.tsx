@@ -6,6 +6,19 @@ import Hero from '../components/Hero';
 import PostSlider from '../components/PostSlider';
 import Navblock from '../components/Navblock';
 import fs from "fs"
+import Link from 'next/link';
+
+
+const TimeLineBlock = () => {
+  return <div className='flex flex-col m-5 h-60 border align-middle bg-yellow-300'>
+    <p className='text-4xl text-center mt-16 text-white tracking-wide underline underline-offset-[5px] shadow-xl'>
+      <Link href="/timeline">这里有时间线，还不快点到碗里来！</Link>
+    </p>
+    <p className='text-lg pt-5 text-center text-teal-400 font-bold shadow-sm'>
+      @果酱, 这一块的艺术造型就靠你了
+    </p>
+  </div>
+}
 
 
 const Home = ({ posts, categories }: StaticProps) => {
@@ -16,6 +29,7 @@ const Home = ({ posts, categories }: StaticProps) => {
       <Hero />
       <PostSlider headlinePosts={posts} />
       {/* <HeadlineSlider /> */}
+      <TimeLineBlock />
       <Navblock />
     </div>
   )
