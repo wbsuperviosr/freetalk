@@ -1,11 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import Header from "../../components/Header";
-// import PortableText from "react-portable-text"
 import { getClient } from "../../utils/sanity";
 import { Category, Post, StaticProps } from "../../models/sanityModel"
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 // import { Player } from 'video-react';
-
+import { testRun } from "../../utils/getCategory"
 
 interface PTC extends PortableTextComponents {
     block: any
@@ -33,6 +31,7 @@ const myPortableTextComponents: PTC = {
             return <video controls autoPlay>
                 <source src={props.value.href} type="video/mp4" />
             </video>
+
         },
         u: (props: any) => {
             return <u>{props.children}</u>
@@ -127,7 +126,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-
+    testRun()
     const client = getClient(true);
 
     const post_query = `
