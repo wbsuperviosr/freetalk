@@ -27,8 +27,11 @@ const myPortableTextComponents: PTC = {
             // return <Player autoPlay>
             //     <source src={props.value.href}></source>
             // </Player>
+            const domain = "https://assets/wbavengers.com"
+            const source = props.value.href.startswith(domain) ? props.value.href : `${domain}/${props.value.href}`
+
             return <video controls autoPlay>
-                <source src={props.value.href} type="video/mp4" />
+                <source src={source} type="video/mp4" />
             </video>
 
         },

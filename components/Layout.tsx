@@ -45,7 +45,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                 `,
                 }}
             />
-            <Header categories={categories} />
+            {/* <Header categories={categories} /> */}
             <main>{children}</main>
         </div>
     )
