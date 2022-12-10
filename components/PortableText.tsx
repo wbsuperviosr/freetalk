@@ -28,10 +28,9 @@ export const LXPortableTextComponents: PTC = {
 			//     <source src={props.value.href}></source>
 			// </Player>
 			const domain = "https://assets.wbavengers.com";
-			const source = props.value.href.startswith(domain)
+			const source = props.value.href.startsWith("https")
 				? props.value.href
 				: `${domain}/${props.value.href}`;
-
 			return (
 				<video controls autoPlay>
 					<source src={source} type="video/mp4" />

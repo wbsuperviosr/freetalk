@@ -82,18 +82,21 @@ function PostHeader({ post }: { post: Post }) {
 					<p className="text-xs">{time}分钟</p>
 				</div>
 				<div className="pt-2 flex">
-					{post.tags.map((tag, index) => {
-						const pr = index + 1 == post.tags.length ? 0 : 1;
-						return (
-							<div
-								key={index}
-								className={`flex items-center space-x-1 pr-${pr}`}
-							>
-								<TagIcon className="w-3" />
-								<p className="text-xs text-gray-600">{tag}</p>
-							</div>
-						);
-					})}
+					{post.tags &&
+						post.tags.map((tag, index) => {
+							const pr = index + 1 == post.tags.length ? 0 : 1;
+							return (
+								<div
+									key={index}
+									className={`flex items-center space-x-1 pr-${pr}`}
+								>
+									<TagIcon className="w-3" />
+									<p className="text-xs text-gray-600">
+										{tag}
+									</p>
+								</div>
+							);
+						})}
 				</div>
 			</div>
 		</div>
