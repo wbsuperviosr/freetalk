@@ -1,119 +1,99 @@
-import Link from 'next/link'
-import React, { Fragment } from 'react'
-import { Post } from '../models/sanityModel'
+import Link from "next/link";
+import React, { Fragment } from "react";
+import { Post } from "../models/sanityModel";
+import { getDate } from "../utils/getDate";
 
-
-export function slideButtons({ headlinePosts }: { headlinePosts: Post[] }) {
-    return headlinePosts.map((post, index) => {
-        return (<button
-            type="button"
-            key={post.slug.current}
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to={`${index}`}
-            className={!index ? "active" : ""}
-            aria-current="true"
-            aria-label={`Slide ${index + 1}`}
-        />)
-    })
+export function slideButtons({ posts }: { posts: Post[] }) {
+	return posts.map((post, index) => {
+		return (
+			<button
+				type="button"
+				key={post.slug.current}
+				data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to={`${index}`}
+				className={!index ? "active" : ""}
+				aria-current="true"
+				aria-label={`Slide ${index + 1}`}
+			/>
+		);
+	});
 }
 
+export function SlidePicture({ post }: { post: Post }) {
+	const has_both_categories = post.category && post.subcategory;
+	return (
+		<Link href={`/posts/${post.slug.current}`}>
+			<div
+				className="relative flex m-auto object-fit w-full h-40 rounded-t-xl items-center justify-center"
+				style={{
+					backgroundImage: `url(${post.mainImageUrl})`,
+					backgroundSize: "cover",
+				}}
+			>
+				<div className="">
+					<div className="flex space-x-2 text-xs font-bold items-center text-center">
+						{post.category && <p>{post.category.title}</p>}
+						{has_both_categories && <p>|</p>}
+						{post.subcategory && <p>{post.subcategory.title}</p>}
+					</div>
 
-export function slidePicture({ headlinePosts }: { headlinePosts: Post[] }) {
-    // return <div>test</div>
-    return (
-        <div className="carousel-inner relative w-full overflow-hidden">
-            <div className="carousel-item active float-left w-full">
-                {headlinePosts.map((post) => {
-                    return (
+					<div className="items-center text-center bg-white text-xl text-black font-bold px-2 py-[2px] rounded-md w-72 flex-wrap overflow-hidden">
+						{post.title}
+					</div>
 
-                        <Fragment>
-                            <img
-                                src={post.mainImageUrl}
-                                className="block w-full rounded-t-xl"
-                                alt="Wild Landscape"
-                            />
-                            <div>test text</div>
-                        </Fragment>
-
-                    )
-                })}
-            </div>
-        </div>
-
-    )
+					<div className="flex justify-end space-x-2 text-sm text-right  tracking-wide">
+						<p>作者:{post.author.name}</p>
+						<p>|</p>
+						<p>{getDate(new Date(post.writtenAt!))}</p>
+					</div>
+				</div>
+			</div>
+			<div className="px-3 text-black text-md pt-5 tracking-wide">
+				「{post.description}」
+			</div>
+		</Link>
+	);
 }
 
+export default function PostSlider({ posts }: { posts: Post[] }) {
+	return (
+		<div className="py-1">
+			<div
+				id="carouselExampleIndicators"
+				className="carousel slide carousel-dark relative h-80 m-4 mt-2 rounded-xl pointer-event bg-white"
+				data-bs-ride="carousel"
+			>
+				<div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+					{posts.map((post, index) => {
+						return (
+							<button
+								type="button"
+								key={post.slug.current}
+								data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to={`${index}`}
+								className={!index ? "active w-5" : "w-5"}
+								aria-current={!index ? "true" : "false"}
+								aria-label={`Slide ${index + 1}`}
+							/>
+						);
+					})}
+				</div>
 
-
-export default function PostSlider({ headlinePosts }: { headlinePosts: Post[] }) {
-    return (
-        <div id="carouselExampleIndicators" className="carousel slide carousel-dark relative h-80 border m-4 rounded-xl pointer-event" data-bs-ride="carousel">
-            <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-                {headlinePosts.map((post, index) => {
-                    return (<button
-                        type="button"
-                        key={post.slug.current}
-                        data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide-to={`${index}`}
-                        className={!index ? "active w-5" : "w-5"}
-                        aria-current={!index ? "true" : "false"}
-                        aria-label={`Slide ${index + 1}`}
-                    />)
-                })}
-            </div>
-
-            <div className="carousel-inner relative w-full overflow-hidden">
-
-                {headlinePosts.map((post, index) => {
-                    return (
-
-                        <div className={`carousel-item float-left w-full ${index == 0 ? 'active' : ''}`} key={index}>
-                            <Link href={`/posts/${post.slug.current}`}>
-                                <img
-                                    src={post.mainImageUrl}
-                                    className="block w-full max-h-40 object-cover rounded-t-xl"
-                                    alt=""
-                                />
-                                <div>
-                                    <div className='text-gray-500 text-xs pl-2 pt-2 pb-1 flex flex-row divide-x space-x-1'>
-                                        <p>{new Date(post.writtenAt!).toLocaleString()}</p>
-                                        <p>{post.author.name}</p>
-                                    </div>
-                                    <div className='text-bold font-noto pl-2 text-lg'>
-                                        {post.title}
-                                    </div>
-                                    <div className='text-xs p-2'>
-                                        <p className='text-gray-500 '>{post.description}
-                                            <span className='inline text-black font-bold underline'>阅读更多</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-
-                    )
-                })}
-
-            </div>
-            {/* <button
-                className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev"
-            >
-                <span className="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-                className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next"
-            >
-                <span className="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button> */}
-        </div>
-    )
+				<div className="carousel-inner relative w-full overflow-hidden">
+					{posts.map((post, index) => {
+						return (
+							<div
+								className={`carousel-item float-left w-full ${
+									index == 0 ? "active" : ""
+								}`}
+								key={index}
+							>
+								<SlidePicture post={post} />
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		</div>
+	);
 }
-

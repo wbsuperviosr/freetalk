@@ -16,7 +16,8 @@ export interface Post {
     _id: string;
     _upstringdAt: string;
     author: Author;
-    categories: Category[];
+    category?: Category;
+    subcategory?:Subcategory
     description: string;
     featured?: boolean;
     mainImageUrl: string;
@@ -47,9 +48,4 @@ export interface Category {
     slug: Slug;
     subcategory: Subcategory[];
     title: string;
-}
-
-export interface StaticProps {
-    posts: Post[],
-    categories: Category[]
 }

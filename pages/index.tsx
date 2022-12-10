@@ -1,46 +1,33 @@
-import Header from '../components/Header'
+import Header from "../components/Header";
 import { GetStaticProps } from "next";
-import { Category, Post, StaticProps } from "../models/sanityModel"
-import { getClient } from "../utils/sanity"
-import Hero from '../components/Hero';
-import PostSlider from '../components/PostSlider';
-import Navblock from '../components/Navblock';
-import fs from "fs"
-import Link from 'next/link';
+import { Category, Post } from "../models/sanityModel";
+import { getClient } from "../utils/sanity";
+import fs from "fs";
+import PostSlider from "../components/PostSlider";
 
+const heropros = {
+	title: "「九纸书笺」",
+	text: ["所有的事情有因必有果。", "大家只看了结果，且结果只是一面之词"],
+	subtext:
+		"我们尽可能地保存那些微弱的声音，那些隐蔽的细节。历史的夜空中，任何一粒星屑，都有它被凝视的意义",
+	link: "https://assets.wbavengers.com/Resource/background_imgs/header_main.png",
+};
 
-const TimeLineBlock = () => {
-  return <div className='flex flex-col m-5 h-60 border align-middle bg-yellow-300'>
-    <p className='text-4xl text-center mt-16 text-white tracking-wide underline underline-offset-[5px] shadow-xl'>
-      <Link href="/timeline">这里有时间线，还不快点到碗里来！</Link>
-    </p>
-    <p className='text-lg pt-5 text-center text-teal-400 font-bold shadow-sm'>
-      @果酱, 这一块的艺术造型就靠你了
-    </p>
-  </div>
-}
-
-
-const Home = ({ posts, categories }: StaticProps) => {
-
-
-  return (
-    <div className='max-w-7xl mx-auto '>
-      <Hero />
-      <PostSlider headlinePosts={posts} />
-      {/* <HeadlineSlider /> */}
-      <TimeLineBlock />
-      <Navblock />
-    </div>
-  )
-}
-
+const Home = ({ posts }: { posts: Post[] }) => {
+	return (
+		<div className="max-w-7xl mx-auto ">
+			<Header {...heropros}></Header>
+			<div className="bg-gray-100">
+				<PostSlider posts={posts} />
+			</div>
+		</div>
+	);
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
+	const client = getClient(true);
 
-  const client = getClient(true);
-
-  const post_query = `
+	const post_query = `
     *[_type=="post" && featured&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
       _id, 
       _createdAt,
@@ -53,14 +40,19 @@ export const getStaticProps: GetStaticProps = async (context) => {
       },
       mainImageUrl,
       featured,
-      categories,
+      category->{
+        title
+      },
+      subcategory->{
+        title
+      },
       tags,
       publishedAt,
       writtenAt,
       description
     }
-  `
-  const category_query = `
+  `;
+	const category_query = `
     *[_type=="category"&&!(_id in path("drafts.**"))]|order(order asc){
       title, slug, _id,
       subcategory[]->{
@@ -70,21 +62,20 @@ export const getStaticProps: GetStaticProps = async (context) => {
         title
       }
     }
-  `
+  `;
 
-  const headlinePosts: Post[] = await client.fetch(post_query)
-  const categories: Category[] = await client.fetch(category_query)
+	const headlinePosts: Post[] = await client.fetch(post_query);
+	const categories: Category[] = await client.fetch(category_query);
 
-  fs.writeFile("categories.json", JSON.stringify(categories), (e) => { console.log(e) })
+	fs.writeFile("categories.json", JSON.stringify(categories), (e) => {
+		console.log(e);
+	});
 
-  return {
-    props: {
-      posts: headlinePosts,
-      categories: categories
-    }
-  }
-}
+	return {
+		props: {
+			posts: headlinePosts,
+		},
+	};
+};
 
-
-
-export default Home
+export default Home;

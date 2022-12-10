@@ -1,147 +1,244 @@
-import Link from "next/link";
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { Bars4Icon } from '@heroicons/react/20/solid'
+import ArrowIcon from "../public/icons/arrow.svg";
+import { Bars3BottomLeftIcon, ArrowRightIcon } from "@heroicons/react/20/solid";
+import Girl from "../public/icons/girl.svg";
 
-import React from 'react'
-import { Category, Subcategory } from "../models/sanityModel";
+import React, { useState, useEffect, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
+import { Category } from "../models/sanityModel";
+import categories from "../categories.json";
 
-function classNames(...classes: any) {
-    return classes.filter(Boolean).join(' ')
+export function SiteLogo() {
+	return (
+		<a href="/" className="flex items-center pl-5 space-x-2">
+			<div>
+				<Girl
+					fill="black"
+					className="w-9 outline-2 border border-black rounded-full"
+				/>
+			</div>
+			<p className="text-gray-400 font-mono tracking-widest">
+				LIUXIN.EXPRESS
+			</p>
+		</a>
+	);
 }
 
+type HeroImageProps = {
+	title: string;
+	text: string[];
+	subtext: string;
+	link: string;
+};
 
-export function MainMenu({ category }: { category: Category }) {
-    return (
-        <li key={category.slug.current} >
-            <Menu as="div" className="relative inline-block text-left">
-                <div>
-                    <Menu.Button className="inline-flex w-full justify-center rounded-md  px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-                        「{category.title}」
-                    </Menu.Button>
-                </div>
-                <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95">
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right  rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <div className="divide-y divide-gray-100">
-                            {category.subcategory.map((subcategory) => {
-                                return <Menu.Item key={subcategory.slug.current}>
-                                    {({ active }) => (
-                                        <a
-                                            href="#"
-                                            className={classNames(
-                                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                                'block px-4 py-2 text-sm'
-                                            )}
-                                        >
-                                            {subcategory.title}
-                                        </a>
-                                    )}
-                                </Menu.Item>
-                            })}
+export function HeroImage(props: HeroImageProps) {
+	return (
+		<div className="relative">
+			<img
+				className="w-full h-52 object-cover"
+				src={props.link}
+				alt="cover"
+			/>
+			<p className="absolute top-0 left-0 pt- text-white text-2xl pl-5 pt-6">
+				{props.title}
+			</p>
 
-                        </div>
-                    </Menu.Items>
-                </Transition>
+			<div className="absolute top-0 left-0 pt-16 pl-9">
+				{props.text.map((t, index) => {
+					return (
+						<p
+							key={index}
+							className="text-white text-[13px] opacity-90"
+						>
+							{t}
+						</p>
+					);
+				})}
+			</div>
 
-            </Menu>
+			<hr className="absolute top-0 ml-[70%] mt-[32%] h-[2px] w-20 bg-gray-200 border-5 border-white opacity-70" />
 
-        </li>
-    )
+			<p className="absolute bottom-0 ml-20 mr-5 mb-10 text-white text-[10px] tracking-widest opacity-90">
+				{props.subtext}
+			</p>
+		</div>
+	);
 }
 
-
-
-function MobileSubMenu({ subcategory }: { subcategory: Subcategory }) {
-    return <Menu.Item key={subcategory.slug.current}>
-        {({ active }) => (
-            <a
-                href="#"
-                className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                )}
-            >
-                {subcategory.title}
-            </a>
-        )}
-    </Menu.Item>
+function Header(props: HeroImageProps) {
+	return (
+		<header className="border-b-2 shadow-lg">
+			<HeroImage {...props} />
+			<div className="flex justify-between">
+				<SiteLogo />
+				<Navbar>
+					<NavItem
+						icon={
+							<Bars3BottomLeftIcon
+								fill="white"
+								className="w-9 text-white bg-black rounded-full p-1 items-center justify-center transition-all duration-300 hover:filter hover:brightness-200"
+							/>
+						}
+					>
+						<DropdownMenu categories={categories}></DropdownMenu>
+					</NavItem>
+				</Navbar>
+			</div>
+		</header>
+	);
 }
 
-
-
-export function MobileMenu({ categories }: { categories: Category[] }) {
-    return (
-        <Menu as="div" className="relative inline-block text-left">
-            <div>
-                <Menu.Button className="inline-flex w-full justify-center rounded-md  px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-                    <Bars4Icon className="h-5 w-5" />
-                </Menu.Button>
-            </div>
-            <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95">
-
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right  rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div>
-                        {categories.map((category, index) => {
-                            return <Fragment key={index}>
-                                <div key={index} className="text-md font-noto ">「{category.title}」</div>
-                                {category.subcategory.map((subcategory, index1) => {
-                                    return <MobileSubMenu key={`${index}-${index1}`} subcategory={subcategory} />
-                                })}
-                            </Fragment>
-                        })}
-
-                    </div>
-                </Menu.Items>
-            </Transition>
-
-        </Menu>
-    )
+function Navbar(props: { children: React.ReactNode }) {
+	return (
+		<nav className="navbar h-[60px]">
+			<ul className="navbar-nav flex justify-end p-5 w-full h-full">
+				{props.children}
+			</ul>
+		</nav>
+	);
 }
 
+function NavItem(props: {
+	children?: React.ReactNode;
+	icon?: React.ReactNode;
+	href?: string;
+}) {
+	const [open, setOpen] = useState(false);
 
-function Header({ categories }: { categories: Category[] }) {
+	return (
+		<li className="nav-item w-[48px] flex items-center justify-center">
+			<a
+				href={props.href ? props.href : "#"}
+				onClick={() => setOpen(!open)}
+			>
+				{props.icon}
+			</a>
 
-    return (
-        <div className="w-full h-20 flex justify-between items-center px-6 md:justify-start">
-            <Link href="/">
-                <img className="w-12 h-12  pl-2 object-contain" src="/coca-leaves.png" alt="" />
-            </Link>
-            <ul className="hidden md:flex items-center ">
-                <li key='home' className="p-5 text-sm font-medium text-gray-700">首页</li>
-
-                {categories.map((category, index) => {
-                    return <MainMenu category={category} key={index} />
-                })}
-            </ul>
-
-            <div className="block md:hidden">
-                <p className="text-lg text-center font-noto font-bold text-gray-700">九纸书笺</p>
-                <p className="text-xs text-center text-gray-400">LIUXIN.EXPRESS</p>
-            </div>
-
-            <div className="block md:hidden">
-                <MobileMenu categories={categories} />
-            </div>
-
-        </div>
-    )
+			{open && props.children}
+		</li>
+	);
 }
 
-export default Header
+type DropdownItemProps = {
+	children?: React.ReactNode;
+	setActiveMenu: (goToMenu: string) => void;
+	goToMenu?: string;
+	leftIcon?: React.ReactNode;
+	rightIcon?: React.ReactNode;
+};
 
+function DropdownItem(props: DropdownItemProps) {
+	return (
+		<a
+			href="#"
+			className="menu-item text-black"
+			onClick={() =>
+				props.goToMenu && props.setActiveMenu(props.goToMenu)
+			}
+		>
+			{props.leftIcon && (
+				<span className="icon-button">{props.leftIcon}</span>
+			)}
+			<div className="flex justify-between space-x-14">
+				<div className="text-gray-600">{props.children}</div>
+				<div>
+					{props.rightIcon && (
+						<span className="icon-right">{props.rightIcon}</span>
+					)}
+				</div>
+			</div>
+		</a>
+	);
+}
 
+function DropdownMenu(props: { categories: Category[] }) {
+	const [activeMenu, setActiveMenu] = useState("main");
+	const [menuHeight, setMenuHeight] = useState<number | null>(null);
+	const dropdownRef = useRef<any>(null);
+	const primeRef = useRef<any>(null);
+	const secRef = useRef<any>(null);
 
+	useEffect(() => {
+		setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+	}, []);
+
+	function calcHeight(el: HTMLElement) {
+		const height = el.offsetHeight;
+		setMenuHeight(height);
+	}
+
+	return (
+		//
+		<div
+			className={`dropdown bg-white shadow-md divide-y-2 divide-slate-400`}
+			style={{ height: menuHeight! }}
+			ref={dropdownRef}
+		>
+			<CSSTransition
+				in={activeMenu === "main"}
+				classNames="menu-primary"
+				timeout={500}
+				unmountOnExit
+				onEnter={calcHeight}
+			>
+				<div className="w-full" ref={primeRef}>
+					{props.categories.map((category, index) => {
+						return (
+							<DropdownItem
+								key={index}
+								setActiveMenu={setActiveMenu}
+								goToMenu={category.title}
+								rightIcon={
+									<ArrowRightIcon className="w-6 text-gray-300" />
+								}
+							>
+								{category.title}
+							</DropdownItem>
+						);
+					})}
+				</div>
+			</CSSTransition>
+
+			{categories.map((category, cateindex) => {
+				return (
+					<CSSTransition
+						in={activeMenu === category.title}
+						key={cateindex}
+						timeout={500}
+						unmountOnExit
+						classNames="menu-secondary"
+						// nodeRef={dropdownRef}
+						onEnter={calcHeight}
+					>
+						<div className="w-full" ref={secRef}>
+							<DropdownItem
+								setActiveMenu={setActiveMenu}
+								goToMenu="main"
+								leftIcon={
+									<ArrowIcon
+										fill="black"
+										widht="20px"
+										height="20px"
+									/>
+								}
+							>
+								<p>返回</p>
+							</DropdownItem>
+							{category.subcategory.map((subcategory, index) => {
+								return (
+									<DropdownItem
+										key={index}
+										setActiveMenu={setActiveMenu}
+									>
+										{subcategory.title}
+									</DropdownItem>
+								);
+							})}
+						</div>
+					</CSSTransition>
+				);
+			})}
+		</div>
+	);
+}
+
+export default Header;
