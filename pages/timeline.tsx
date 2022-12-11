@@ -511,7 +511,7 @@ function TimelineCard({
 		<>
 			{isTarget && (
 				<div className="transform transition cursor-pointer hover:-translate-y-2 ml-6 relative flex items-center pb-4 bg-white text-black rounded-lg border border-gray-300 mb-4 shadow-sm flex-col space-y-4 ">
-					<div className="w-4 h-4 bg-white outline outline-lxd absolute -left-[26px] translate-y-[1px] transform -translate-x-2/4 rounded-full z-10 mt-2 border-2 border-lxd border-spacing-4"></div>
+					<div className="w-5 h-5 bg-white absolute -left-[26px] -translate-y-[1px] transform -translate-x-2/4 rounded-full z-10 mt-2 border-4 border-s border-lxd border-spacing-4"></div>
 					<div className="w-8 h-[2px] bg-gray-300 absolute -left-8 z-0"></div>
 					<div className="flex-row justify-start w-full">
 						<div className="rounded-lg -translate-x-[0px]">
@@ -621,7 +621,7 @@ function TimelineList({
 		<div className="mx-auto relative py-3">
 			<div className="border-l-2 mt-3">
 				<div className="relative flex items-center px-6 py-4  rounded mb-2 flex-col">
-					<div className="w-3 h-3 bg-lxd absolute left-0 -top-2 transform -translate-x-2/4 rounded-full z-10 mt-2"></div>
+					<div className="w-3 h-3 bg-lxd  absolute -left-[1px] -top-2 transform -translate-x-2/4 rounded-full z-10 mt-2"></div>
 					<div className="text-xs ml-1 font-bold justify-start text-justify text-slate-600">
 						{string}
 					</div>
