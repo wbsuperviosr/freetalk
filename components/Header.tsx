@@ -23,7 +23,7 @@ export function SiteLogo() {
 	);
 }
 
-type HeroImageProps = {
+export type HeroImageProps = {
 	title: string;
 	text: string[];
 	subtext: string;
@@ -32,17 +32,16 @@ type HeroImageProps = {
 
 export function HeroImage(props: HeroImageProps) {
 	return (
-		<div className="relative">
-			<img
-				className="w-full h-52 object-cover"
-				src={props.link}
-				alt="cover"
-			/>
-			<p className="absolute top-0 left-0 pt- text-white text-2xl pl-5 pt-6">
-				{props.title}
-			</p>
+		<div
+			className="relative w-full h-60"
+			style={{
+				backgroundImage: `url(${props.link})`,
+				backgroundSize: "cover",
+			}}
+		>
+			<p className="text-white text-2xl pl-5 pt-6">{props.title}</p>
 
-			<div className="absolute top-0 left-0 pt-16 pl-9">
+			<div className="pt-3 pl-9">
 				{props.text.map((t, index) => {
 					return (
 						<p
@@ -55,11 +54,12 @@ export function HeroImage(props: HeroImageProps) {
 				})}
 			</div>
 
-			<hr className="absolute top-0 ml-[70%] mt-[32%] h-[2px] w-20 bg-gray-200 border-5 border-white opacity-70" />
-
-			<p className="absolute bottom-0 ml-20 mr-5 mb-10 text-white text-[10px] tracking-widest opacity-90">
-				{props.subtext}
-			</p>
+			<div className="ml-[30%] mt-10 mr-5">
+				<hr className="ml-[70%] h-[2px]  bg-gray-200 border-5 border-white opacity-70" />
+				<p className="mt-3 text-end text-white text-[12px] tracking-widest opacity-90  font-heiti">
+					{props.subtext}
+				</p>
+			</div>
 		</div>
 	);
 }

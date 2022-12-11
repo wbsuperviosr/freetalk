@@ -1,20 +1,22 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { getClient } from "../../utils/sanity";
-import { Post } from "../../models/sanityModel";
-import { PortableText } from "@portabletext/react";
-import { LXPortableTextComponents } from "../../components/PortableText";
-import Header from "../../components/Header";
-import React from "react";
+import { TagIcon } from "@heroicons/react/20/solid";
 import {
-	NewspaperIcon,
 	ClockIcon,
-	HomeIcon,
 	EnvelopeIcon,
 	FaceSmileIcon,
+	HomeIcon,
+	NewspaperIcon,
 } from "@heroicons/react/24/outline";
-import { TagIcon } from "@heroicons/react/20/solid";
+import { PortableText } from "@portabletext/react";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
+import React from "react";
+import Header from "../../components/Header";
+import { LXPortableTextComponents } from "../../components/PortableText";
+import { Post } from "../../models/sanityModel";
 import { getDate } from "../../utils/getDate";
+import { getClient } from "../../utils/sanity";
+import QuoteLeft from "../../public/icons/quote_left.svg";
+import QuoteRight from "../../public/icons/quote_right.svg";
 
 const lx_voice = {
 	title: "「刘鑫声音」",
@@ -107,16 +109,20 @@ function PostAbstract({ post }: { post: Post }) {
 	return (
 		<div>
 			<div className="relative px-10 py-5">
-				<p className="absolute top-[8px] left-[15%] text-7xl text-purple-300 ">
+				{/* <p className="absolute top-[8px] left-[15%] text-7xl text-purple-300 ">
 					“
-				</p>
+				</p> */}
+
+				<QuoteLeft className="absolute top-2 left-16 w-12 h-9 fill-purple-300 bg-white" />
 
 				<div className="border-4 px-5 py-5 text-sm text-gray-600 rounded-lg z-20">
 					{post.description}
 				</div>
-				<p className="absolute bottom-[-32px] left-[80%] text-7xl text-purple-300 ">
+
+				<QuoteRight className="absolute bottom-1 right-16 w-12 h-9 fill-purple-300 bg-white" />
+				{/* <p className="absolute bottom-[-32px] left-[80%] text-7xl text-purple-300 ">
 					”
-				</p>
+				</p> */}
 			</div>
 			<div className="text-center text-xl font-bold items-center py-2">
 				{post.title}

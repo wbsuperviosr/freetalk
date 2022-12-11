@@ -14,8 +14,13 @@ module.exports = {
 			transitionProperty: {
 				'height': 'height'
 			},
+			colors:{
+				lxd: '#7e5bae',
+				lxl: '#cebef0',
+			},
 			fontFamily: {
 				kaiti: ["Georgia", "Times New Roman", "KaiTi", "STKaiti", "serif"],
+				heiti: ["Georgia", "Times New Roman", '"Microsoft YaHei"', "STXihei", "serif"],
 				noto: ['"Noto Sans SC"', "sans-serif"]
 			}
 		},
