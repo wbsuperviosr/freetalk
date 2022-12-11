@@ -292,7 +292,8 @@ function getTime(time: string) {
 	}
 }
 
-function makeSummary(eventText: Event[], threhold: number = 50) {
+function makeSummary(eventText: Event[], threhold: number = 140) {
+	console.log(eventText);
 	let summary: Event[] = JSON.parse(JSON.stringify(eventText.slice(0, 1)));
 	let isSummarized: boolean = false;
 
@@ -302,7 +303,7 @@ function makeSummary(eventText: Event[], threhold: number = 50) {
 		}
 	}
 
-	if (summary[0].children[0].text.length > 50) {
+	if (summary[0].children[0].text.length > threhold) {
 		summary[0].children[0].text = summary[0].children[0].text.slice(
 			0,
 			threhold
@@ -326,7 +327,7 @@ function EvidenceCard({
 			} relative float-left w-full`}
 		>
 			<img src={image_url.urlField} className="block w-full" alt="..." />
-			<div className="carousel-caption  md:block absolute text-center">
+			<div className="carousel-caption absolute text-center">
 				<h5 className="text-md">{image_url.url_title}</h5>
 				{/* <p className="text-white">
 					Some representative placeholder content for the first slide.
@@ -506,15 +507,14 @@ function TimelineCard({
 		typeState,
 		infoState
 	);
-	console.log(timeline);
 	return (
 		<>
 			{isTarget && (
-				<div className="transform transition cursor-pointer hover:-translate-y-2 ml-6 relative flex items-center pb-4 bg-white text-black rounded-lg border border- border-gray-300 mb-4 shadow-sm flex-col md:flex-row space-y-4 md:space-y-0">
-					<div className="w-4 h-4 bg-white outline outline-lxd absolute -left-6 transform -translate-x-2/4 rounded-full z-10 mt-2"></div>
+				<div className="transform transition cursor-pointer hover:-translate-y-2 ml-6 relative flex items-center pb-4 bg-white text-black rounded-lg border border-gray-300 mb-4 shadow-sm flex-col space-y-4 ">
+					<div className="w-4 h-4 bg-white outline outline-lxd absolute -left-[26px] translate-y-[1px] transform -translate-x-2/4 rounded-full z-10 mt-2 border-2 border-lxd border-spacing-4"></div>
 					<div className="w-8 h-[2px] bg-gray-300 absolute -left-8 z-0"></div>
-					<div className="flex-row justify-start">
-						<div className="rounded-lg -translate-x-[1px]">
+					<div className="flex-row justify-start w-full">
+						<div className="rounded-lg -translate-x-[0px]">
 							<div className="pl-3 flex space-x-2 text-xs bg-lxd -translate-y-2 mr-2 text-white rounded-tr-lg">
 								<p>{getDate(timeline.date)}</p>
 								{timeline.time && <p>|</p>}
@@ -544,13 +544,13 @@ function TimelineCard({
 									className="flex justify-end"
 									onClick={() => setExpand(!expand)}
 								>
-									<span className="block font-bold text-lxd -translate-y-5">
+									<span className="block font-bold text-lxd">
 										{expand ? "...收起" : "...展开"}
 									</span>
 									{expand ? (
-										<ChevronUpIcon className="w-3 fill-lxd -translate-y-5" />
+										<ChevronUpIcon className="w-3 fill-lxd" />
 									) : (
-										<ChevronRightIcon className="w-3 fill-lxd -translate-y-5" />
+										<ChevronRightIcon className="w-3 fill-lxd" />
 									)}
 								</div>
 							)}
@@ -627,13 +627,13 @@ function TimelineList({
 					</div>
 				</div>
 				{/* <TimelineCard
-					timeline={timelines[5]}
+					timeline={timelines[0]}
 					yearState={yearState}
 					nameState={nameState}
 					typeState={typeState}
 					infoState={infoState}
-				/>
-
+				/> */}
+				{/* 
 				<TimelineCard
 					timeline={timelines[4]}
 					yearState={yearState}

@@ -506,7 +506,6 @@ function TimelineCard({
 		typeState,
 		infoState
 	);
-	console.log(timeline);
 	return (
 		<>
 			{isTarget && (
