@@ -17,6 +17,7 @@ import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
 import QuoteLeft from "../../public/icons/quote_left.svg";
 import QuoteRight from "../../public/icons/quote_right.svg";
+import { Footer } from "../../components/Footer";
 
 const lx_voice = {
 	title: "「刘鑫声音」",
@@ -65,7 +66,7 @@ function PostHeader({ post }: { post: Post }) {
 	return (
 		<div className="p-5">
 			<div className="flex justify-between text-sm border-b-2 pb-2">
-				<p className="text-purple-800 font-bold">{category}</p>
+				<p className="text-lxd font-bold">{category}</p>
 				<div className="flex space-x-2 text-gray-500 ">
 					<p>{post.author.name}</p>
 					<p>|</p>
@@ -109,42 +110,16 @@ function PostAbstract({ post }: { post: Post }) {
 	return (
 		<div>
 			<div className="relative px-10 py-5">
-				{/* <p className="absolute top-[8px] left-[15%] text-7xl text-purple-300 ">
-					“
-				</p> */}
-
-				<QuoteLeft className="absolute top-2 left-16 w-12 h-9 fill-purple-300 bg-white" />
+				<QuoteLeft className="absolute top-2 left-16 w-12 h-9 fill-lxl bg-white" />
 
 				<div className="border-4 px-5 py-5 text-sm text-gray-600 rounded-lg z-20">
 					{post.description}
 				</div>
 
-				<QuoteRight className="absolute bottom-1 right-16 w-12 h-9 fill-purple-300 bg-white" />
-				{/* <p className="absolute bottom-[-32px] left-[80%] text-7xl text-purple-300 ">
-					”
-				</p> */}
+				<QuoteRight className="absolute bottom-1 right-16 w-12 h-9 fill-lxl bg-white" />
 			</div>
 			<div className="text-center text-xl font-bold items-center py-2">
 				{post.title}
-			</div>
-		</div>
-	);
-}
-
-function PostFooter() {
-	return (
-		<div className="flex justify-center space-x-4 pt-4">
-			<div className="flex items-center">
-				<HomeIcon className="w-3" />
-				<p className="text-xs ">关于本站</p>
-			</div>
-			<div className="flex items-center">
-				<FaceSmileIcon className="w-3" />
-				<p className="text-xs ">关于我们</p>
-			</div>
-			<div className="flex items-center">
-				<EnvelopeIcon className="w-3" />
-				<p className="text-xs ">联系我们</p>
 			</div>
 		</div>
 	);
@@ -172,13 +147,13 @@ export default function PostPage({ posts }: { posts: Post[] }) {
 						<hr className="mb-4 mx-5 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
 						<Link href="#top">
 							<div className="flex px-5 justify-end mb-3">
-								<div className="px-2 py-1 mb-1 rounded-md bg-purple-800 text-white hover:bg-purple-700">
+								<div className="px-2 py-1 mb-1 rounded-md bg-lxd text-white hover:bg-lxd">
 									回到顶部
 								</div>
 							</div>
 						</Link>
 					</article>
-					<PostFooter />
+					<Footer />
 				</div>
 			</div>
 		</div>

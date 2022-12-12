@@ -9,7 +9,7 @@ export const LXPortableTextComponents: PTC = {
 	marks: {
 		link: (props: any) => {
 			return (
-				<a className={"text-purple-700"} href={props.value.href}>
+				<a className={"text-lxd"} href={props.value.href}>
 					{props.children}
 				</a>
 			);

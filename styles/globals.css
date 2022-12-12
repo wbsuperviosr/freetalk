@@ -83,7 +83,7 @@ a {
 
 .dropdown {
     position: absolute;
-    top: 270px;
+    top: 290px;
     width: 180px;
     transform: translateX(-45%);
     border-radius: var(--border-radius);

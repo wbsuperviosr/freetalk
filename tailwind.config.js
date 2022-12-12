@@ -15,8 +15,10 @@ module.exports = {
 				'height': 'height'
 			},
 			colors:{
-				lxd: '#7e5bae',
-				lxl: '#cebef0',
+				lxd: '#8458B3',
+				lxl: '#d0bdf4',
+				ice: '#a0d2eb',
+				freeze: '#e5eaf5'
 			},
 			fontFamily: {
 				kaiti: ["Georgia", "Times New Roman", "KaiTi", "STKaiti", "serif"],
