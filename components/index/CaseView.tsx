@@ -47,7 +47,7 @@ const casefile: CardProps = {
 	title: "部分卷宗",
 	description: "有缘见到的仅有这些，也已经说明了许多",
 	update: new Date(),
-	link: "/casefiles",
+	link: "/casefiles/list",
 	dark: true,
 };
 

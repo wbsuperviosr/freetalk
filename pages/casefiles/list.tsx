@@ -16,7 +16,7 @@ const casfile_header = {
 
 function CaseCard({ casefile }: { casefile: CaseFile }) {
 	return (
-		<Link href={`/casefiles/list/${casefile.slug.current}`}>
+		<Link href={`/casefiles/${casefile.slug.current}`}>
 			<div className="flex m-4 bg-white p-4 rounded-lg shadow-sm">
 				<img
 					src={casefile.mainImageUrl}

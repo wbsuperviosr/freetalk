@@ -40,15 +40,15 @@ export const LXPortableTextComponents: PTC = {
 	},
 	list: {
 		bullet: ({ children }) => (
-			<ul className="py-4 ml-1 list-sisc list-inside">{children}</ul>
+			<ul className="py-0 ml-1 list-sisc list-inside">{children}</ul>
 		),
 		number: ({ children }) => (
-			<ol className="py-4 ml-1 list-decimal list-inside">{children}</ol>
+			<ol className="py-0 ml-1 list-decimal list-inside">{children}</ol>
 		),
 	},
 	listItem: {
-		bullet: ({ children }) => <li className="pb-4">{children}</li>,
-		number: ({ children }) => <li className="pb-4">{children}</li>,
+		bullet: ({ children }) => <li className="pb-2">{children}</li>,
+		number: ({ children }) => <li className="pb-2">{children}</li>,
 	},
 	block: {
 		blockquote: ({ children }: { children: string }) => {
