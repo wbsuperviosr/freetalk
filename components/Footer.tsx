@@ -6,7 +6,7 @@ import {
 
 export function Footer() {
 	return (
-		<div className="flex justify-center space-x-4 pt-4">
+		<div className="flex justify-center space-x-4 py-4">
 			<div className="flex items-center">
 				<HomeIcon className="w-3" />
 				<p className="text-xs ">关于本站</p>

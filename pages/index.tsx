@@ -3,8 +3,10 @@ import { GetStaticProps } from "next";
 import { Category, Post } from "../models/sanityModel";
 import { getClient } from "../utils/sanity";
 import fs from "fs";
-import PostSlider from "../components/PostSlider";
+import PostSlider from "../components/index/PostSlider";
 import Link from "next/link";
+import CaseView from "../components/index/CaseView";
+import { Footer } from "../components/Footer";
 
 const heropros = {
 	title: "「九纸书笺」",
@@ -16,17 +18,12 @@ const heropros = {
 
 const Home = ({ posts }: { posts: Post[] }) => {
 	return (
-		<div className="max-w-7xl mx-auto ">
+		<div className="max-w-7xl mx-auto">
 			<Header {...heropros}></Header>
 			<div className="bg-gray-100">
 				<PostSlider posts={posts} />
-				<Link href="/timeline">
-					<div className="bg-lxd h-60 mx-5 rounded-lg mb-5">
-						<p className="text-white text-7xl text-center underline pt-10">
-							时间线啊啊啊
-						</p>
-					</div>
-				</Link>
+				<CaseView />
+				<Footer />
 			</div>
 		</div>
 	);

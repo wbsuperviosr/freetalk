@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
-import { Post } from "../models/sanityModel";
-import { getDate } from "../utils/getDate";
+import { Post } from "../../models/sanityModel";
+import { getDate } from "../../utils/getDate";
 
 export function slideButtons({ posts }: { posts: Post[] }) {
 	return posts.map((post, index) => {
@@ -57,10 +57,10 @@ export function SlidePicture({ post }: { post: Post }) {
 
 export default function PostSlider({ posts }: { posts: Post[] }) {
 	return (
-		<div className="py-1">
+		<div className="py-1 ">
 			<div
 				id="carouselExampleIndicators"
-				className="carousel slide carousel-dark relative h-80 m-4 mt-2 rounded-xl pointer-event bg-white"
+				className="carousel slide carousel-dark relative h-80 m-4 mt-2 rounded-xl pointer-event bg-white border shadow-sm"
 				data-bs-ride="carousel"
 			>
 				<div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
