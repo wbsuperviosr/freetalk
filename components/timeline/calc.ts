@@ -4,7 +4,6 @@ export const calcMapSum = (map: Map<string, boolean>) => {
 	return Array.from(map.values()).reduce((a, b) => Number(a) + Number(b), 0);
 };
 
-
 export function getDate(date: string) {
 	const [year, month, day] = date.split("-");
 	return day == "XX" ? `${year}年${month}月` : `${year}年${month}月${day}日`;
@@ -22,8 +21,6 @@ export function getTime(time: string) {
 		return `${hh}点${mm}分`;
 	}
 }
-
-
 
 export function getYears(timelines: Timeline[]): string[] {
 	const years = new Set<string>(
@@ -57,11 +54,10 @@ export function getPeoples(timelines: Timeline[]): string[] {
 	return names;
 }
 
-
 export function getTypes(timelines: Timeline[]): string[] {
 	const types = new Set(
 		timelines.map((timeline) => {
-			return timeline.type.title;
+			return timeline.type;
 		})
 	);
 	return Array.from(types);

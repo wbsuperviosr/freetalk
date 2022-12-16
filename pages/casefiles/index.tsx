@@ -40,7 +40,6 @@ function CaseCard({ casefile }: { casefile: CaseFile }) {
 }
 
 function CaseFileList({ casefiles }: { casefiles: CaseFile[] }) {
-	console.log(casefiles);
 	return (
 		<div className="bg-gray-100">
 			<Header {...casfile_header} />

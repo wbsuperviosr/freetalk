@@ -83,7 +83,7 @@ function getPeoples(timelines: Timeline[]): string[] {
 function getTypes(timelines: Timeline[]): string[] {
 	const types = new Set(
 		timelines.map((timeline) => {
-			return timeline.type.title;
+			return timeline.type;
 		})
 	);
 	return Array.from(types);
@@ -469,7 +469,7 @@ function inferTarget(
 	}
 
 	if (typeTrues !== 0) {
-		if (!typeState.get(timeline.type.title)) {
+		if (!typeState.get(timeline.type)) {
 			isTarget = false;
 		}
 	}
