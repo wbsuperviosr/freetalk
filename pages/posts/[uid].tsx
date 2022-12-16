@@ -64,7 +64,7 @@ function PostHeader({ post }: { post: Post }) {
 	const num_words = countText(post);
 	const time = Math.ceil(num_words / 300);
 	return (
-		<div className="p-5">
+		<div className="p-6">
 			<div className="flex justify-between text-sm border-b-2 pb-2">
 				<p className="text-lxd font-bold">{category}</p>
 				<div className="flex space-x-2 text-gray-500 ">
@@ -118,7 +118,7 @@ function PostAbstract({ post }: { post: Post }) {
 
 				<QuoteRight className="absolute bottom-1 right-16 w-12 h-9 fill-lxl bg-white" />
 			</div>
-			<div className="text-center text-xl font-bold items-center py-2">
+			<div className="text-center text-xl font-bold items-center py-6">
 				{post.title}
 			</div>
 		</div>
@@ -129,6 +129,13 @@ export default function PostPage({ posts }: { posts: Post[] }) {
 	const post = posts[0];
 	let header_props = post.author.name == "刘鑫" ? lx_voice : common_voice;
 
+	const bottomToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	return (
 		<div className="max-w-6xl mx-auto" id="top">
 			<Header {...header_props} />
@@ -138,20 +145,21 @@ export default function PostPage({ posts }: { posts: Post[] }) {
 					<article className="bg-white border border-gray-200 rounded-lg shadow-sm">
 						<PostHeader post={post} />
 						<PostAbstract post={post} />
-						<div className="px-5 pb-5 space-y-5 text-justify">
+						<div className="px-6 pb-5 space-y-5 text-justify text-[14px]">
 							<PortableText
 								value={post.body!}
 								components={LXPortableTextComponents}
 							/>
 						</div>
 						<hr className="mb-4 mx-5 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
-						<Link href="#top">
-							<div className="flex px-5 justify-end mb-3">
-								<div className="px-2 py-1 mb-1 rounded-md bg-lxd text-white hover:bg-lxd">
-									回到顶部
-								</div>
+						<div className="flex px-5 justify-end mb-3">
+							<div
+								className="px-[7px] py-[3px] text-[10px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"
+								onClick={bottomToTop}
+							>
+								回到顶部
 							</div>
-						</Link>
+						</div>
 					</article>
 					<Footer />
 				</div>

@@ -48,7 +48,7 @@ export function SlidePicture({ post }: { post: Post }) {
 					</div>
 				</div>
 			</div>
-			<div className="px-3 text-black text-md pt-5 tracking-wide">
+			<div className="px-4 text-black text-[13px] pt-5 tracking-widest">
 				「{post.description}」
 			</div>
 		</Link>
@@ -57,10 +57,10 @@ export function SlidePicture({ post }: { post: Post }) {
 
 export default function PostSlider({ posts }: { posts: Post[] }) {
 	return (
-		<div className="py-1 ">
+		<div className="py-0">
 			<div
 				id="carouselExampleIndicators"
-				className="carousel slide carousel-dark relative h-80 m-4 mt-2 rounded-xl pointer-event bg-white border shadow-sm"
+				className="carousel slide carousel-dark relative h-[300px] m-[10px] rounded-xl pointer-event bg-white border shadow-md"
 				data-bs-ride="carousel"
 			>
 				<div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">

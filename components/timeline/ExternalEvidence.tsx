@@ -26,9 +26,9 @@ function ExternalEvidence({ source_urls }: { source_urls: SourceUrl[] }) {
 				</div>
 				{open && (
 					<ul className="list-disc list-inside pt-1 pl-2">
-						{source_urls.map((source_url) => {
+						{source_urls.map((source_url, index) => {
 							return (
-								<li>
+								<li key={index}>
 									<a
 										href={source_url.urlField}
 										target="_blank"

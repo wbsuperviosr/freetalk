@@ -161,9 +161,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		date,
 		  time,
 		  event,
-		  type->{
-			title,
-		  },
+		  type,
 		  image_urls[]{
 			urlField,
 			url_title,

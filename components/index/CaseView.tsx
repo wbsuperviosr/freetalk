@@ -13,7 +13,7 @@ type CardProps = {
 
 const timeline: CardProps = {
 	bg_image:
-		"https://am3pap007files.storage.live.com/y4mZKtH3s1Bx3lOdyt17ps7MS3p7Io359Tx7aZXD-jlY0nti5PUE61CYbHntFVdJoyfiwViasEi2eKegzmdWzjmopZxmY-lB3Z7N21WnSMw2Jt6bXga_zd_7EFTUl_DzXRv8b70od1gM89QTc8PVUYhGa9MQCbAX74MWwF5708thljXRWtpEzbPuygo91HkqvEf?width=1024&height=576&cropmode=none",
+		"https://am3pap007files.storage.live.com/y4moN6UA0S0lmXgO-ZGgqVBfBdquZtrnTkPGSUTY0NJY5D2Xt_6lDMrJeAPSg77jmvnnL2bwmhL0MRQiajuqiGRRpJqziPXbzUiM_UJFbEjSqI___p2HsGOKcBXRrJkBYvyhQ2f6MLD4WDXChs9GKACmwVAp-RAzAvReFWUMnGCB1Fgr2okKXQW9JxKrTOlnLc9?width=500&height=500&cropmode=none",
 	title: "时光回溯",
 	description: "案件具体时间线，细说事件始末",
 	dark: false,
@@ -23,7 +23,7 @@ const timeline: CardProps = {
 
 const rumor: CardProps = {
 	bg_image:
-		"https://am3pap007files.storage.live.com/y4mI5-GKO3C4Ayyw2p-O_I8Xd-6mWc_LCAiKIrqOHdSaUd6mnUGA13SHKb1WS2Ot5DLxip9qt3CyVfnZBqVnDfVXGEivQHoO1E1O2VKWR0UJc4I6iGnJOsj6vT8oeQt350yggwX-ux4bflKM7rQKJ7P_hFkqDU-Zk0Ck_5LkBIBdYySRwA3PER8-_rKDSwLxbZ1?width=1024&height=683&cropmode=none",
+		"https://am3pap007files.storage.live.com/y4muQj2M_PSlKoGLuj2tlpEVuMjEWINjLBgv6GOJvOKtqwS-gMXSNATGxmpd6wyZKbTKMfH8svq0T1mh7pI7IK01D7417lYGtfddpQ6uyy7AWQFwQf_0c2NNP7lNagHba3RiXovaMU2qtJglKloNaJngbIPD9tC9Swe17q8SbofdUS7dQO5uVrc8trji6hKmx0g?width=500&height=500&cropmode=none",
 	title: "辟谣问答",
 	description: "事实是？那些人尽皆知的谎言又是...？",
 	update: new Date(),
@@ -33,7 +33,7 @@ const rumor: CardProps = {
 
 const media: CardProps = {
 	bg_image:
-		"https://am3pap007files.storage.live.com/y4m_EoEIEXTzcwJgH65UvPI4ywN5Tu29FDpq8SOClbiC-KzPIyDQuaePlevZQ_hZDPoaf4ivS3e9PW8HBTZGbSP_7OAHHUx3XSgLWjJnck2SK0oLT5-tUxQ2_yg9Nl10y4FRjG-I70WN7xwluCzvqY7CSSvbbdf6366nk2Du0-FOu9yt0YiaCgcQzsapc_w0wPx?width=1024&height=643&cropmode=none",
+		"https://am3pap007files.storage.live.com/y4mNUFelAv03gAVClpNseFsCACqXyfhu3qh8xwqx3FIWK3pK14uKClUBoZ252YXR11UaWQbAnN2eUHK6r_cutYvBlyWZRCCLJv06rvCR3bU-s4xUKMxo-azMjUayKPd0s1OWv41-jA03yqoRpcK3hcCTIrXDjjzPSMLbqTnX6JVH2kDAgXTlucfLWJ0soSGz2WN?width=500&height=500&cropmode=none",
 	title: "影音合集",
 	description: "重要的音频视频合集，如报警录音与采访",
 	update: new Date(),
@@ -43,11 +43,11 @@ const media: CardProps = {
 
 const casefile: CardProps = {
 	bg_image:
-		"https://am3pap007files.storage.live.com/y4m7JUpB7GDecmGaaik_kiRT_eHVpfWJMhpRS1xqyYHwi1hGrzxV8XfdRriz0fAvHhIunUtQDxB9z93j2jWif48XqH73GKGM0ZrIg-AxL0jVhrlOtA7CpBQ83r8MvR5zafLB4W_9vliuqGDa5UytcdLHM-hepuGg-B_o1NAZEHkZIGGD6ObJOKAuYQgT-3226tn?width=1024&height=678&cropmode=none",
+		"https://am3pap007files.storage.live.com/y4mWdEsP4cgD_gApnULBztQmtC5qmsj958ltBhiy0PP6It_ooNxQXIOe8H4J_4yJU3ALfWz_VZpDLT9mQIl_E4wjq6-NIrwcX6mmMo_OvUp7y4kbmQ60b2yUtmx0SIM4AAkJmMe3Gv_6w8etwynQTF-RXpjU-Y35j5gHpCJX1vWvn4K3j81p7460avn8JLf7p-n?width=500&height=500&cropmode=none",
 	title: "部分卷宗",
 	description: "有缘见到的仅有这些，也已经说明了许多",
 	update: new Date(),
-	link: "/casefiles/list",
+	link: "/casefiles",
 	dark: true,
 };
 
@@ -68,10 +68,10 @@ function Card(props: CardProps) {
 								props.dark ? "bg-lxd" : "bg-lxl"
 							} rounded-full mr-[10px]`}
 						></div>
-						<p className="font-bold">{props.title}</p>
+						<p className="font-bold text-[16px]">{props.title}</p>
 					</div>
-					<p className="text-xs">{props.description}</p>
-					<p className="font-bold text-xs">
+					<p className="text-[12px]">{props.description}</p>
+					<p className="font-bold text-[11px]">
 						最后更新：{getDate(props.update)}
 					</p>
 				</div>
@@ -82,11 +82,13 @@ function Card(props: CardProps) {
 
 export default function CaseView() {
 	return (
-		<div className="mx-4 pb-5">
-			<div className="bg-white rounded-lg border shadow-sm pb-[15px]">
-				<p className="flex px-5 pt-5 pb-3 border-b-2 font-bold text-sm">
+		<div className="mx-[10px] pb-5">
+			<div className="bg-white rounded-xl border shadow-lg pb-[15px]">
+				<p className="flex px-5 pt-5 pb-3 font-bold text-sm text-lxd">
 					江案阅览
 				</p>
+
+				<hr className="text-black h-[2px] bg-freeze mx-5" />
 				<div>
 					<Card {...casefile} />
 					<Card {...timeline} />

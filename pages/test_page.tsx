@@ -1,148 +1,209 @@
-import React from "react";
-import { ImageUrl } from "../models/timelineModel";
-
-const image_urls: ImageUrl[] = [
+import Image from "next/image";
+const images = [
 	{
-		urlField:
-			"https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-		url_title: "大内公寓二楼部分结构图（标有刘鑫报警时身处的位置）",
+		src: "https://source.unsplash.com/sQZ_A17cufs/549x711",
+		alt: "Mechanical keyboard with white keycaps.",
 	},
 	{
-		urlField:
-			"https://images.pexels.com/photos/414359/pexels-photo-414359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-		url_title: "乱填一张图片",
+		src: "https://source.unsplash.com/rsAeSMzOX9Y/768x512",
+		alt: "Mechanical keyboard with white, pastel green and red keycaps.",
 	},
 	{
-		urlField:
-			"https://images.pexels.com/photos/345162/pexels-photo-345162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-		url_title: "fdfd乱填一张图片",
+		src: "https://source.unsplash.com/Z6SXt1v5tP8/768x512",
+		alt: "Mechanical keyboard with white, pastel pink, yellow and red keycaps.",
 	},
 ];
-
-function EviImage({
-	image_url,
-	index,
-}: {
-	image_url: ImageUrl;
-	index: number;
-}) {
-	return (
-		<div
-			className={`carousel-item ${
-				index == 0 ? "active" : ""
-			} relative float-left w-full`}
-		>
-			<img src={image_url.urlField} className="block w-full" alt="..." />
-			<div className="carousel-caption  md:block absolute text-center">
-				<h5 className="text-md">{image_url.url_title}</h5>
-				{/* <p className="text-white">
-					Some representative placeholder content for the first slide.
-				</p> */}
-			</div>
-		</div>
-	);
-}
+import React, { useState } from "react";
+import FsLightbox from "fslightbox-react";
 
 export default function TestPage() {
-	return (
-		<div
-			id="carouselExampleCaptions"
-			className="carousel slide relative"
-			data-bs-ride="carousel"
-		>
-			<div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-				{image_urls.map((image_url, index) => {
-					return (
-						<button
-							type="button"
-							key={index}
-							data-bs-target="#carouselExampleCaptions"
-							data-bs-slide-to={`${index}`}
-							className={index == 0 ? "active w-5" : "w-5"}
-							aria-current={index == 0 ? "true" : "false"}
-							aria-label={`Slide ${index + 1}`}
-						></button>
-					);
-				})}
-			</div>
-			<div className="carousel-inner relative w-full overflow-hidden">
-				{image_urls.map((image_url, index) => {
-					return (
-						<EviImage
-							image_url={image_url}
-							index={index}
-							key={index}
-						/>
-					);
-				})}
+	const [toggler, setToggler] = useState(false);
 
-				{/* <div className="carousel-item active relative float-left w-full">
-					<img
-						src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-						className="block w-full"
-						alt="..."
-					/>
-					<div className="carousel-caption hidden md:block absolute text-center">
-						<h5 className="text-xl">First slide label</h5>
-						<p>
-							Some representative placeholder content for the
-							first slide.
-						</p>
-					</div>
-				</div>
-				<div className="carousel-item relative float-left w-full">
-					<img
-						src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-						className="block w-full"
-						alt="..."
-					/>
-					<div className="carousel-caption hidden md:block absolute text-center">
-						<h5 className="text-xl">Second slide label</h5>
-						<p>
-							Some representative placeholder content for the
-							second slide.
-						</p>
-					</div>
-				</div>
-				<div className="carousel-item relative float-left w-full">
-					<img
-						src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-						className="block w-full"
-						alt="..."
-					/>
-					<div className="carousel-caption hidden md:block absolute text-center">
-						<h5 className="text-xl">Third slide label</h5>
-						<p>
-							Some representative placeholder content for the
-							third slide.
-						</p>
-					</div>
-				</div> */}
-			</div>
-			<button
-				className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-				type="button"
-				data-bs-target="#carouselExampleCaptions"
-				data-bs-slide="prev"
-			>
-				<span
-					className="carousel-control-prev-icon inline-block bg-no-repeat"
-					aria-hidden="true"
-				></span>
-				<span className="visually-hidden">Previous</span>
+	return (
+		<>
+			<button onClick={() => setToggler(!toggler)}>
+				Open the lightbox.
 			</button>
-			<button
-				className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-				type="button"
-				data-bs-target="#carouselExampleCaptions"
-				data-bs-slide="next"
-			>
-				<span
-					className="carousel-control-next-icon inline-block bg-no-repeat"
-					aria-hidden="true"
-				></span>
-				<span className="visually-hidden">Next</span>
-			</button>
-		</div>
+			<FsLightbox
+				toggler={toggler}
+				sources={[
+					"https://source.unsplash.com/sQZ_A17cufs/549x711",
+					"https://source.unsplash.com/rsAeSMzOX9Y/768x512",
+					"https://source.unsplash.com/Z6SXt1v5tP8/768x512",
+					"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+				]}
+			/>
+		</>
 	);
 }
+
+// import "photoswipe/dist/photoswipe.css";
+
+// import { Gallery, Item } from "react-photoswipe-gallery";
+
+// const MyGallery = () => {
+// 	const smallItemStyles: React.CSSProperties = {
+// 		cursor: "pointer",
+// 		objectFit: "cover",
+// 		width: "150px",
+// 		height: "150px",
+// 	};
+// 	return (
+// 		<Gallery>
+// 			<div
+// 				style={{
+// 					display: "grid",
+// 					gridTemplateColumns: "repeat(3, 2fr)",
+// 					gridGap: 10,
+// 				}}
+// 			>
+// 				<Item
+// 					cropped
+// 					original="https://source.unsplash.com/IXP_xjMntlc/1920x2879"
+// 					thumbnail="https://source.unsplash.com/IXP_xjMntlc/1920x2879"
+// 					width="1920"
+// 					height="2879"
+// 				>
+// 					{({ ref, open }) => (
+// 						<img
+// 							style={smallItemStyles}
+// 							src="https://source.unsplash.com/IXP_xjMntlc/1920x2879"
+// 							ref={
+// 								ref as React.MutableRefObject<HTMLImageElement>
+// 							}
+// 							onClick={open}
+// 						/>
+// 					)}
+// 				</Item>
+// 				<Item
+// 					cropped
+// 					original="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
+// 					thumbnail="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg"
+// 					width="1600"
+// 					height="1600"
+// 				>
+// 					{({ ref, open }) => (
+// 						<img
+// 							style={smallItemStyles}
+// 							src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg"
+// 							ref={
+// 								ref as React.MutableRefObject<HTMLImageElement>
+// 							}
+// 							onClick={open}
+// 						/>
+// 					)}
+// 				</Item>
+// 				<Item
+// 					cropped
+// 					original="https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg"
+// 					thumbnail="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg"
+// 					width="1600"
+// 					height="1068"
+// 				>
+// 					{({ ref, open }) => (
+// 						<img
+// 							style={smallItemStyles}
+// 							src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg"
+// 							ref={
+// 								ref as React.MutableRefObject<HTMLImageElement>
+// 							}
+// 							onClick={open}
+// 						/>
+// 					)}
+// 				</Item>
+// 				<Item
+// 					cropped
+// 					original="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg"
+// 					thumbnail="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg"
+// 					width="1600"
+// 					height="1066"
+// 				>
+// 					{({ ref, open }) => (
+// 						<img
+// 							style={smallItemStyles}
+// 							src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg"
+// 							ref={
+// 								ref as React.MutableRefObject<HTMLImageElement>
+// 							}
+// 							onClick={open}
+// 						/>
+// 					)}
+// 				</Item>
+// 				<Item
+// 					cropped
+// 					original="https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg"
+// 					thumbnail="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_m.jpg"
+// 					width="1600"
+// 					height="1066"
+// 				>
+// 					{({ ref, open }) => (
+// 						<img
+// 							style={smallItemStyles}
+// 							src="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_m.jpg"
+// 							ref={
+// 								ref as React.MutableRefObject<HTMLImageElement>
+// 							}
+// 							onClick={open}
+// 						/>
+// 					)}
+// 				</Item>
+// 				<Item
+// 					cropped
+// 					original="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg"
+// 					thumbnail="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg"
+// 					width="1600"
+// 					height="1066"
+// 				>
+// 					{({ ref, open }) => (
+// 						<img
+// 							style={smallItemStyles}
+// 							src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg"
+// 							ref={
+// 								ref as React.MutableRefObject<HTMLImageElement>
+// 							}
+// 							onClick={open}
+// 						/>
+// 					)}
+// 				</Item>
+// 			</div>
+// 		</Gallery>
+// 	);
+// };
+
+// export default MyGallery;
+// import React, { useEffect } from "react";
+// import PhotoSwipeLightbox from "photoswipe/lightbox";
+// import "photoswipe/style.css";
+
+// export default function SimpleGallery(props) {
+// 	useEffect(() => {
+// 		let lightbox = new PhotoSwipeLightbox({
+// 			gallery: "#" + props.galleryID,
+// 			children: "a",
+// 			pswpModule: () => import("photoswipe"),
+// 		});
+// 		lightbox.init();
+
+// 		return () => {
+// 			lightbox.destroy();
+// 			lightbox = null;
+// 		};
+// 	}, []);
+
+// 	return (
+// 		<div className="pswp-gallery" id={props.galleryID}>
+// 			{props.images.map((image, index) => (
+// 				<a
+// 					href={image.largeURL}
+// 					data-pswp-width={image.width}
+// 					data-pswp-height={image.height}
+// 					key={props.galleryID + "-" + index}
+// 					target="_blank"
+// 					rel="noreferrer"
+// 				>
+// 					<img src={image.thumbnailURL} alt="" />
+// 				</a>
+// 			))}
+// 		</div>
+// 	);
+// }

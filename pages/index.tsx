@@ -4,7 +4,6 @@ import { Category, Post } from "../models/sanityModel";
 import { getClient } from "../utils/sanity";
 import fs from "fs";
 import PostSlider from "../components/index/PostSlider";
-import Link from "next/link";
 import CaseView from "../components/index/CaseView";
 import { Footer } from "../components/Footer";
 

@@ -39,10 +39,6 @@ export interface SourceUrl {
     url_title: string;
 }
 
-export interface Type {
-    title: string;
-}
-
 export interface Timeline {
     date: string;
     event: Event[];
@@ -53,6 +49,6 @@ export interface Timeline {
     tags: string[];
     time: string;
     title:string;
-    type: Type;
+    type: string;
 }
 

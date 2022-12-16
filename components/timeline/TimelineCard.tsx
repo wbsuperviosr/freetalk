@@ -47,7 +47,7 @@ function inferTarget(
 	}
 
 	if (typeTrues !== 0) {
-		if (!typeState.get(timeline.type.title)) {
+		if (!typeState.get(timeline.type)) {
 			isTarget = false;
 		}
 	}
@@ -168,7 +168,7 @@ export function TimelineCard({
 								<div className="flex space-x-0 items-center">
 									<MdMergeType className="w-4" />
 									<div className="text-xs text-lxd">
-										{timeline.type.title}
+										{timeline.type}
 									</div>
 								</div>
 							)}
