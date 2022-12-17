@@ -203,7 +203,7 @@ function DropdownItems({ category }: { category: Category }) {
 
 function DropdownMenu({ categories }: { categories: Category[] }) {
 	return (
-		<div className="absolute flex-row top-[280px] w-[180px] bg-white border right-2 rounded-lg overflow-hidden z-50 p-6 space-y-2">
+		<div className="absolute flex-row top-[280px] w-[180px]  bg-white border right-[3.5rem] rounded-lg overflow-hidden z-50 p-6 space-y-2">
 			{categories.map((category, index) => {
 				return <DropdownItems category={category} key={index} />;
 			})}
