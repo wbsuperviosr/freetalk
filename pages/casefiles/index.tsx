@@ -8,12 +8,14 @@ import Link from "next/link";
 import { Footer } from "../../components/Footer";
 import {
 	calcMapSum,
+	getCurrentSelectString,
 	getSelect,
 	makeMapState,
 } from "../../components/menu/utils";
 import {
 	DropDownProps,
 	DropDownSelect,
+	makeDropDownMenu,
 } from "../../components/menu/DropDownSelect";
 import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 import { BiCategory } from "react-icons/bi";
@@ -43,17 +45,6 @@ function getUniqueClassification(casefiles: CaseFile[]) {
 	return Array.from(classes).sort();
 }
 
-function getCurrentSelectString(
-	yearState: Map<string, boolean>,
-	classState: Map<string, boolean>
-) {
-	const years = getSelect(yearState);
-	const classes = getSelect(classState);
-	const string = `【时间：${years}】【类别：${classes}】`;
-	// return [years, classes];
-	return string;
-}
-
 function CaseFilesHeader({
 	casefiles,
 	years,
@@ -63,8 +54,8 @@ function CaseFilesHeader({
 	years: DropDownProps;
 	classes: DropDownProps;
 }) {
-	const showText: number =
-		calcMapSum(years.options.state) + calcMapSum(classes.options.state);
+	// const showText: number =
+	// 	calcMapSum(years.options.state) + calcMapSum(classes.options.state);
 	return (
 		<div className="m-[10px] bg-white rounded-lg border-[1px] shadow-sm">
 			<div className="text-center pt-5 flow-row">
@@ -123,7 +114,6 @@ function inferTarget(
 			isTarget = false;
 		}
 	}
-
 	return isTarget;
 }
 
@@ -179,6 +169,11 @@ function CaseFilesList({
 	years: DropDownProps;
 	classes: DropDownProps;
 }) {
+	const num_active = casefiles
+		.map((casefile) =>
+			inferTarget(casefile, years.options.state, classes.options.state)
+		)
+		.reduce((a, b) => Number(a) + Number(b), 0);
 	return (
 		<div className="bg-white rounded-lg m-[10px] border shadow-sm">
 			<div className="m-6">
@@ -186,15 +181,10 @@ function CaseFilesList({
 					<p className="text-lxd">卷宗</p>
 					<p>|</p>
 					<p className="text-sm">
-						{getCurrentSelectString(
-							years.options.state,
-							classes.options.state
-						)}
+						{getCurrentSelectString([years, classes])}
 					</p>
 				</div>
-				<p className="text-[12px] my-3">
-					这一行用来展示有多少卷宗属于该类别
-				</p>
+				<p className="text-[12px] mt-3">总共筛选出{num_active}份卷宗</p>
 
 				{casefiles.map((casefile) => {
 					return (
@@ -213,25 +203,16 @@ function CaseFilesList({
 function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 	const yearsList = getUniqueYear(casefiles);
 	const classesList = getUniqueClassification(casefiles);
-
-	const initialYears = makeMapState(yearsList);
-	const initialClass = makeMapState(classesList);
-
-	const [yearState, setYearState] = React.useState(initialYears);
-	const [classState, setClassState] = React.useState(initialClass);
-
-	const years: DropDownProps = {
-		title: "时间",
-		options: { state: yearState, setState: setYearState },
-		icon: <CalendarDaysIcon className="w-3" />,
-	};
-
-	const classes: DropDownProps = {
-		title: "类别",
-		options: { state: classState, setState: setClassState },
-		icon: <BiCategory className="w-3" />,
-	};
-
+	const years = makeDropDownMenu(
+		"时间",
+		<CalendarDaysIcon className="w-3" />,
+		yearsList
+	);
+	const classes = makeDropDownMenu(
+		"类别",
+		<BiCategory className="w-3" />,
+		classesList
+	);
 	return (
 		<div className="bg-gray-100">
 			<Header {...casfile_header} />

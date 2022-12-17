@@ -1,3 +1,5 @@
+import { DropDownProps } from "./DropDownSelect";
+
 export const calcMapSum = (map: Map<string, boolean>) => {
 	return Array.from(map.values()).reduce((a, b) => Number(a) + Number(b), 0);
 };
@@ -25,4 +27,12 @@ export function getSelect(state: Map<string, boolean>) {
 	} else {
 		return select.join("，");
 	}
+}
+
+export function getCurrentSelectString(states: DropDownProps[]) {
+	const text = states.map((state) => {
+		return `【${state.title}:${getSelect(state.options.state)}】`;
+	});
+
+	return text.join(" ");
 }

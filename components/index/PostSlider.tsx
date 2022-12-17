@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React, { Fragment } from "react";
-import { Post } from "../../models/sanityModel";
+import React from "react";
+import { Post } from "../../models/postModel";
 import { getDate } from "../../utils/getDate";
 
 export function slideButtons({ posts }: { posts: Post[] }) {
@@ -20,7 +20,8 @@ export function slideButtons({ posts }: { posts: Post[] }) {
 }
 
 export function SlidePicture({ post }: { post: Post }) {
-	const has_both_categories = post.category && post.subcategory;
+	const mainCategory = post.author.name == "刘鑫" ? "暖曦话语" : "观者评说";
+
 	return (
 		<Link href={`/posts/${post.slug.current}`}>
 			<div
@@ -32,9 +33,9 @@ export function SlidePicture({ post }: { post: Post }) {
 			>
 				<div className="">
 					<div className="flex space-x-2 text-xs font-bold items-center text-center">
-						{post.category && <p>{post.category.title}</p>}
-						{has_both_categories && <p>|</p>}
-						{post.subcategory && <p>{post.subcategory.title}</p>}
+						<p>{mainCategory}</p>
+						{post.category && <p>|</p>}
+						{post.category && <p>{post.category}</p>}
 					</div>
 
 					<div className="items-center text-center bg-white text-xl text-black font-bold px-2 py-[2px] rounded-md w-72 flex-wrap overflow-hidden">

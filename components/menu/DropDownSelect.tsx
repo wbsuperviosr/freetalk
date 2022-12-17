@@ -1,6 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import React from "react";
 import { useVisible } from "../../utils/useVisible";
-import { calcMapSum } from "./utils";
+import { calcMapSum, makeMapState } from "./utils";
 
 export type DropDownItemsProps = {
 	option: string;
@@ -36,6 +37,21 @@ export function DropDownItems({
 			{option}
 		</div>
 	);
+}
+
+export function makeDropDownMenu(
+	title: string,
+	icon: React.ReactElement,
+	options: string[]
+) {
+	const initialStates = makeMapState(options);
+	const [state, setState] = React.useState(initialStates);
+	const dropdown: DropDownProps = {
+		title: title,
+		options: { state: state, setState: setState },
+		icon: icon,
+	};
+	return dropdown;
 }
 
 export function DropDownSelect({ menu }: { menu: DropDownProps }) {

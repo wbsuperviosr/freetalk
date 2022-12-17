@@ -57,21 +57,25 @@ function Card(props: CardProps) {
 			<img
 				src={props.bg_image}
 				alt={props.title}
-				className="w-20 h-20 object-cover"
+				className="w-20 h-20 md:w-40 md:h-40 object-cover"
 			/>
 			<Link href={props.link}>
 				<div className="pl-5 space-y-[7px] text-black">
 					<div className="flex items-center">
-						<hr className="h-1 w-[25px] bg-gray-300 mr-[10px]" />
+						<hr className="h-[2px] w-[25px] md:h-1 md:w-10 bg-gray-300 mr-[10px]" />
 						<div
-							className={`w-4 h-4 ${
+							className={`w-4 h-4 md:w-6 md:h-6 ${
 								props.dark ? "bg-lxd" : "bg-lxl"
 							} rounded-full mr-[10px]`}
 						></div>
-						<p className="font-bold text-[16px]">{props.title}</p>
+						<p className="font-bold text-[16px] md:text-xl">
+							{props.title}
+						</p>
 					</div>
-					<p className="text-[12px]">{props.description}</p>
-					<p className="font-bold text-[11px]">
+					<p className="text-[12px] md:text-lg">
+						{props.description}
+					</p>
+					<p className="font-bold text-[11px] md:text-[15px]">
 						最后更新：{getDate(props.update)}
 					</p>
 				</div>
@@ -82,9 +86,9 @@ function Card(props: CardProps) {
 
 export default function CaseView() {
 	return (
-		<div className="mx-[10px] pb-5">
+		<div className="mx-[10px]">
 			<div className="bg-white rounded-xl border shadow-lg pb-[15px]">
-				<p className="flex px-5 pt-5 pb-3 font-bold text-sm text-lxd">
+				<p className="flex px-5 pt-5 pb-3 font-bold text-sm md:text-xl text-lxd">
 					江案阅览
 				</p>
 

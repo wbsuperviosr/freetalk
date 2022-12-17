@@ -18,16 +18,12 @@ import { Post } from "../../models/postModel";
 import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
 
-const nuanxi = {
-	title: "「暖曦话语」",
-	text: [
-		"我被掩藏过，打败过，我叶充满着针扎和无奈",
-		"现在只希望网友也能通过我了解事情的另一面",
-	],
-	subtext: "这里是自2017年5月七刘鑫再网上尽力留下的声音",
-	link: "https://am3pap007files.storage.live.com/y4mY4gTdVuVqypLTsY-oM55RW9Hffh6npwbsgRfkvX6VT_OjaAbUgrYKj2qlXsMVIAq5falE6MzMKVHqEIscCYLQIuGBdy_cDK-fpA654R1ss2b3bXlOhZqvRr_oKKUs9DdiND9S6s_9bRAGNCFQ5TX4d327x4oH7qHMdvKuFQ1vmW26NwrkqwlIexU5oFJY_0_?width=860&height=460&cropmode=none",
+const common_voice = {
+	title: "「观者评说」",
+	text: ["那些是我人生最灰暗时刻的微光", "是我能取暖燃烧着的篝火"],
+	subtext: "观者看法众多，并不等于本站立场。愿君子合而不同，求同存异",
+	link: "https://images.pexels.com/photos/1546070/pexels-photo-1546070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
 };
-
 function getUniqueYear(posts: Post[]) {
 	const years = new Set<string>(
 		posts.map((post) => {
@@ -100,13 +96,13 @@ function PostDetail({
 									post.mainImageUrl ? "basis-3/4" : "w-full"
 								}`}
 							>
-								<Link href={`posts/${post.slug.current}`}>
+								<Link href={`voices/${post.slug.current}`}>
 									<p className="text-lxd">{post.title}</p>
 								</Link>
 								<p className="text-xs pt-1 text-justify">
 									{post.description}
 								</p>
-								<Link href={`posts/${post.slug.current}`}>
+								<Link href={`voices/${post.slug.current}`}>
 									<div className="flex pt-1 justify-end">
 										<div className="px-[7px] py-[3px] text-[10px] rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd">
 											阅读全文
@@ -164,7 +160,7 @@ function PostHeader({
 				</div>
 				<div className="p-6">
 					<p className="text-sm text-justify">
-						这里是自2017年5月七刘鑫再网上尽力留下的声音。感谢各位网友的热心整理贡献，本栏目会持续更新，也希望大家踊跃投稿。您可以通过下方按钮对文章进行筛选阅读
+						这里是社会各界人士对江歌案的讨论。感谢各位网友的热心整理贡献，本栏目会持续更新，也希望大家踊跃投稿，我们坚信江歌案给社会的价值不应该只有仇恨。您可以通过下方按钮对文章进行筛选阅读
 					</p>
 					<div className="border-2 my-5 py-2 border-gray-300 rounded-lg flex justify-between px-10">
 						<DropDownSelect menu={years} />
@@ -190,12 +186,14 @@ function Posts({ posts }: { posts: Post[] }) {
 		yearsList
 	);
 	const classes = makeDropDownMenu("类别", <BiCategory className="w-3" />, [
-		"过往残篇",
-		"今时尽言",
+		"价值讨论",
+		"法律研讨",
+		"案情推理",
+		"创意作品",
 	]);
 	return (
 		<div className="max-w-7xl mx-auto bg-gray-100">
-			<Header {...nuanxi} />
+			<Header {...common_voice} />
 			<PostHeader posts={posts} years={years} classes={classes} />
 			<PostList posts={posts} years={years} classes={classes} />
 			<Footer />
@@ -209,7 +207,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="post" &&!(_id in path("drafts.**"))]|order(writtenAt desc){
+    *[_type=="voice" &&!(_id in path("drafts.**"))]|order(writtenAt desc){
       _id, 
       _createdAt,
       _updatedAt,
