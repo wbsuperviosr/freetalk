@@ -12,6 +12,7 @@ import { HeadCard } from "../components/timeline/HeadCard";
 import { TimelineCard } from "../components/timeline/TimelineCard";
 import { Timeline } from "../models/timelineModel";
 import { getClient } from "../utils/sanity";
+import { makeMapState, getSelect } from "../components/menu/utils";
 
 const timeline_texts = {
 	title: "「江刘之案」",
@@ -23,23 +24,6 @@ const timeline_texts = {
 		"江秋莲诉刘鑫生命权纠纷案在公众平台、媒体的重要发布，本栏目尽力保存",
 	link: "https://assets.wbavengers.com/Resource/background_imgs/header_case.png",
 };
-
-function getSelect(state: Map<string, boolean>) {
-	const select = Array.from(state.keys())
-		.map((year) => {
-			return state.get(year) ? year : "";
-		})
-		.filter((y) => y != "");
-	if (select.length == 0) {
-		return "所有";
-	} else if (select.length == 1) {
-		return select[0];
-	} else if (select.length == state.size) {
-		return "所有";
-	} else {
-		return select.join("，");
-	}
-}
 
 function getCurrentStatusText(
 	yearState: Map<string, boolean>,
@@ -108,14 +92,6 @@ function TimelineList({
 			</div>
 		</div>
 	);
-}
-
-function makeMapState(options: string[], initial: boolean = false) {
-	const state = new Map<string, boolean>();
-	for (const option of options) {
-		state.set(option, initial);
-	}
-	return state;
 }
 
 export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {

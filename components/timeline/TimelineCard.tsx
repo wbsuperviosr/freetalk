@@ -10,7 +10,8 @@ import { MdMergeType } from "react-icons/md";
 import { VscSourceControl } from "react-icons/vsc";
 import { Timeline, Event } from "../../models/timelineModel";
 import { LXPortableTextComponents } from "../PortableText";
-import { calcMapSum, getDate, getTime } from "./calc";
+import { getDate, getTime } from "./calc";
+import { calcMapSum } from "../menu/utils";
 import ExternalEvidence from "./ExternalEvidence";
 import { ImageEvidence } from "./ImageEvidence";
 

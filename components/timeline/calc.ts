@@ -1,9 +1,5 @@
 import { Timeline } from "../../models/timelineModel";
 
-export const calcMapSum = (map: Map<string, boolean>) => {
-	return Array.from(map.values()).reduce((a, b) => Number(a) + Number(b), 0);
-};
-
 export function getDate(date: string) {
 	const [year, month, day] = date.split("-");
 	return day == "XX" ? `${year}年${month}月` : `${year}年${month}月${day}日`;

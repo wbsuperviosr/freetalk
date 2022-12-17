@@ -1,16 +1,21 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useVisible } from "../../utils/useVisible";
-import { calcMapSum } from "./calc";
-import { MenuProps } from "./Menu";
+import { calcMapSum } from "./utils";
 
 export type DropDownItemsProps = {
 	option: string;
 	isSelected: boolean;
 	setOptionState: (option: string, toggle: boolean) => void;
 };
+
+export type DropDownState = {
+	state: Map<string, boolean>;
+	setState: (state: Map<string, boolean>) => void;
+};
+
 export type DropDownProps = {
 	title: string;
-	options: MenuProps;
+	options: DropDownState;
 	icon: React.ReactNode;
 };
 

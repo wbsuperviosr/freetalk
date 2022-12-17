@@ -4,12 +4,8 @@ import {
 	GlobeAltIcon,
 	UserIcon,
 } from "@heroicons/react/24/outline";
-import { DropDownProps, DropDownSelect } from "./DropDownSelect";
-
-export type MenuProps = {
-	state: Map<string, boolean>;
-	setState: (state: Map<string, boolean>) => void;
-};
+import { DropDownProps, DropDownSelect } from "../menu/DropDownSelect";
+import { DropDownState } from "../menu/DropDownSelect";
 
 export function Menu({
 	yearState,
@@ -17,10 +13,10 @@ export function Menu({
 	typeState,
 	infoState,
 }: {
-	yearState: MenuProps;
-	nameState: MenuProps;
-	typeState: MenuProps;
-	infoState: MenuProps;
+	yearState: DropDownState;
+	nameState: DropDownState;
+	typeState: DropDownState;
+	infoState: DropDownState;
 }) {
 	const time: DropDownProps = {
 		title: "时间",

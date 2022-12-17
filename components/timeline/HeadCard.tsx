@@ -1,4 +1,5 @@
-import { Menu, MenuProps } from "./Menu";
+import { DropDownState } from "../menu/DropDownSelect";
+import { Menu } from "./Menu";
 
 export function HeadCard({
 	yearState,
@@ -6,10 +7,10 @@ export function HeadCard({
 	typeState,
 	infoState,
 }: {
-	yearState: MenuProps;
-	nameState: MenuProps;
-	typeState: MenuProps;
-	infoState: MenuProps;
+	yearState: DropDownState;
+	nameState: DropDownState;
+	typeState: DropDownState;
+	infoState: DropDownState;
 }) {
 	return (
 		<div className="bg-white rounded-lg border border-gray-300">
