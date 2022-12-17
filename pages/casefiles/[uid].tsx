@@ -1,24 +1,23 @@
+import { ClockIcon, NewspaperIcon } from "@heroicons/react/24/outline";
+import { PortableText } from "@portabletext/react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Link from "next/link";
+import "photoswipe/dist/photoswipe.css";
 import React from "react";
+import { BsBookmarks, BsCalendar3 } from "react-icons/bs";
+import { Gallery, Item } from "react-photoswipe-gallery";
+import { Footer } from "../../components/Footer";
 import Header from "../../components/Header";
-import { getClient } from "../../utils/sanity";
+import { LXPortableTextComponents } from "../../components/PortableText";
 import { CaseFile, ImageUrl } from "../../models/casefilesModel";
 import { getDate } from "../../utils/getDate";
-import { Footer } from "../../components/Footer";
-import { ClockIcon, NewspaperIcon } from "@heroicons/react/24/outline";
-import { BsCalendar3 } from "react-icons/bs";
-import { PortableText } from "@portabletext/react";
-import { LXPortableTextComponents } from "../../components/PortableText";
-import { BsBookmarks } from "react-icons/bs";
-import "photoswipe/dist/photoswipe.css";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import Link from "next/link";
+import { getClient } from "../../utils/sanity";
 
 const casfile_header = {
 	title: "「部分卷宗」",
 	text: ["有缘见到的仅有这些，", "也已经说明了许多"],
 	subtext: "2016年日本留学生被害案部分卷宗，本栏目尽力保存",
-	link: "https://images.pexels.com/photos/3720483/pexels-photo-3720483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+	link: "https://am3pap007files.storage.live.com/y4mrQYXPK0wzkCTllrL1t052m_p4B9ILnOE5793RgUsEtrfwfpZEulDim8xljELSTBcdy0t4yCXVxk1kCQ2augpQxMlA_Or54EpA3qvq1V7PFaPmvqr-3lolzzN1BcN2QLdvY606SqMXscShYWiUg9HaVBU0jroxFbwnZ9iDhcZrtVwxzseQu4VuPTMYvTjM6YS?width=1920&height=460&cropmode=none",
 };
 
 function countText(casefile: CaseFile): number {
