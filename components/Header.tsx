@@ -1,33 +1,20 @@
 import Girl from "../public/icons/girl.svg";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Transition } from "@headlessui/react";
-import React, { useState, useEffect, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
-import { Category } from "../models/categoryModel";
-import categories from "../categories.json";
+import React, { useState } from "react";
+import categories from "../category.json";
 import Link from "next/link";
-import { useVisible } from "../utils/useVisible";
 
-function sortCategory(categories: Category[]) {
-	for (const category of categories) {
-		if (category.subcategory) {
-			category.subcategory.sort((a, b) => {
-				if (a.order == null) {
-					return -1;
-				} else if (b.order == null) {
-					return 1;
-				} else if (a.order == null && b.order == null) {
-					return 0;
-				} else {
-					return a.order - b.order;
-				}
-			});
-		}
-	}
-	return categories as Category[];
-}
+type SubCategory = {
+	title: string;
+	slug: string;
+};
 
-const sortedCategories = sortCategory(categories as Category[]);
+type Category = {
+	title: string;
+	subcategory?: SubCategory[];
+	slug?: string;
+};
 
 export function SiteLogo() {
 	return (
@@ -104,7 +91,7 @@ function Header(props: HeroImageProps) {
 						}
 					>
 						<DropdownMenu
-							categories={sortedCategories}
+							categories={categories as Category[]}
 						></DropdownMenu>
 					</NavItem>
 				</Navbar>
@@ -155,29 +142,43 @@ function NavItem(props: {
 }
 
 function DropdownItems({ category }: { category: Category }) {
-	const { open, setOpen, dropref } = useVisible(false);
+	const [open, setOpen] = React.useState(false);
 	return (
 		<div
 			className="text-black flex-row space-y-2"
 			onClick={() => setOpen(!open)}
 		>
-			<div className="flex items-center space-x-3 cursor-pointer">
-				<div className="w-[25px] h-[2px] bg-gray-400"></div>
-				<div className="w-4 h-4 rounded-full bg-lxd hover:bg-rose-300"></div>
-				<p className="font-bold text-black">{category.title}</p>
-				{/* <Link href={category.slug.current}>
-					<p className="font-bold text-black">{category.title}</p>
-				</Link> */}
-			</div>
+			{category.slug ? (
+				<div>
+					<Link
+						href={category.slug}
+						className="flex items-center space-x-3 cursor-pointer"
+					>
+						<div className="w-[25px] h-[2px] bg-gray-400"></div>
+						<div className="w-4 h-4 rounded-full bg-lxl hover:bg-rose-300"></div>
+						<p className=" text-black p-1 rounded-md hover:bg-lxl">
+							{category.title}
+						</p>
+					</Link>
+				</div>
+			) : (
+				<div className="flex items-center space-x-3 cursor-pointer">
+					<div className="w-[25px] h-[2px] bg-gray-400"></div>
+					<div className="w-4 h-4 rounded-full bg-lxd hover:bg-rose-300"></div>
+					<p className="font-bold p-1 text-black rounded-md hover:bg-lxl">
+						{category.title}
+					</p>
+				</div>
+			)}
 			{category.subcategory && (
 				<Transition
 					show={open}
-					enter="transition ease duration-300 transform"
-					enterFrom="opacity-0 -translate-y-5"
-					enterTo="opacity-100 translate-y-0"
-					leave="transition ease duration-110 transform"
-					leaveFrom="opacity-100 translate-y-0"
-					leaveTo="opacity-0 -translate-y-5"
+					enter="transition-all ease duration-100 transform"
+					enterFrom="opacity-0 h-0 -translate-y-5"
+					enterTo="opacity-100 h-32 translate-y-0"
+					leave="transition-all ease duration-100 transform"
+					leaveFrom="opacity-100 h-24 translate-y-0"
+					leaveTo="opacity-0 h-0 -translate-y-5"
 				>
 					{category.subcategory.map((subcategory, index) => {
 						return (
@@ -187,8 +188,8 @@ function DropdownItems({ category }: { category: Category }) {
 								// ref={dropref}
 							>
 								<div className="w-4 h-4 rounded-full bg-lxl hover:bg-rose-300"></div>
-								<Link href={subcategory.slug.current}>
-									<p className="text-black">
+								<Link href={subcategory.slug}>
+									<p className="text-black p-1 hover:bg-lxl rounded-md">
 										{subcategory.title}
 									</p>
 								</Link>
@@ -203,7 +204,7 @@ function DropdownItems({ category }: { category: Category }) {
 
 function DropdownMenu({ categories }: { categories: Category[] }) {
 	return (
-		<div className="absolute flex-row top-[280px] w-[180px]  bg-white border right-[3.5rem] rounded-lg overflow-hidden z-50 p-6 space-y-2">
+		<div className="absolute flex-row top-[280px] w-[190px]  bg-white border right-[3.5rem] rounded-lg overflow-hidden z-50 p-6 space-y-2">
 			{categories.map((category, index) => {
 				return <DropdownItems category={category} key={index} />;
 			})}

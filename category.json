@@ -1,0 +1,36 @@
+[
+	{
+		"title": "江案阅览",
+		"slug": null,
+		"subcategory": [
+			{
+				"title": "部分卷宗",
+				"slug": "/casefiles"
+			},
+			{
+				"title": "时光回溯",
+				"slug": "/timeline"
+			},
+			{
+				"title": "辟谣问答",
+				"slug": "/rumor"
+			},
+			{
+				"title": "影音合集",
+				"slug": "/media"
+			}
+		]
+	},
+	{
+		"title": "暖曦话语",
+		"slug": "/posts"
+	},
+	{
+		"title": "观者评说",
+		"slug": "/voices"
+	},
+	{
+		"title": "关于我们",
+		"slug": "/about"
+	}
+]

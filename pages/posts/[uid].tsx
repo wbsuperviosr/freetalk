@@ -1,16 +1,8 @@
-import { TagIcon } from "@heroicons/react/20/solid";
-import { ClockIcon, NewspaperIcon } from "@heroicons/react/24/outline";
-import { PortableText } from "@portabletext/react";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Link from "next/link";
 import React from "react";
 import Header from "../../components/Header";
-import { LXPortableTextComponents } from "../../components/PortableText";
 import { Post } from "../../models/postModel";
-import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
-import QuoteLeft from "../../public/icons/quote_left.svg";
-import QuoteRight from "../../public/icons/quote_right.svg";
 import { Footer } from "../../components/Footer";
 import PostPage from "../../components/PostPage";
 

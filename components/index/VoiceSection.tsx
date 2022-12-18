@@ -26,7 +26,7 @@ function VoiceSection({
 	author,
 }: VoiceSectionProps) {
 	return (
-		<div className="m-[10px] bg-white rounded-lg shadow-sm">
+		<div className="m-[10px] bg-white rounded-xl shadow-md">
 			<div className="container p-5">
 				<div className="flex">
 					<img
