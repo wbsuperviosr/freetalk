@@ -138,10 +138,12 @@ function CaseCard({
 								<div className="w-10 h-[2px] bg-freeze"></div>
 								<div className="w-4 h-4 bg-lxl rounded-full"></div>
 								<p className="text-lg font-bold text-lxd">
-									{casefile.classification}
+									{casefile.title}
 								</p>
 							</div>
-							<p className="text-black">{casefile.title}</p>
+							<p className="text-black">
+								{casefile.classification}
+							</p>
 							<p className="text-gray-600 text-sm">
 								{casefile.description}
 							</p>
