@@ -15,7 +15,7 @@ import { getClient } from "../utils/sanity";
 import { makeMapState, getSelect } from "../components/menu/utils";
 
 const timeline_texts = {
-	title: "「江刘之案」",
+	title: "「江案阅览」",
 	text: [
 		"一场对幸存者和证人的猎巫围剿",
 		"然而真相必然具备绝对的力量，长存不灭",
