@@ -133,18 +133,18 @@ function CaseCard({
 			{isTarget && (
 				<Link href={`/casefiles/${casefile.slug.current}`}>
 					<div className="flex bg-white py-3 justify-between rounded-lg shadow-sm">
-						<div className="">
-							<div className="flex items-center space-x-4">
-								<div className="w-10 h-[2px] bg-freeze"></div>
+						<div className="overflow-hidden">
+							<div className="flex items-center space-x-3">
+								<div className="w-7 h-[2px] bg-freeze"></div>
 								<div className="w-4 h-4 bg-lxl rounded-full"></div>
-								<p className="text-lg font-bold text-lxd">
+								<p className="text-md font-bold text-lxd">
 									{casefile.title}
 								</p>
 							</div>
 							<p className="text-black">
 								{casefile.classification}
 							</p>
-							<p className="text-gray-600 text-sm">
+							<p className=" text-gray-600 text-sm flex-wrap">
 								{casefile.description}
 							</p>
 						</div>
@@ -152,7 +152,7 @@ function CaseCard({
 							<img
 								src={casefile.mainImageUrl}
 								alt={casefile.title}
-								className="w-20 h-20 object-cover grayscale-[50%]"
+								className="w-20 object-cover grayscale-[50%]"
 							/>
 						)}
 					</div>
