@@ -7,7 +7,6 @@ import { Post } from "../models/postModel";
 import { getDate } from "../utils/getDate";
 import QuoteLeft from "../public/icons/quote_left.svg";
 import QuoteRight from "../public/icons/quote_right.svg";
-import { Footer } from "./Footer";
 import Link from "next/link";
 
 function countText(post: Post): number {

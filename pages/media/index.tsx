@@ -224,7 +224,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="media"]
+    *[_type=="media" &&!(_id in path("drafts.**"))]
   `;
 	const medias: Media[] = await client.fetch(post_query);
 	medias.sort(sortMedia);

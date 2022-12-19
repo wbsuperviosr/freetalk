@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="voice"]|order(_updatedAt desc){
+    *[_type=="voice"&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
       _id, 
       slug,
     }`;

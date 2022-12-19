@@ -10,7 +10,6 @@
     "@heroicons/react": "^2.0.13",
     "@portabletext/react": "^2.0.0",
     "flowbite": "^1.5.4",
-    "flowbite-react": "^0.3.5",
     "fslightbox-react": "^1.6.2-2",
     "heroicons": "^2.0.13",
     "next": "latest",

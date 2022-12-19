@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="post"]|order(_updatedAt desc){
+    *[_type=="post"&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
       _id, 
       slug,
     }`;
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="post"&& slug.current==$slug]{
+    *[_type=="post" &&!(_id in path("drafts.**"))&& slug.current==$slug]{
       _id, 
       _createdAt,
       _updatedAt,

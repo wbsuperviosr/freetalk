@@ -99,7 +99,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="media"]|order(_updatedAt desc){
+    *[_type=="media"&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
       _id, 
       slug,
     }`;
@@ -122,7 +122,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="media"&& slug.current==$slug]
+    *[_type=="media" &&!(_id in path("drafts.**"))&& slug.current==$slug]
   `;
 	const medias: Media[] = await client.fetch(post_query, {
 		slug: params?.uid,

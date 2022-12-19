@@ -214,7 +214,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="casefiles"]|order(_updatedAt desc){
+    *[_type=="casefiles"&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
       _id, 
       slug,
     }`;
@@ -237,7 +237,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="casefiles"&& slug.current==$slug]
+    *[_type=="casefiles" &&!(_id in path("drafts.**"))&& slug.current==$slug]
   `;
 	const casefiles: CaseFile[] = await client.fetch(post_query, {
 		slug: params?.uid,

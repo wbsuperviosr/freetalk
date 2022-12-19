@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="about"&& slug.current==$slug][0]
+    *[_type=="about" &&!(_id in path("drafts.**"))&& slug.current==$slug][0]
   `;
 	const post: About = await client.fetch(post_query, {
 		slug: "about_site",
