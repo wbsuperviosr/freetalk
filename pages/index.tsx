@@ -6,14 +6,7 @@ import PostSlider from "../components/index/PostSlider";
 import CaseView from "../components/index/CaseView";
 import { Footer } from "../components/Footer";
 import VoiceSection from "../components/index/VoiceSection";
-
-const heropros = {
-	title: "「九纸书笺」",
-	text: ["所有的事情有因必有果。", "大家只看了结果，且结果只是一面之词"],
-	subtext:
-		"我们尽可能地保存那些微弱的声音，那些隐蔽的细节。历史的夜空中，任何一粒星屑，都有它被凝视的意义",
-	link: "https://assets.wbavengers.com/Resource/background_imgs/header_main.png",
-};
+import { home_text } from "../components/HeroText";
 
 const Home = ({
 	posts,
@@ -51,7 +44,7 @@ const Home = ({
 	};
 	return (
 		<div className="max-w-7xl mx-auto">
-			<Header {...heropros}></Header>
+			<Header {...home_text}></Header>
 			<div className="bg-gray-100">
 				<PostSlider posts={posts} />
 				<CaseView />

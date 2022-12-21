@@ -11,56 +11,10 @@ import { VscSourceControl } from "react-icons/vsc";
 import { Timeline, Event } from "../../models/timelineModel";
 import { LXPortableTextComponents } from "../PortableText";
 import { getDate, getTime } from "./calc";
-import { calcMapSum } from "../menu/utils";
+import { inferTarget } from "../menu/utils";
 import ExternalEvidence from "./ExternalEvidence";
 import { ImageEvidence } from "./ImageEvidence";
-
-function inferTarget(
-	timeline: Timeline,
-	yearState: Map<string, boolean>,
-	nameState: Map<string, boolean>,
-	typeState: Map<string, boolean>,
-	infoState: Map<string, boolean>
-) {
-	let isTarget = true;
-	const yearTrues = calcMapSum(yearState);
-	const nameTrues = calcMapSum(nameState);
-	const typeTrues = calcMapSum(typeState);
-	const infoTrues = calcMapSum(infoState);
-
-	if (yearTrues !== 0) {
-		let current_year = timeline.date.split("-")[0];
-		if (!yearState.get(current_year)) {
-			isTarget = false;
-		}
-	}
-
-	if (nameTrues !== 0) {
-		const curerntPeople = new Map<string, boolean>();
-		for (const people of timeline.people) {
-			people &&
-				curerntPeople.set(people.name, nameState.get(people.name)!);
-		}
-		const currentNameTrues = calcMapSum(curerntPeople);
-		if (currentNameTrues == 0) {
-			isTarget = false;
-		}
-	}
-
-	if (typeTrues !== 0) {
-		if (!typeState.get(timeline.type)) {
-			isTarget = false;
-		}
-	}
-
-	if (infoTrues !== 0) {
-		if (!infoState.get(timeline.source)) {
-			isTarget = false;
-		}
-	}
-
-	return isTarget;
-}
+import { DropDownProps } from "../menu/DropDownSelect";
 
 function makeSummary(eventText: Event[], threhold: number = 140) {
 	let summary: Event[] = JSON.parse(JSON.stringify(eventText.slice(0, 1)));
@@ -85,27 +39,15 @@ function makeSummary(eventText: Event[], threhold: number = 140) {
 
 export function TimelineCard({
 	timeline,
-	yearState,
-	nameState,
-	typeState,
-	infoState,
+	menus,
 }: {
 	timeline: Timeline;
-	yearState: Map<string, boolean>;
-	nameState: Map<string, boolean>;
-	typeState: Map<string, boolean>;
-	infoState: Map<string, boolean>;
+	menus: DropDownProps[];
 }) {
 	const [expand, setExpand] = React.useState(false);
 	const [summary, isSummarized] = makeSummary(timeline.event);
 
-	const isTarget = inferTarget(
-		timeline,
-		yearState,
-		nameState,
-		typeState,
-		infoState
-	);
+	const isTarget = inferTarget(timeline, menus);
 	return (
 		<>
 			{isTarget && (
@@ -177,6 +119,7 @@ export function TimelineCard({
 
 						<ImageEvidence image_urls={timeline.image_urls} />
 						<ExternalEvidence source_urls={timeline.source_urls} />
+
 						<div className="flex pt-1">
 							{timeline.tags && (
 								<div className="flex items-center space-x-1 px-3">

@@ -12,13 +12,7 @@ import { LXPortableTextComponents } from "../../components/PortableText";
 import { CaseFile, ImageUrl } from "../../models/casefilesModel";
 import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
-
-const casfile_header = {
-	title: "「部分卷宗」",
-	text: ["有缘见到的仅有这些，", "也已经说明了许多"],
-	subtext: "2016年日本留学生被害案部分卷宗，本栏目尽力保存",
-	link: "https://am3pap007files.storage.live.com/y4mrQYXPK0wzkCTllrL1t052m_p4B9ILnOE5793RgUsEtrfwfpZEulDim8xljELSTBcdy0t4yCXVxk1kCQ2augpQxMlA_Or54EpA3qvq1V7PFaPmvqr-3lolzzN1BcN2QLdvY606SqMXscShYWiUg9HaVBU0jroxFbwnZ9iDhcZrtVwxzseQu4VuPTMYvTjM6YS?width=1920&height=460&cropmode=none",
-};
+import { casfile_text } from "../../components/HeroText";
 
 function countText(casefile: CaseFile): number {
 	const body = casefile.body;
@@ -99,6 +93,13 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 	const num_words = countText(casefile);
 	const time = Math.ceil(num_words / 300);
 	const headers = casefile.header.split("\n");
+	const bottomToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	return (
 		<div className="m-[10px] bg-white rounded-lg">
 			<div className="p-[22px]">
@@ -183,16 +184,15 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 				</div>
 
 				<ImageGallery image_urls={casefile.image_urls} />
-				{/* {casefile.image_urls &&
-					casefile.image_urls.map((image_url, index) => {
-						return (
-							<img
-								src={image_url.urlField}
-								alt={image_url.url_title}
-								className="border-[1px] border-gray-200"
-							/>
-						);
-					})} */}
+				<hr className="mb-4 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
+				<div className="flex justify-end mb-3">
+					<div
+						className="px-[7px] py-[3px] text-[14px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"
+						onClick={bottomToTop}
+					>
+						回到顶部
+					</div>
+				</div>
 			</div>
 		</div>
 	);
@@ -201,7 +201,7 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 export default function CaseFilePost({ casefiles }: { casefiles: CaseFile[] }) {
 	return (
 		<div className="bg-gray-100">
-			<Header {...casfile_header} />
+			<Header {...casfile_text} />
 			{casefiles.map((casefile, index) => {
 				return <CaseBody casefile={casefile} key={index} />;
 			})}

@@ -13,18 +13,10 @@ import {
 } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 import { IoImageOutline } from "react-icons/io5";
-import FsLightbox from "fslightbox-react";
-
-const rumor_texts = {
-	title: "「江刘之案」",
-	text: [
-		"一场对幸存者和证人的猎巫围剿",
-		"然而真相必然具备绝对的力量，长存不灭",
-	],
-	subtext:
-		"江秋莲诉刘鑫生命权纠纷案在公众平台、媒体的重要发布，本栏目尽力保存",
-	link: "https://am3pap007files.storage.live.com/y4mrQYXPK0wzkCTllrL1t052m_p4B9ILnOE5793RgUsEtrfwfpZEulDim8xljELSTBcdy0t4yCXVxk1kCQ2augpQxMlA_Or54EpA3qvq1V7PFaPmvqr-3lolzzN1BcN2QLdvY606SqMXscShYWiUg9HaVBU0jroxFbwnZ9iDhcZrtVwxzseQu4VuPTMYvTjM6YS?width=1920&height=460&cropmode=none",
-};
+import { rumor_text } from "../components/HeroText";
+import { ListHeader } from "../components/ListHeader";
+import { Gallery, Item } from "react-photoswipe-gallery";
+import "photoswipe/dist/photoswipe.css";
 
 type RumorDetailProps = {
 	text: string;
@@ -34,13 +26,22 @@ type RumorDetailProps = {
 };
 
 function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
-	const image_urls =
-		images &&
-		images.map((image) => {
-			return image.urlField;
-		});
-	const [imageOpen, setImageOpen] = React.useState(false);
 	const [postOpen, setPostOpen] = React.useState(false);
+
+	const htmlString = (url: string) => `
+	<div style="
+	  color: white;
+	  display: flex;
+	  place-content: center;
+	  flex-direction: column;
+	  height: 100%;
+	  widht:100%,
+	  text-align: center;
+	">
+	  <img src="${url}"/>
+	</div>
+	`;
+
 	return (
 		<div className="bg-gray-200 rounded-md">
 			<div className="text-sm p-3 border-b-2 border-white">{text}</div>
@@ -50,13 +51,37 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 					<p className="text-sm text-lxd">{people}</p>
 				</div>
 				{images && (
-					<div
-						className="flex items-center space-x-1"
-						onClick={() => setImageOpen(!imageOpen)}
-					>
+					<div className="flex items-center space-x-1">
 						<IoImageOutline className="w-3" />
-						<p className="text-sm text-lxd">点击查看图片</p>
-						<FsLightbox toggler={imageOpen} sources={image_urls} />
+						<Gallery>
+							{images.map((image, index) => {
+								return (
+									<Item
+										key={index}
+										html={htmlString(image.urlField)}
+									>
+										{({ ref, open }) => (
+											<a
+												href="#"
+												onClick={(e) => {
+													e.preventDefault();
+													open(e);
+												}}
+												ref={
+													ref as React.MutableRefObject<HTMLAnchorElement>
+												}
+											>
+												{index == 0 && (
+													<p className="text-sm text-lxd">
+														点击查看图片
+													</p>
+												)}
+											</a>
+										)}
+									</Item>
+								);
+							})}
+						</Gallery>
 					</div>
 				)}
 				{posts && (
@@ -187,43 +212,29 @@ function RumorList({ rumors }: { rumors: Rumor[] }) {
 	return (
 		<div className="bg-white m-[10px] rounded-lg border-[1px] shadow-sm">
 			<div className="container py-5">
-				{rumors.map((rumor) => {
-					return <RumorItem rumor={rumor} />;
+				{rumors.map((rumor, index) => {
+					return <RumorItem key={index} rumor={rumor} />;
 				})}
-			</div>
-			{/* <RumorItem rumor={rumors[0]} /> */}
-		</div>
-	);
-}
-
-function RumorHeader({ rumors }: { rumors: Rumor[] }) {
-	return (
-		<div className="m-[10px] bg-white rounded-lg border-[1px] shadow-sm">
-			<div className="text-center pt-5 flow-row">
-				<p className="bg-lxd text-white items-center text-[16px] tracking-[2.1px]">
-					谣言合集与澄清
-				</p>
-				<p className="bg-freeze font-bold text-[12px] h-5 pt-[2px] ">
-					最后更新:
-					{getDate(new Date(rumors[rumors.length - 1]._updatedAt))}
-				</p>
-			</div>
-
-			<div className="mx-8 py-5">
-				<p className="tracking-[1.8px] text-[14px] text-justify">
-					本站对网友整理收集的谣言澄清进行排版展示。本章节会一直持续更新，也希望各位网友踊跃参与进来，欢迎各位到@七_叶_
-					（微博搜索）置顶微博下方留言分享你的证据。我们会定期收录。
-				</p>
 			</div>
 		</div>
 	);
 }
 
 function RumorPage({ rumors }: { rumors: Rumor[] }) {
+	const list_header = {
+		title: "谣言合集与澄清",
+		description:
+			"本站对网友整理收集的谣言澄清进行排版展示。本章节会一直持续更新，也希望各位网友踊跃参与进来，欢迎各位到@七_叶_(微博搜索）置顶微博下方留言分享你的证据。我们会定期收录。",
+		last_update: getDate(new Date(rumors[rumors.length - 1]._updatedAt)),
+		menus: undefined,
+		show_active: false,
+	};
+
 	return (
 		<div className="bg-gray-100">
-			<Header {...rumor_texts} />
-			<RumorHeader rumors={rumors} />
+			<Header {...rumor_text} />
+			{/* <RumorHeader rumors={rumors} /> */}
+			<ListHeader {...list_header} />
 			<RumorList rumors={rumors} />
 			<Footer />
 		</div>

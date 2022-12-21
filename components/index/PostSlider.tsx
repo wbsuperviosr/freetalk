@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Post } from "../../models/postModel";
 import { getDate } from "../../utils/getDate";
+import { limit_text } from "../../utils/limitText";
 
 export function slideButtons({ posts }: { posts: Post[] }) {
 	return posts.map((post, index) => {
@@ -32,25 +33,25 @@ export function SlidePicture({ post }: { post: Post }) {
 				}}
 			>
 				<div className="">
-					<div className="flex space-x-2 text-xs font-bold items-center text-center">
+					<div className="flex space-x-2 text-xs font-bold items-center text-center pb-1 md:text-lg">
 						<p>{mainCategory}</p>
 						{post.category && <p>|</p>}
 						{post.category && <p>{post.category}</p>}
 					</div>
 
-					<div className="items-center text-center bg-white text-xl text-black font-bold px-2 py-[2px] rounded-md w-72 flex-wrap overflow-hidden">
+					<div className="items-center text-center bg-white text-xl text-black font-bold px-2 py-[2px] rounded-md w-72 flex-wrap overflow-hidden md:text-2xl md:w-96">
 						{post.title}
 					</div>
 
-					<div className="flex justify-end space-x-2 text-sm text-right  tracking-wide">
+					<div className="flex justify-end space-x-2 pt-1 text-sm text-right  tracking-wide md:text-lg">
 						<p>作者:{post.author.name}</p>
 						<p>|</p>
 						<p>{getDate(new Date(post.writtenAt!))}</p>
 					</div>
 				</div>
 			</div>
-			<div className="px-4 text-black text-[13px] pt-5 tracking-widest">
-				「{post.description}」
+			<div className="px-4 text-black text-[13px] pt-5 tracking-widest md:text-lg md:px-10">
+				「{limit_text(post.description, 100)}」
 			</div>
 		</Link>
 	);

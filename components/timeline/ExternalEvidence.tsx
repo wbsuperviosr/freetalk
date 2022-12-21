@@ -1,9 +1,7 @@
 import React from "react";
 import { SourceUrl } from "../../models/timelineModel";
-import { useVisible } from "../../utils/useVisible";
 import { BsLink45Deg } from "react-icons/bs";
 import { GoTriangleRight, GoTriangleUp } from "react-icons/go";
-import Link from "next/link";
 
 function ExternalEvidence({ source_urls }: { source_urls: SourceUrl[] }) {
 	const [open, setOpen] = React.useState(false);

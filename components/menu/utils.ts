@@ -36,3 +36,27 @@ export function getCurrentSelectString(states: DropDownProps[]) {
 
 	return text.join(" ");
 }
+
+export function inferTarget(obj: any, menus: DropDownProps[]): boolean {
+	let isTarget = true;
+	menus.map((menu) => {
+		const num_active = calcMapSum(menu.options.state);
+		if (num_active !== 0) {
+			const field = menu.mapping_fn!(obj);
+			if (field instanceof Array) {
+				for (const item of field) {
+					if (!menu.options.state.get(item)) {
+						isTarget = false;
+					}
+				}
+			} else {
+				if (!menu.options.state.get(field)) {
+					isTarget = false;
+				}
+			}
+		}
+		return;
+	});
+
+	return isTarget;
+}

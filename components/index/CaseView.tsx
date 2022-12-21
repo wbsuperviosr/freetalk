@@ -35,7 +35,7 @@ const media: CardProps = {
 	bg_image:
 		"https://am3pap007files.storage.live.com/y4mNUFelAv03gAVClpNseFsCACqXyfhu3qh8xwqx3FIWK3pK14uKClUBoZ252YXR11UaWQbAnN2eUHK6r_cutYvBlyWZRCCLJv06rvCR3bU-s4xUKMxo-azMjUayKPd0s1OWv41-jA03yqoRpcK3hcCTIrXDjjzPSMLbqTnX6JVH2kDAgXTlucfLWJ0soSGz2WN?width=500&height=500&cropmode=none",
 	title: "影音合集",
-	description: "重要的音频视频合集，如报警录音与采访",
+	description: "重要的音频视频合集",
 	update: new Date(),
 	link: "/media",
 	dark: false,
@@ -45,7 +45,7 @@ const casefile: CardProps = {
 	bg_image:
 		"https://am3pap007files.storage.live.com/y4mWdEsP4cgD_gApnULBztQmtC5qmsj958ltBhiy0PP6It_ooNxQXIOe8H4J_4yJU3ALfWz_VZpDLT9mQIl_E4wjq6-NIrwcX6mmMo_OvUp7y4kbmQ60b2yUtmx0SIM4AAkJmMe3Gv_6w8etwynQTF-RXpjU-Y35j5gHpCJX1vWvn4K3j81p7460avn8JLf7p-n?width=500&height=500&cropmode=none",
 	title: "部分卷宗",
-	description: "有缘见到的仅有这些，也已经说明了许多",
+	description: "有缘见到的仅有这些，也说明了许多",
 	update: new Date(),
 	link: "/casefiles",
 	dark: true,

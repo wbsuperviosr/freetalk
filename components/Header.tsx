@@ -35,20 +35,20 @@ export function SiteLogo() {
 export type HeroImageProps = {
 	title: string;
 	text: string[];
-	subtext: string;
+	subtext: string[];
 	link: string;
 };
 
 export function HeroImage(props: HeroImageProps) {
 	return (
 		<div
-			className="relative w-full h-[230px]"
+			className="relative w-full h-[230px] md:h-[360px]"
 			style={{
 				backgroundImage: `url(${props.link})`,
 				backgroundSize: "cover",
 			}}
 		>
-			<p className="text-white text-[20px] px-[24px] pt-[24px] tracking-[10px]">
+			<p className="text-white text-[20px] px-[24px] pt-[24px] tracking-[10px] md:text-[40px]">
 				{props.title}
 			</p>
 
@@ -57,7 +57,7 @@ export function HeroImage(props: HeroImageProps) {
 					return (
 						<p
 							key={index}
-							className="text-white text-[14px] opacity-90 tracking-widest"
+							className="text-white text-[14px] opacity-90 tracking-widest md:text-[20px]"
 						>
 							{t}
 						</p>
@@ -65,11 +65,22 @@ export function HeroImage(props: HeroImageProps) {
 				})}
 			</div>
 
-			<div className="ml-[30%] mt-10 mr-5">
-				<hr className="ml-[70%] h-[2px]  bg-gray-200 border-5 border-white opacity-70" />
-				<p className="mt-3 text-end text-white text-[10px] tracking-[1.5px] opacity-90 font-heiti">
+			<div className="mt-10 mr-5 md:mt-20">
+				<hr className="ml-[80%] h-[2px] mb-3 bg-gray-200 border-5 border-white opacity-70" />
+				{props.subtext.map((text, index) => {
+					return (
+						<p
+							key={index}
+							className="mt-1 text-end text-white text-[10px] tracking-[1.5px] opacity-90 font-heiti md:text-[18px]"
+						>
+							{text}
+						</p>
+					);
+				})}
+
+				{/* <p className="mt-3 text-end text-white text-[10px] tracking-[1.5px] opacity-90 font-heiti">
 					{props.subtext}
-				</p>
+				</p> */}
 			</div>
 		</div>
 	);
@@ -125,17 +136,7 @@ function NavItem(props: {
 			>
 				{props.icon}
 			</a>
-			{/* <Transition
-				show={open}
-				enter="transition-opacity duration-100"
-				enterFrom="opacity-50"
-				enterTo="opacity-100"
-				leave="transition-opacity duration-100"
-				leaveFrom="opacity-100"
-				leaveTo="opacity-50"
-			>
-				{props.children}
-			</Transition> */}
+
 			{open && props.children}
 		</li>
 	);

@@ -18,6 +18,7 @@ export type DropDownProps = {
 	title: string;
 	options: DropDownState;
 	icon: React.ReactNode;
+	mapping_fn?: (obj: any) => string | Array<string>;
 };
 
 export function DropDownItems({
@@ -42,7 +43,8 @@ export function DropDownItems({
 export function makeDropDownMenu(
 	title: string,
 	icon: React.ReactElement,
-	options: string[]
+	options: string[],
+	mapping_fn: (obj: any) => string | string[] = () => "null"
 ) {
 	const initialStates = makeMapState(options);
 	const [state, setState] = React.useState(initialStates);
@@ -50,6 +52,7 @@ export function makeDropDownMenu(
 		title: title,
 		options: { state: state, setState: setState },
 		icon: icon,
+		mapping_fn: mapping_fn,
 	};
 	return dropdown;
 }

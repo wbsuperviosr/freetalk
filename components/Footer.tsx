@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export function Footer() {
 	return (
-		<div className="flex justify-center space-x-4 py-4">
+		<div className="flex justify-center space-x-4 pt-2 pb-7">
 			<Link href="/about">
 				<div className="flex items-center">
 					<HomeIcon className="w-3 text-black" />

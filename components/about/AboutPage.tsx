@@ -6,13 +6,7 @@ import QuoteRight from "../../public/icons/quote_right.svg";
 import { About } from "../../models/aboutModel";
 import { PortableText } from "@portabletext/react";
 import { LXPortableTextComponents } from "../../components/PortableText";
-
-const lx_voice = {
-	title: "「关于本站」",
-	text: ["虚怀乃若谷", "水深则流缓"],
-	subtext: "关于网站的开始、现在于未来。我们记录它茁壮成长",
-	link: "https://am3pap007files.storage.live.com/y4mgFrwmIgSB6i9b31mvv-Rqx3BUpKRgSm1yGiMdeZ8RTee_ulyT7tksm6er6Ohu_CSH9Dd3wxjgTe1m2kQahtKfNJ-4OMZ2ft8iD7M2ocxQzUvjP7NLrv15spXhbBHhMtaW3Ud6SiaI0VRKrx1xiH_M640Ofu8tNQTptTgFzU3b9MEKqsy_XqJ1A1XMkiQF3Jb?width=1920&height=460&cropmode=none",
-};
+import { about_us } from "../HeroText";
 
 function AboutAbstract({ post }: { post: About }) {
 	return (
@@ -49,7 +43,7 @@ export default function AboutPage({
 	console.log(center);
 	return (
 		<div className="max-w-6xl mx-auto  bg-gray-100" id="top">
-			<Header {...lx_voice} />
+			<Header {...about_us} />
 			<div className="m-[10px] bg-white rounded-lg border-[1px] h-full shadow-sm">
 				<div className="px-6 mb-7">
 					<h1 className="text-center text-gray-500 font-bold mt-7 pb-2 text-xl border-b-2">

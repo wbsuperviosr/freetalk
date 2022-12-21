@@ -8,57 +8,31 @@ import {
 	getTypes,
 	getYears,
 } from "../components/timeline/calc";
-import { HeadCard } from "../components/timeline/HeadCard";
 import { TimelineCard } from "../components/timeline/TimelineCard";
 import { Timeline } from "../models/timelineModel";
 import { getClient } from "../utils/sanity";
-import { makeMapState, getSelect } from "../components/menu/utils";
-
-const timeline_texts = {
-	title: "「江案阅览」",
-	text: [
-		"一场对幸存者和证人的猎巫围剿",
-		"然而真相必然具备绝对的力量，长存不灭",
-	],
-	subtext:
-		"江秋莲诉刘鑫生命权纠纷案在公众平台、媒体的重要发布，本栏目尽力保存",
-	link: "https://assets.wbavengers.com/Resource/background_imgs/header_case.png",
-};
-
-function getCurrentStatusText(
-	yearState: Map<string, boolean>,
-	nameState: Map<string, boolean>,
-	typeState: Map<string, boolean>,
-	infoState: Map<string, boolean>
-) {
-	const years = getSelect(yearState);
-	const names = getSelect(nameState);
-	const types = getSelect(typeState);
-	const infos = getSelect(infoState);
-
-	const string = `当前展示【时间：${years}】【人物：${names}】【性质：${types}】【来源：${infos}】范围内的条目`;
-	return string;
-}
+import { timeline_text } from "../components/HeroText";
+import {
+	DropDownProps,
+	makeDropDownMenu,
+} from "../components/menu/DropDownSelect";
+import {
+	CalendarDaysIcon,
+	FolderIcon,
+	GlobeAltIcon,
+	UserIcon,
+} from "@heroicons/react/24/outline";
+import { ListHeader } from "../components/ListHeader";
+import { getCurrentSelectString } from "../components/menu/utils";
 
 function TimelineList({
 	timelines,
-	yearState,
-	nameState,
-	typeState,
-	infoState,
+	menus,
 }: {
 	timelines: Timeline[];
-	yearState: Map<string, boolean>;
-	nameState: Map<string, boolean>;
-	typeState: Map<string, boolean>;
-	infoState: Map<string, boolean>;
+	menus: DropDownProps[];
 }) {
-	const string = getCurrentStatusText(
-		yearState,
-		nameState,
-		typeState,
-		infoState
-	);
+	const string = getCurrentSelectString(menus);
 	return (
 		<div className="mx-auto relative pt-2">
 			<div className="border-l-2 mt-3">
@@ -68,23 +42,12 @@ function TimelineList({
 						{string}
 					</div>
 				</div>
-				{/* 
-				<TimelineCard
-					timeline={timelines[4]}
-					yearState={yearState}
-					nameState={nameState}
-					typeState={typeState}
-					infoState={infoState}
-				/> */}
 
 				{timelines.map((timeline, index) => {
 					return (
 						<TimelineCard
 							timeline={timeline}
-							yearState={yearState}
-							nameState={nameState}
-							typeState={typeState}
-							infoState={infoState}
+							menus={menus}
 							key={index}
 						/>
 					);
@@ -95,33 +58,50 @@ function TimelineList({
 }
 
 export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
-	const initialYears = makeMapState(getYears(timelines));
-	const initialNames = makeMapState(getPeoples(timelines));
-	const initialTypes = makeMapState(getTypes(timelines));
-	const initialInfos = makeMapState(getInfos(timelines));
+	const years = makeDropDownMenu(
+		"时间",
+		<CalendarDaysIcon className="w-3" />,
+		getYears(timelines),
+		(timeline: Timeline) => timeline.date.split("-")[0]
+	);
 
-	const [yearState, setYearState] = React.useState(initialYears);
-	const [nameState, setNameState] = React.useState(initialNames);
-	const [typeState, setTypeState] = React.useState(initialTypes);
-	const [infoState, setInfoState] = React.useState(initialInfos);
+	const names = makeDropDownMenu(
+		"人物",
+		<UserIcon className="w-3" />,
+		getPeoples(timelines),
+		(timeline: Timeline) => timeline.people.map((p) => p.name)
+	);
+	const types = makeDropDownMenu(
+		"性质",
+		<FolderIcon className="w-3" />,
+		getTypes(timelines),
+		(timeline: Timeline) => timeline.type
+	);
+	const infos = makeDropDownMenu(
+		"来源",
+		<GlobeAltIcon className="w-3" />,
+		getInfos(timelines),
+		(timeline: Timeline) => timeline.source
+	);
+
+	const list_header = {
+		title: "江刘案相关事件时间线 ：2017-2022",
+		description:
+			"时间线可以根据不同的方式进行筛选。例如，按时间年份查看，按事件人物查看，按事件性质查看，和按事件信息来源查看。感谢：@孤独的开心果酱，@灰石eye进行整理。",
+		last_update: "更新：2022年12月22日 | 第0.1版[日志]",
+		menus: [years, names, types, infos],
+		show_active: false,
+	};
 
 	return (
 		<div>
-			<Header {...timeline_texts} />
+			<Header {...timeline_text} />
 			<div className="bg-gray-100 p-3 ">
-				<HeadCard
-					yearState={{ state: yearState, setState: setYearState }}
-					nameState={{ state: nameState, setState: setNameState }}
-					typeState={{ state: typeState, setState: setTypeState }}
-					infoState={{ state: infoState, setState: setInfoState }}
-				/>
+				<ListHeader {...list_header} />
 
 				<TimelineList
 					timelines={timelines}
-					yearState={yearState}
-					nameState={nameState}
-					typeState={typeState}
-					infoState={infoState}
+					menus={[years, names, types, infos]}
 				/>
 				<Footer />
 			</div>

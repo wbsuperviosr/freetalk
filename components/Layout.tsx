@@ -14,8 +14,6 @@ function Layout({ children }: { children: React.ReactNode }) {
 				src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
 				strategy="beforeInteractive"
 			></Script>
-			<Script src="https://unpkg.com/react-transition-group/dist/react-transition-group.js"></Script>
-			<Script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></Script>
 			<Script
 				async
 				src="https://www.googletagmanager.com/gtag/js?id=G-R3Q4QCQ774"

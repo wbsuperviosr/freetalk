@@ -5,30 +5,17 @@ import Link from "next/link";
 import "photoswipe/dist/photoswipe.css";
 import React from "react";
 import { BsBookmarks, BsCalendar3 } from "react-icons/bs";
-import { Gallery, Item } from "react-photoswipe-gallery";
 import { Footer } from "../../components/Footer";
 import Header from "../../components/Header";
 import { LXPortableTextComponents } from "../../components/PortableText";
-import { CaseFile, ImageUrl } from "../../models/casefilesModel";
 import { Media } from "../../models/mediaModel";
 import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
-
-const media_header = {
-	title: "「江案阅览」",
-	text: [
-		"一场对幸存者和证人的猎巫围剿",
-		"然而真相必然具备绝对的力量，长存不灭",
-	],
-	subtext:
-		"江秋莲诉刘鑫生命权纠纷案在公众平台、媒体的重要发布，本栏目尽力保存",
-	link: "https://am3pap007files.storage.live.com/y4mrQYXPK0wzkCTllrL1t052m_p4B9ILnOE5793RgUsEtrfwfpZEulDim8xljELSTBcdy0t4yCXVxk1kCQ2augpQxMlA_Or54EpA3qvq1V7PFaPmvqr-3lolzzN1BcN2QLdvY606SqMXscShYWiUg9HaVBU0jroxFbwnZ9iDhcZrtVwxzseQu4VuPTMYvTjM6YS?width=1920&height=460&cropmode=none",
-};
+import { media_text } from "../../components/HeroText";
 
 function MediaBody({ media }: { media: Media }) {
 	const select = media.writtenAt ? media.writtenAt : media.publishedAt!;
 	const select_date = new Date(select);
-	const date_string = getDate(select_date);
 	const media_url = `https://assets.wbavengers.com/${media.mediaUrl}`;
 	return (
 		<div className="m-[10px] bg-white rounded-lg">
@@ -43,7 +30,7 @@ function MediaBody({ media }: { media: Media }) {
 					</div>
 					<div>{getDate(new Date(media.writtenAt))}</div>
 				</div>
-				<div className="flex space-x-2 items-center">
+				<div className="flex space-x-2 pt-2 items-center">
 					{media.tags &&
 						media.tags.map((tag, index) => {
 							return (
@@ -86,7 +73,7 @@ function MediaBody({ media }: { media: Media }) {
 export default function MediaPost({ medias }: { medias: Media[] }) {
 	return (
 		<div className="bg-gray-100">
-			<Header {...media_header} />
+			<Header {...media_text} />
 			{medias.map((media, index) => {
 				return <MediaBody media={media} key={index} />;
 			})}

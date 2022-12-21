@@ -109,7 +109,7 @@ export default function PostPage({ post }: { post: Post }) {
 			<article className="bg-white border border-gray-200 rounded-lg shadow-sm">
 				<PostHeader post={post} />
 				<PostAbstract post={post} />
-				<div className="px-6 pb-5 space-y-5 text-justify text-[14px]">
+				<div className="px-6 pb-5 space-y-5 text-justify text-base">
 					<PortableText
 						value={post.body!}
 						components={LXPortableTextComponents}
