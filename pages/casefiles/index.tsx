@@ -241,7 +241,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="casefiles" &&!(_id in path("drafts.**"))]{
+    *[_type=="casefiles" &&!(_id in path("drafts.**"))]|order(_updatedAt desc){
 		title,
 		writtenAt,
 		mainImageUrl,
