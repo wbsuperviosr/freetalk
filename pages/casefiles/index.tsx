@@ -125,6 +125,7 @@ function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 		last_update: getDate(new Date(casefiles[0].writtenAt)),
 		menus: [years, classes],
 		show_active: false,
+		post_link: "https://wj.qq.com/s2/11424516/0a97",
 	};
 	return (
 		<div className="bg-gray-100">

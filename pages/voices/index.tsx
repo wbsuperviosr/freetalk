@@ -104,6 +104,7 @@ function Posts({ posts }: { posts: Post[] }) {
 		last_update: getDate(new Date(posts[0]._updatedAt)),
 		menus: [years, classes],
 		show_active: true,
+		post_link: "https://wj.qq.com/s2/11424514/f61c",
 	};
 
 	return (

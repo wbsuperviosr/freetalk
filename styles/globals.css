@@ -11,28 +11,15 @@
     margin-left: 15px;
 }
 
-:root {
-    --bg: #242526;
-    --bg-accent: #484a4d;
-    --text-color: #dadce1;
-    --nav-size: 60px;
-    --border: 1px solid #474a4d;
-    --border-radius: 8px;
-    --speed: 500ms;
+.pswp img {
+    max-width: none;
+    height: auto !important;
+    top: 35vh;
+    /* position:relative;
+    top:50%; */
+    /* transform: translateY(-50%); */
+    /* top:100px; */
 }
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: var(--text-color);
-    text-decoration: none;
-    ;
-}
-
 /* Top Navigation Bar */
 
 /* <nav> */

@@ -25,7 +25,7 @@ const rumor: CardProps = {
 	bg_image:
 		"https://am3pap007files.storage.live.com/y4muQj2M_PSlKoGLuj2tlpEVuMjEWINjLBgv6GOJvOKtqwS-gMXSNATGxmpd6wyZKbTKMfH8svq0T1mh7pI7IK01D7417lYGtfddpQ6uyy7AWQFwQf_0c2NNP7lNagHba3RiXovaMU2qtJglKloNaJngbIPD9tC9Swe17q8SbofdUS7dQO5uVrc8trji6hKmx0g?width=500&height=500&cropmode=none",
 	title: "辟谣问答",
-	description: "事实是？那些人尽皆知的谎言又是...？",
+	description: "那些人尽皆知的谎言是...？",
 	update: new Date(),
 	link: "/rumor",
 	dark: true,
@@ -45,7 +45,7 @@ const casefile: CardProps = {
 	bg_image:
 		"https://am3pap007files.storage.live.com/y4mWdEsP4cgD_gApnULBztQmtC5qmsj958ltBhiy0PP6It_ooNxQXIOe8H4J_4yJU3ALfWz_VZpDLT9mQIl_E4wjq6-NIrwcX6mmMo_OvUp7y4kbmQ60b2yUtmx0SIM4AAkJmMe3Gv_6w8etwynQTF-RXpjU-Y35j5gHpCJX1vWvn4K3j81p7460avn8JLf7p-n?width=500&height=500&cropmode=none",
 	title: "部分卷宗",
-	description: "有缘见到的仅有这些，也说明了许多",
+	description: "有缘见到的这些也说明了许多",
 	update: new Date(),
 	link: "/casefiles",
 	dark: true,
@@ -72,10 +72,10 @@ function Card(props: CardProps) {
 							{props.title}
 						</p>
 					</div>
-					<p className="text-[12px] md:text-lg">
+					<p className="text-[14px] md:text-lg">
 						{props.description}
 					</p>
-					<p className="font-bold text-[11px] md:text-[15px]">
+					<p className="font-bold text-[13px] md:text-[15px]">
 						最后更新：{getDate(props.update)}
 					</p>
 				</div>

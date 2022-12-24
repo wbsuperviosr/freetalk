@@ -224,10 +224,11 @@ function RumorPage({ rumors }: { rumors: Rumor[] }) {
 	const list_header = {
 		title: "谣言合集与澄清",
 		description:
-			"本站对网友整理收集的谣言澄清进行排版展示。本章节会一直持续更新，也希望各位网友踊跃参与进来，欢迎各位到@七_叶_(微博搜索）置顶微博下方留言分享你的证据。我们会定期收录。",
+			"本站对网友整理收集的谣言澄清进行排版展示。本章节会一直持续更新，也希望各位网友踊跃参与进来，欢迎各位点击下方按钮分享你的证据。我们会定期收录。",
 		last_update: getDate(new Date(rumors[rumors.length - 1]._updatedAt)),
 		menus: undefined,
 		show_active: false,
+		post_link: "https://wj.qq.com/s2/11424512/e925",
 	};
 
 	return (

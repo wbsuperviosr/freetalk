@@ -109,6 +109,7 @@ function MediaIndex({ medias }: { medias: Media[] }) {
 		last_update: getDate(new Date(medias[0]._updatedAt)),
 		menus: [years, classes],
 		show_active: false,
+		post_link: "https://wj.qq.com/s2/11424515/904b",
 	};
 
 	return (

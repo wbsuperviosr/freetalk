@@ -18,7 +18,7 @@ function MediaBody({ media }: { media: Media }) {
 	const select_date = new Date(select);
 	const media_url = `https://assets.wbavengers.com/${media.mediaUrl}`;
 	return (
-		<div className="m-[10px] bg-white rounded-lg">
+		<div className="m-[10px] bg-white rounded-lg min-h-[57vh]">
 			<div className="p-[22px]">
 				<div className="flex justify-between border-b-2 pb-2">
 					<div className="flex space-x-2">
@@ -53,7 +53,7 @@ function MediaBody({ media }: { media: Media }) {
 
 				{media.description && <div>{media.description}</div>}
 
-				<video controls autoPlay className="pt-2">
+				<video controls autoPlay className="py-5">
 					<source src={media_url} type="video/mp4" />
 				</video>
 

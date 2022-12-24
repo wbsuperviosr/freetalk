@@ -91,6 +91,7 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 		last_update: "更新：2022年12月22日 | 第0.1版[日志]",
 		menus: [years, names, types, infos],
 		show_active: false,
+		post_link: "https://wj.qq.com/s2/11424513/d27e",
 	};
 
 	return (

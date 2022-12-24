@@ -60,8 +60,8 @@ function ImageGallery({ image_urls }: { image_urls: ImageUrl[] }) {
 								cropped
 								original={image_url.urlField}
 								thumbnail={image_url.urlField}
-								width={width}
-								height={height}
+								// width={width}
+								// height={height}
 								key={index}
 							>
 								{({ ref, open }) => (

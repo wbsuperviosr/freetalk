@@ -8,6 +8,7 @@ type ListHeaderProps = {
 	description: string;
 	menus?: DropDownProps[];
 	show_active: boolean;
+	post_link?: string;
 };
 
 export function ListHeader({
@@ -16,6 +17,7 @@ export function ListHeader({
 	description,
 	menus,
 	show_active,
+	post_link,
 }: ListHeaderProps) {
 	const isActive =
 		menus && sum(menus!.map((menu) => calcMapSum(menu.options.state)));
@@ -29,6 +31,15 @@ export function ListHeader({
 				</div>
 				<div className="p-6">
 					<p className="text-sm text-justify">{description}</p>
+
+					{post_link && (
+						<div className="text-sm bg-lxd text-white rounded-lg mx-20 mt-5">
+							<a href={post_link} target="_blank" rel="noopener">
+								我要投稿
+							</a>
+						</div>
+					)}
+
 					{menus && (
 						<div
 							className={`border-2 my-5 py-2 border-gray-300 rounded-lg flex justify-between ${px}`}
@@ -38,7 +49,6 @@ export function ListHeader({
 							))}
 						</div>
 					)}
-
 					{menus && isActive !== 0 && show_active && (
 						<div className="text-xs">
 							<span className="font-bold">当前展示：</span>
