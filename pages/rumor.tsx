@@ -20,7 +20,7 @@ import "photoswipe/dist/photoswipe.css";
 
 type RumorDetailProps = {
 	text: string;
-	people: string;
+	people: string[];
 	images?: RumorImage[];
 	posts?: RumorPost[];
 };
@@ -28,29 +28,57 @@ type RumorDetailProps = {
 function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 	const [postOpen, setPostOpen] = React.useState(false);
 
-	const htmlString = (url: string) => `
-	<div style="
-	  color: white;
-	  display: flex;
-	  place-content: center;
-	  flex-direction: column;
-	  height: 100%;
-	  widht:100%,
-	  text-align: center;
-	">
-	  <img src="${url}"/>
-	</div>
-	`;
+	const htmlString = (url: string) => {
+		let src = "";
+		const domain = "https://assets.wbavengers.com/";
+		if (url.startsWith("https")) {
+			src = url;
+		} else {
+			if (url.endsWith("mp4")) {
+				src = `
+				<video controls autoPlay>
+					<source src='${domain}${url}' type="video/mp4" />
+				</video>
+				`;
+			} else {
+				src = `
+				<img src="${domain}${url}"/>
+				`;
+			}
+		}
 
+		const html_string = `
+			<div style="
+			color: white;
+			display: flex;
+			place-content: center;
+			flex-direction: column;
+			height: 100%;
+			widht:100%,
+			text-align: center;
+			">
+			${src}
+			</div>
+			`;
+		return html_string;
+	};
 	return (
 		<div className="bg-gray-200 rounded-md">
 			<div className="text-sm p-3 border-b-2 border-white">{text}</div>
 			<div className="p-3">
-				<div className="flex items-center space-x-1">
-					<AiOutlineUser className="w-3" />
-					<p className="text-sm text-lxd">{people}</p>
-				</div>
-				{images && (
+				{people && (
+					<div className="flex items-center space-x-1">
+						<AiOutlineUser className="w-3" />
+						{people.map((p, index) => {
+							return (
+								<p className="text-sm text-lxd" key={index}>
+									{p}
+								</p>
+							);
+						})}
+					</div>
+				)}
+				{images && images.length != 0 && (
 					<div className="flex items-center space-x-1">
 						<IoImageOutline className="w-3" />
 						<Gallery>
@@ -73,7 +101,7 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 											>
 												{index == 0 && (
 													<p className="text-sm text-lxd">
-														点击查看图片
+														点击查看媒体资料
 													</p>
 												)}
 											</a>
@@ -96,9 +124,9 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 				{postOpen && (
 					<div className="block pl-5">
 						<ul className="list-disc list-inside">
-							{posts!.map((post) => {
+							{posts!.map((post, index) => {
 								return (
-									<li>
+									<li key={index}>
 										<a
 											href={post.urlField}
 											target="_blank"
@@ -142,12 +170,12 @@ function RumorItem({ rumor }: { rumor: Rumor }) {
 	};
 
 	return (
-		<div className="mx-7 py-1">
-			<div className="border-b-2 pb-1">
+		<div className="mx-7 py-1 pb-3">
+			<div className="border-b-2 pb-1 text-[15px]">
 				{rumor.question}
-				{rumor.question.endsWith("?") ? "" : "?"}
+				{rumor.question.endsWith("？") ? "" : "?"}
 			</div>
-			<div className="flex justify-between pt-2">
+			<div className="flex justify-between pt-1">
 				<div className="flex space-x-3">
 					<div
 						className={`flex items-center rounded-t-md p-1 space-x-1 ${

@@ -33,11 +33,13 @@ export function ListHeader({
 					<p className="text-sm text-justify">{description}</p>
 
 					{post_link && (
-						<div className="text-sm bg-lxd text-white rounded-lg mx-20 mt-5">
-							<a href={post_link} target="_blank" rel="noopener">
-								我要投稿
-							</a>
-						</div>
+						<a href={post_link} target="_blank" rel="noopener">
+							<div className="flex justify-center text-center mt-5 ">
+								<p className="w-24 text-sm px-2 bg-lxd text-white rounded-lg">
+									我要投稿
+								</p>
+							</div>
+						</a>
 					)}
 
 					{menus && (

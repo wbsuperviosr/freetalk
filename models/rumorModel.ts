@@ -24,8 +24,8 @@ export interface Rumor {
 	rumor: string;
 	rumor_images: RumorImage[];
 	rumor_posts: RumorPost[];
-	rumor_spreader: string;
-	rumor_victim: string;
+	rumor_spreader: string[];
+	rumor_victim: string[];
 	tags: string[];
 	truth: string;
 	truth_images: RumorImage[];
