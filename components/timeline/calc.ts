@@ -8,7 +8,7 @@ export function getDate(date: string) {
 export function getTime(time: string) {
 	const [hh, mm] = time.split(":");
 	if (mm == "XX") {
-		return `${hh}点`;
+		return `${hh}点左右`;
 	} else if (mm == "AA") {
 		return `${hh}点之前`;
 	} else if (mm == "BB") {

@@ -67,7 +67,7 @@ export function TimelineCard({
 								{timeline.title}
 							</div>
 						</div>
-						<div className="flex-col px-3 pr-5  text-sm text-justify border-b-2 pb-2">
+						<div className="flex-col px-3 pr-5 space-y-2 text-sm text-justify border-b-2 pb-2">
 							{isSummarized && !expand && (
 								<PortableText
 									value={summary as Event[]}

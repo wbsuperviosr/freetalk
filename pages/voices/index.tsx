@@ -10,13 +10,14 @@ import {
 	makeDropDownMenu,
 } from "../../components/menu/DropDownSelect";
 import { inferTarget } from "../../components/menu/utils";
-import { Post } from "../../models/postModel";
+import { Author, Post } from "../../models/postModel";
 import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
 import { common_voice } from "../../components/HeroText";
 import { limit_text } from "../../utils/limitText";
 import { ListHeader } from "../../components/ListHeader";
 import { unique } from "../../utils/ArrayOps";
+import { AiOutlineUser } from "react-icons/ai";
 
 function PostDetail({ post, menus }: { post: Post; menus: DropDownProps[] }) {
 	const isTarget = inferTarget(post, menus);
@@ -83,12 +84,20 @@ function PostList({ posts, menus }: { posts: Post[]; menus: DropDownProps[] }) {
 
 function Posts({ posts }: { posts: Post[] }) {
 	const getYear = (post: Post) => `${new Date(post.writtenAt).getFullYear()}`;
+	const getAuthor = (post: Post) => post.author.name;
 	const yearsList = unique(posts, getYear);
+	const authorList = unique(posts, getAuthor);
 	const years = makeDropDownMenu(
 		"时间",
 		<CalendarDaysIcon className="w-3" />,
 		yearsList,
 		getYear
+	);
+	const authors = makeDropDownMenu(
+		"作者",
+		<AiOutlineUser className="w-3" />,
+		authorList,
+		getAuthor
 	);
 	const classes = makeDropDownMenu(
 		"类别",
@@ -102,18 +111,17 @@ function Posts({ posts }: { posts: Post[] }) {
 		description:
 			"这里是社会各界人士对江歌案的讨论。感谢各位网友的热心整理贡献，本栏目会持续更新，也希望大家踊跃投稿，我们坚信江歌案给社会的价值不应该只有仇恨。您可以通过下方按钮对文章进行筛选阅读",
 		last_update: getDate(new Date(posts[0]._updatedAt)),
-		menus: [years, classes],
+		menus: [years, authors, classes],
 		show_active: true,
 		post_link: "https://wj.qq.com/s2/11424514/f61c",
 	};
-
 	return (
 		<div className="max-w-7xl mx-auto bg-gray-100">
 			<Header {...common_voice} />
 
 			<ListHeader {...list_header} />
 
-			<PostList posts={posts} menus={[years, classes]} />
+			<PostList posts={posts} menus={[years, authors, classes]} />
 			<Footer />
 		</div>
 	);
