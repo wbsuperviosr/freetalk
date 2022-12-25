@@ -29,7 +29,7 @@ export const LXPortableTextComponents: PTC = {
 				? props.value.href
 				: `${domain}/${props.value.href}`;
 			return (
-				<video controls autoPlay>
+				<video controls>
 					<source src={source} type="video/mp4" />
 				</video>
 			);

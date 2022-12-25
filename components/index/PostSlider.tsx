@@ -34,16 +34,18 @@ export function SlidePicture({ post }: { post: Post }) {
 			>
 				<div className="">
 					<div className="flex space-x-2 text-xs font-bold items-center text-center pb-1 md:text-lg">
-						<p>{mainCategory}</p>
-						{post.category && <p>|</p>}
-						{post.category && <p>{post.category}</p>}
+						<p className="text-white">{mainCategory}</p>
+						{post.category && <p className="text-white">|</p>}
+						{post.category && (
+							<p className="text-white">{post.category}</p>
+						)}
 					</div>
 
 					<div className="items-center text-center bg-white text-xl text-black font-bold px-2 py-[2px] rounded-md w-72 flex-wrap overflow-hidden md:text-2xl md:w-96">
 						{post.title}
 					</div>
 
-					<div className="flex justify-end space-x-2 pt-1 text-sm text-right  tracking-wide md:text-lg">
+					<div className="flex justify-end space-x-2 pt-1 text-sm text-right  tracking-wide md:text-lg text-white">
 						<p>作者:{post.author.name}</p>
 						<p>|</p>
 						<p>{getDate(new Date(post.writtenAt!))}</p>

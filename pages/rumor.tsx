@@ -32,11 +32,11 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 		let src = "";
 		const domain = "https://assets.wbavengers.com/";
 		if (url.startsWith("https")) {
-			src = url;
+			src = `<img src="${url}"/>`;
 		} else {
 			if (url.endsWith("mp4")) {
 				src = `
-				<video controls autoPlay>
+				<video controls>
 					<source src='${domain}${url}' type="video/mp4" />
 				</video>
 				`;
