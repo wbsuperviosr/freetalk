@@ -5,6 +5,41 @@ interface PTC extends PortableTextComponents {
 	block: any;
 }
 
+function renderTable(raw_string: string) {
+	const rows = raw_string.split(";");
+
+	return (
+		<table className="table-fixed text-sm border-spacing-2 font-noto font-extralight border-collapse border border-slate-400 w-full">
+			<thead>
+				<tr>
+					{rows[0].split("|").map((item, j) => (
+						<th className="border border-slate-300" key={j}>
+							{item}
+						</th>
+					))}
+				</tr>
+			</thead>
+
+			<tbody>
+				{rows.slice(1, rows.length - 1).map((row, index) => {
+					return (
+						<tr key={index}>
+							{row.split("|").map((item, k) => (
+								<th
+									className="border px-2 border-slate-300"
+									key={k}
+								>
+									{item}
+								</th>
+							))}
+						</tr>
+					);
+				})}
+			</tbody>
+		</table>
+	);
+}
+
 export const LXPortableTextComponents: PTC = {
 	marks: {
 		link: (props: any) => {
@@ -40,7 +75,7 @@ export const LXPortableTextComponents: PTC = {
 	},
 	list: {
 		bullet: ({ children }) => (
-			<ul className="py-0 ml-1 list-sisc list-inside">{children}</ul>
+			<ul className="py-0 ml-1 list-disc list-inside">{children}</ul>
 		),
 		number: ({ children }) => (
 			<ol className="py-0 ml-1 list-decimal list-inside">{children}</ol>
@@ -75,6 +110,9 @@ export const LXPortableTextComponents: PTC = {
 		},
 		h6: ({ children }: { children: string }) => {
 			return <h6 className="text-md font-bold py-2">{children}</h6>;
+		},
+		table: ({ children }: { children: string }) => {
+			return renderTable(children[0]);
 		},
 	},
 };
