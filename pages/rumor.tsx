@@ -171,9 +171,14 @@ function RumorItem({ rumor }: { rumor: Rumor }) {
 
 	return (
 		<div className="mx-7 py-1 pb-3">
-			<div className="border-b-2 pb-1 text-[15px]">
-				{rumor.question}
-				{rumor.question.endsWith("？") ? "" : "?"}
+			<div className="flex border-b-2 pb-1 items-center space-x-2">
+				<div className="w-5">
+					<div className="w-4 h-4 bg-lxl rounded-full"></div>
+				</div>
+				<div className="text-[15px] flex-wrap">
+					{rumor.question}
+					{rumor.question.endsWith("？") ? "" : "?"}
+				</div>
 			</div>
 			<div className="flex justify-between pt-1">
 				<div className="flex space-x-3">
