@@ -1,6 +1,6 @@
 import { PortableTextComponents } from "@portabletext/react";
-// import { Player } from 'video-react';
 
+const domain = "https://assets.wbavengers.com";
 interface PTC extends PortableTextComponents {
 	block: any;
 }
@@ -26,7 +26,7 @@ function renderTable(raw_string: string) {
 						<tr key={index}>
 							{row.split("|").map((item, k) => (
 								<th
-									className="border px-2 border-slate-300"
+									className="border overflow-hidden px-2 border-slate-300 font-light"
 									key={k}
 								>
 									{item}
@@ -50,16 +50,19 @@ export const LXPortableTextComponents: PTC = {
 			);
 		},
 		imagelink: (props: any) => {
-			return <img src={props.value.href} alt={props.text} />;
+			let src = "";
+			if (props.value.href.startsWith("https")) {
+				src = props.value.href;
+			} else {
+				src = `${domain}/${props.value.href}`;
+			}
+
+			return <img src={src} alt={props.text} className="w-full" />;
 		},
 		internalLink: (props: any) => {
 			return <span>{props.children}</span>;
 		},
 		videolink: (props: any) => {
-			// return <Player autoPlay>
-			//     <source src={props.value.href}></source>
-			// </Player>
-			const domain = "https://assets.wbavengers.com";
 			const source = props.value.href.startsWith("https")
 				? props.value.href
 				: `${domain}/${props.value.href}`;

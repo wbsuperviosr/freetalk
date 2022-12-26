@@ -22,9 +22,9 @@ export function slideButtons({ posts }: { posts: Post[] }) {
 
 export function SlidePicture({ post }: { post: Post }) {
 	const mainCategory = post.author.name == "刘鑫" ? "暖曦话语" : "观者评说";
-
+	const slash = post.author.name == "刘鑫" ? "posts" : "voices";
 	return (
-		<Link href={`/posts/${post.slug.current}`}>
+		<Link href={`/${slash}/${post.slug.current}`}>
 			<div
 				className="relative flex m-auto object-fit w-full h-40 rounded-t-xl items-center justify-center"
 				style={{
@@ -53,7 +53,7 @@ export function SlidePicture({ post }: { post: Post }) {
 				</div>
 			</div>
 			<div className="px-4 text-black text-[13px] pt-5 tracking-widest md:text-lg md:px-10">
-				「{limit_text(post.description, 100)}」
+				「{limit_text(post.description, 80)}」
 			</div>
 		</Link>
 	);

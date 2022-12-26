@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="post" && featured&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
+    *[_type==$type && featured&&!(_id in path("drafts.**"))]|order(_updatedAt desc){
       _id, 
       _createdAt,
       _updatedAt,
@@ -85,8 +85,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
       publishedAt,
       writtenAt,
       description
-    }
+    }[0..2]
   `;
+
 	const liuxin_vocie_query = `
     *[_type=="post"&&!(_id in path("drafts.**"))]{
       title,
@@ -106,7 +107,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
       }[0]
   `;
 
-	const headlinePosts: Post[] = await client.fetch(post_query);
+	const headlinePosts1: Post[] = await client.fetch(post_query, {
+		type: "post",
+	});
+	const headlinePosts2: Post[] = await client.fetch(post_query, {
+		type: "voice",
+	});
+	const headlinePosts = headlinePosts1.concat(headlinePosts2);
 	const liuxin: VoiceQResult = await client.fetch(liuxin_vocie_query);
 	const viewer: VoiceQResult = await client.fetch(viewer_vocie_query);
 
