@@ -62,9 +62,14 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 			`;
 		return html_string;
 	};
+	console.log(text);
 	return (
 		<div className="bg-gray-200 rounded-md">
-			<div className="text-sm p-3 border-b-2 border-white">{text}</div>
+			<div className="text-sm p-3 border-b-2 border-white">
+				{text.split("\n").map((p) => (
+					<p className="pb-1">{p}</p>
+				))}
+			</div>
 			<div className="p-3">
 				{people && (
 					<div className="flex items-center space-x-1">
@@ -112,7 +117,7 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 						</Gallery>
 					</div>
 				)}
-				{posts && (
+				{posts && posts.length != 0 && (
 					<div
 						className="flex items-center space-x-1"
 						onClick={() => setPostOpen(!postOpen)}
