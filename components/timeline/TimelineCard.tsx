@@ -15,24 +15,39 @@ import { inferTarget } from "../menu/utils";
 import ExternalEvidence from "./ExternalEvidence";
 import { ImageEvidence } from "./ImageEvidence";
 import { DropDownProps } from "../menu/DropDownSelect";
-import { time } from "console";
 
-function makeSummary(eventText: Event[], threhold: number = 140) {
-	let summary: Event[] = JSON.parse(JSON.stringify(eventText.slice(0, 1)));
-	let isSummarized: boolean = false;
-
-	if (eventText.length > 1) {
-		if (eventText[eventText.length - 1].children[0].text !== "") {
-			isSummarized = true;
+function find_breakpoint(eventText: Event[], threhold: number = 140) {
+	let count = 0;
+	let i = 0;
+	let j = 0;
+	let block;
+	let span;
+	for ([i, block] of eventText.entries()) {
+		for ([j, span] of block.children.entries()) {
+			count += span.text.length;
+			if (count > threhold) {
+				return [i, j];
+			}
 		}
 	}
+	return [i, j];
+}
 
-	if (summary[0].children[0].text.length > threhold) {
-		summary[0].children[0].text = summary[0].children[0].text.slice(
-			0,
-			threhold
-		);
-		isSummarized = true;
+function makeSummary(eventText: Event[], threhold: number = 50) {
+	let summary: Event[] = JSON.parse(JSON.stringify(eventText));
+	const [block_i, span_j] = find_breakpoint(eventText, threhold);
+	summary.length = block_i + 1;
+	summary[block_i].children.length = span_j + 1;
+
+	let isSummarized = false;
+
+	if (eventText.length >= block_i + 1) {
+		if (
+			summary[block_i].children.length <
+			eventText[block_i].children.length
+		) {
+			isSummarized = true;
+		}
 	}
 
 	return [summary, isSummarized];
@@ -53,12 +68,15 @@ export function TimelineCard({
 	}
 
 	const isTarget = inferTarget(timeline, menus);
+
 	return (
 		<>
 			{isTarget && (
-				<div className="transform transition hover:-translate-y-2 ml-6 relative flex items-center pb-4 bg-white text-black rounded-lg border border-gray-300 mb-4 shadow-sm flex-col space-y-4 z-10 cursor-default">
+				<div className="transform  ml-6 relative flex items-center pb-4 bg-white text-black rounded-lg border border-gray-300 mb-4 shadow-sm flex-col space-y-4 z-10 cursor-default">
 					<div className="w-5 h-5 bg-white absolute -left-[26px] -translate-y-[1px] transform -translate-x-2/4 rounded-full z-10 mt-2 border-4 border-s border-lxd border-spacing-4"></div>
-					<div className="w-8 h-[2px] bg-gray-300 absolute -left-8 z-0"></div>
+					{timeline.event && (
+						<div className="w-8 h-[2px] bg-gray-300 absolute -left-8 z-0"></div>
+					)}
 					<div className="flex-row justify-start w-full">
 						<div className="rounded-lg -translate-x-[0px]">
 							<div className="pl-3 flex space-x-2 text-xs bg-lxd -translate-y-2 mr-2 text-white rounded-tr-lg">
@@ -72,35 +90,38 @@ export function TimelineCard({
 								{timeline.title}
 							</div>
 						</div>
-						<div className="flex-col px-3 pr-5 space-y-2 text-sm text-justify border-b-2 pb-2">
-							{isSummarized && !expand && (
-								<PortableText
-									value={summary as Event[]}
-									components={LXPortableTextComponents}
-								/>
-							)}
-							{(!isSummarized || expand) && (
-								<PortableText
-									value={timeline.event}
-									components={LXPortableTextComponents}
-								/>
-							)}
-							{isSummarized && (
-								<div
-									className="flex justify-end"
-									onClick={() => setExpand(!expand)}
-								>
-									<span className="block font-bold text-lxd">
-										{expand ? "...收起" : "...展开"}
-									</span>
-									{expand ? (
-										<ChevronUpIcon className="w-3 fill-lxd" />
-									) : (
-										<ChevronRightIcon className="w-3 fill-lxd" />
-									)}
-								</div>
-							)}
-						</div>
+
+						{timeline.event && (
+							<div className="flex-col px-3 pr-5 space-y-2 text-sm text-justify border-b-2 pb-2">
+								{isSummarized && !expand && (
+									<PortableText
+										value={summary as Event[]}
+										components={LXPortableTextComponents}
+									/>
+								)}
+								{(!isSummarized || expand) && (
+									<PortableText
+										value={timeline.event}
+										components={LXPortableTextComponents}
+									/>
+								)}
+								{isSummarized && (
+									<div
+										className="flex justify-end mt-0"
+										onClick={() => setExpand(!expand)}
+									>
+										<span className="block font-bold text-lxd">
+											{expand ? "...收起" : "...展开"}
+										</span>
+										{expand ? (
+											<ChevronUpIcon className="w-3 fill-lxd" />
+										) : (
+											<ChevronRightIcon className="w-3 fill-lxd" />
+										)}
+									</div>
+								)}
+							</div>
+						)}
 
 						<div className="px-3 flex pt-3 space-x-2 items-center ">
 							<div className="flex space-x-1 items-center ">

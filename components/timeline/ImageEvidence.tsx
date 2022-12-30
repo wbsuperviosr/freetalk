@@ -18,7 +18,7 @@ export function ImageEvidence({ image_urls }: { image_urls: ImageUrl[] }) {
 		  place-content: center;
 		  flex-direction: column;
 		  height: 100%;
-		  widht:100%,
+		  width:100%,
 		  text-align: center;
 		">
 		  <img src="${url}"/>
