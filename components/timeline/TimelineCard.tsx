@@ -15,6 +15,7 @@ import { inferTarget } from "../menu/utils";
 import ExternalEvidence from "./ExternalEvidence";
 import { ImageEvidence } from "./ImageEvidence";
 import { DropDownProps } from "../menu/DropDownSelect";
+import { time } from "console";
 
 function makeSummary(eventText: Event[], threhold: number = 140) {
 	let summary: Event[] = JSON.parse(JSON.stringify(eventText.slice(0, 1)));
@@ -45,7 +46,11 @@ export function TimelineCard({
 	menus: DropDownProps[];
 }) {
 	const [expand, setExpand] = React.useState(false);
-	const [summary, isSummarized] = makeSummary(timeline.event);
+	let summary: any;
+	let isSummarized: any;
+	if (timeline.event) {
+		[summary, isSummarized] = makeSummary(timeline.event);
+	}
 
 	const isTarget = inferTarget(timeline, menus);
 	return (
@@ -117,8 +122,19 @@ export function TimelineCard({
 							)}
 						</div>
 
-						<ImageEvidence image_urls={timeline.image_urls} />
-						<ExternalEvidence source_urls={timeline.source_urls} />
+						{timeline.image_urls &&
+							timeline.image_urls.length != 0 && (
+								<ImageEvidence
+									image_urls={timeline.image_urls}
+								/>
+							)}
+
+						{timeline.source_urls &&
+							timeline.source_urls.length != 0 && (
+								<ExternalEvidence
+									source_urls={timeline.source_urls}
+								/>
+							)}
 
 						<div className="flex pt-1">
 							{timeline.tags && (

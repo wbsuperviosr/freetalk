@@ -163,12 +163,14 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 		(timeline: Timeline) => timeline.source
 	);
 
+	const menus = [years, names, types];
+
 	const list_header = {
 		title: "江刘案相关事件时间线 ：2017-2022",
 		description:
 			"时间线可以根据不同的方式进行筛选。例如，按时间年份查看，按事件人物查看，按事件性质查看，和按事件信息来源查看。感谢：@孤独的开心果酱，@灰石eye进行整理。",
 		last_update: "更新：2022年12月22日 | 第0.1版[日志]",
-		menus: [years, names, types, infos],
+		menus: menus,
 		show_active: false,
 		post_link: "https://wj.qq.com/s2/11424513/d27e",
 	};
@@ -179,10 +181,7 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 			<div className="bg-gray-100 p-3 ">
 				<ListHeader {...list_header} />
 
-				<TimelineList
-					timelines={timelines}
-					menus={[years, names, types, infos]}
-				/>
+				<TimelineList timelines={timelines} menus={menus} />
 				<Footer />
 			</div>
 		</div>
