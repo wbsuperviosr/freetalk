@@ -70,8 +70,8 @@ function PostDetail({ post, menus }: { post: Post; menus: DropDownProps[] }) {
 function PostList({ posts, menus }: { posts: Post[]; menus: DropDownProps[] }) {
 	return (
 		<div>
-			{posts.map((post) => {
-				return <PostDetail post={post} menus={menus} />;
+			{posts.map((post, index) => {
+				return <PostDetail post={post} menus={menus} key={index} />;
 			})}
 		</div>
 	);
@@ -97,7 +97,7 @@ function Posts({ posts }: { posts: Post[] }) {
 	const list_header = {
 		title: "刘鑫在过去和现在所有社交平台的发言",
 		description:
-			"这里是自2017年5月七刘鑫再网上尽力留下的声音。感谢各位网友的热心整理贡献，本栏目会持续更新，也希望大家踊跃投稿。您可以通过下方按钮对文章进行筛选阅读",
+			"这里是自2017年5月起刘鑫再网上尽力留下的声音。感谢各位网友的热心整理贡献，本栏目会持续更新，也希望大家踊跃投稿。您可以通过下方按钮对文章进行筛选阅读",
 		last_update: getDate(new Date(posts[0]._updatedAt)),
 		menus: [years, classes],
 		show_active: true,

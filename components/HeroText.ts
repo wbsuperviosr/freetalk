@@ -17,10 +17,7 @@ export const home_text = {
 
 export const rumor_text = {
 	title: "「江刘之案」",
-	text: [
-		"一场对幸存者和证人的猎巫围剿",
-		"然而真相必然具备绝对的力量，长存不灭",
-	],
+	text: ["幸存者和证人不应该被猎巫围剿", "真相必然具备绝对的力量，长存不灭"],
 	subtext: [
 		"江秋莲诉刘鑫生命权纠纷案在公众平台、媒体的",
 		"重要发布，本栏目尽力保存",
@@ -30,10 +27,7 @@ export const rumor_text = {
 
 export const timeline_text = {
 	title: "「江案阅览」",
-	text: [
-		"一场对幸存者和证人的猎巫围剿",
-		"然而真相必然具备绝对的力量，长存不灭",
-	],
+	text: ["幸存者和证人不应该被猎巫围剿", "真相必然具备绝对的力量，长存不灭"],
 	subtext: [
 		"江秋莲诉刘鑫生命权纠纷案在公众平台、媒体的",
 		"重要发布，本栏目尽力保存",
@@ -61,7 +55,7 @@ export const nuanxi_voice = {
 export const media_text = {
 	title: "「江案阅览」",
 	text: [
-		"一场对幸存者和证人的猎巫围剿",
+		"幸存者和证人不应该被猎巫围剿",
 		"然而真相必然具备绝对的力量，长存不灭",
 	],
 	subtext: [

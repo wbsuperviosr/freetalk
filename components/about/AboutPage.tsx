@@ -40,7 +40,6 @@ export default function AboutPage({
 		});
 	};
 	const isCenter = center ? "text-center" : "text-justify";
-	console.log(center);
 	return (
 		<div className="max-w-6xl mx-auto  bg-gray-100" id="top">
 			<Header {...about_us} />
@@ -55,7 +54,7 @@ export default function AboutPage({
 
 					{post.quote && <AboutAbstract post={post} />}
 
-					<div className={`mt-10  space-y-5 ${isCenter} text-[14px]`}>
+					<div className={`mt-10  space-y-5 ${isCenter} text-[16px]`}>
 						<PortableText
 							value={post.content}
 							components={LXPortableTextComponents}
@@ -80,7 +79,7 @@ export default function AboutPage({
 					{button && (
 						<div className="flex justify-end">
 							<div
-								className="px-[7px] py-[3px] text-[10px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"
+								className="px-[7px] py-[3px] text-[14px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"
 								onClick={bottomToTop}
 							>
 								回到顶部

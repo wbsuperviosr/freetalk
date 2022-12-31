@@ -62,12 +62,13 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 			`;
 		return html_string;
 	};
-	console.log(text);
 	return (
 		<div className="bg-gray-200 rounded-md">
 			<div className="text-sm p-3 border-b-2 border-white">
-				{text.split("\n").map((p) => (
-					<p className="pb-1">{p}</p>
+				{text.split("\n").map((p, index) => (
+					<p className="pb-1" key={index}>
+						{p}
+					</p>
 				))}
 			</div>
 			<div className="p-3">
@@ -88,7 +89,34 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 						<IoImageOutline className="w-3" />
 						<Gallery>
 							{images.map((image, index) => {
-								return (
+								return image.width ? (
+									<Item
+										key={index}
+										original={image.urlField}
+										thumbnail={image.urlField}
+										width={image.width}
+										height={image.height}
+									>
+										{({ ref, open }) => (
+											<a
+												href="#"
+												onClick={(e) => {
+													e.preventDefault();
+													open(e);
+												}}
+												ref={
+													ref as React.MutableRefObject<HTMLAnchorElement>
+												}
+											>
+												{index == 0 && (
+													<p className="text-sm text-lxd">
+														点击查看媒体资料
+													</p>
+												)}
+											</a>
+										)}
+									</Item>
+								) : (
 									<Item
 										key={index}
 										html={htmlString(image.urlField)}

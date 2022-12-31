@@ -14,7 +14,6 @@ import { getClient } from "../../utils/sanity";
 import { media_text } from "../../components/HeroText";
 
 function secondsToMins(seconds: number) {
-	console.log("in func", seconds);
 	const min = Math.floor(seconds / 60);
 	const sec = Math.floor(seconds - min * 60);
 	return `${min}分${sec}秒`;

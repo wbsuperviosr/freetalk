@@ -3,6 +3,8 @@ export interface RumorImage {
 	_type: string;
 	urlField: string;
 	url_title: string;
+	width?: string;
+	height?: string;
 }
 
 export interface RumorPost {

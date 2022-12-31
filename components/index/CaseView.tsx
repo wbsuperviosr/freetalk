@@ -75,7 +75,7 @@ function Card(props: CardProps) {
 					<p className="text-[14px] md:text-lg">
 						{props.description}
 					</p>
-					<p className="font-bold text-[13px] md:text-[15px]">
+					<p className="font-bold text-[12px] md:text-[15px]">
 						最后更新：{getDate(props.update)}
 					</p>
 				</div>
