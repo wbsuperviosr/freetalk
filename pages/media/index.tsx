@@ -105,7 +105,7 @@ function MediaIndex({ medias }: { medias: Media[] }) {
 	const list_header = {
 		title: "影音合集",
 		description:
-			"本栏目对公开影音资料进行收集和整理，感谢各位网友的整理的无私分享。可以根据以下规则进行媒体内容内容的删选。",
+			"本栏目对公开影音资料进行收集和整理，感谢各位网友的整理的无私分享。可以根据以下规则进行媒体内容内容的筛选。",
 		last_update: getDate(new Date(medias[0]._updatedAt)),
 		menus: [years, classes],
 		show_active: false,

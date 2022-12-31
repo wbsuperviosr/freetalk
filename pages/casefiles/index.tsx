@@ -121,7 +121,7 @@ function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 	const list_header = {
 		title: "部分卷宗展示",
 		description:
-			"本站仅对【公开】卷宗进行搬运， 并为了增强阅读体验，进行了卷宗的重新排版，感谢各位网友的整理的无私分享。可以根据以下规则进行卷宗内容的删选。",
+			"本站仅对【公开】卷宗进行搬运， 并为了增强阅读体验，进行了卷宗的重新排版，感谢各位网友的整理的无私分享。可以根据以下规则进行卷宗内容的筛选。",
 		last_update: getDate(new Date(casefiles[0].writtenAt)),
 		menus: [years, classes],
 		show_active: false,
