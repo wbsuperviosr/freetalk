@@ -122,6 +122,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		  image_urls[]{
 			urlField,
 			url_title,
+			width,
+			height
 		  },
 		  source_urls[]{
 			urlField,

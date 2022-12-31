@@ -27,6 +27,8 @@ export interface Event {
 export interface ImageUrl {
 	urlField: string;
 	url_title: string;
+	height: string;
+	width: string;
 }
 
 export interface Person {

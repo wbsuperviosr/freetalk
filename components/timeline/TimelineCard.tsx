@@ -13,7 +13,7 @@ import { LXPortableTextComponents } from "../PortableText";
 import { getDate, getTime } from "./calc";
 import { inferTarget } from "../menu/utils";
 import ExternalEvidence from "./ExternalEvidence";
-import { ImageEvidence } from "./ImageEvidence";
+import { ImageEvidence } from "./ImageEvidenceNew";
 import { DropDownProps } from "../menu/DropDownSelect";
 import { time } from "console";
 
@@ -68,13 +68,6 @@ export function TimelineCard({
 	let isSummarized: any;
 	if (timeline.event) {
 		[summary, isSummarized] = makeSummary(timeline.event);
-	}
-
-	if (
-		timeline.title ==
-		"刘鑫向母亲和江秋莲打视频电话，在视频通话中哭着一直向江秋莲道歉"
-	) {
-		console.log(summary, timeline.event);
 	}
 
 	const isTarget = inferTarget(timeline, menus);
