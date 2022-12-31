@@ -28,23 +28,33 @@ type RumorDetailProps = {
 function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 	const [postOpen, setPostOpen] = React.useState(false);
 
+	const prepend_domain = (url: string) => {
+		const domain = "https://assets.wbavengers.com/";
+		let src = "";
+		if (url.startsWith("https")) {
+			src = url;
+		} else {
+			src = `${domain}${url}`;
+		}
+
+		return src;
+	};
+
 	const htmlString = (url: string) => {
 		let src = "";
-		const domain = "https://assets.wbavengers.com/";
-		if (url.startsWith("https")) {
-			src = `<img src="${url}"/>`;
+
+		const urlparsed = prepend_domain(url);
+
+		if (url.endsWith("mp4")) {
+			src = `
+			<video controls>
+				<source src='${urlparsed}' type="video/mp4" />
+			</video>
+			`;
 		} else {
-			if (url.endsWith("mp4")) {
-				src = `
-				<video controls>
-					<source src='${domain}${url}' type="video/mp4" />
-				</video>
-				`;
-			} else {
-				src = `
-				<img src="${domain}${url}"/>
-				`;
-			}
+			src = `
+			<img src="${urlparsed}"/>
+			`;
 		}
 
 		const html_string = `
@@ -92,8 +102,12 @@ function RumorDetail({ text, people, images, posts }: RumorDetailProps) {
 								return image.width ? (
 									<Item
 										key={index}
-										original={image.urlField}
-										thumbnail={image.urlField}
+										original={prepend_domain(
+											image.urlField
+										)}
+										thumbnail={prepend_domain(
+											image.urlField
+										)}
 										width={image.width}
 										height={image.height}
 									>
