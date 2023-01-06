@@ -45,7 +45,7 @@ export const common_voice = {
 export const nuanxi_voice = {
 	title: "「暖曦话语」",
 	text: [
-		"我被掩藏过，打败过，我叶充满着针扎和无奈",
+		"我被掩藏过，打败过，我也充满着挣扎和无奈",
 		"现在只希望网友也能通过我了解事情的另一面",
 	],
 	subtext: ["这里是自2017年5月起", "刘鑫在网上尽力留下的声音"],
