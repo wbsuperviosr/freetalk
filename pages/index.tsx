@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   `;
 
 	const liuxin_vocie_query = `
-    *[_type=="post"&&!(_id in path("drafts.**"))]{
+    *[_type=="post"&&!(_id in path("drafts.**"))]|order(writtenAt desc){
       title,
       slug,
       author->{name},
@@ -98,7 +98,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       }[0]
   `;
 	const viewer_vocie_query = `
-    *[_type=="voice"&&!(_id in path("drafts.**"))]{
+    *[_type=="voice"&&!(_id in path("drafts.**"))]|order(writtenAt desc){
       title,
       slug,
       author->{name},
