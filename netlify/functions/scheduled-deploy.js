@@ -5,7 +5,7 @@ const params = new URLSearchParams();
 params.append("trigger_branch", "next");
 params.append("trigger_title", "scheduled auto-rebuild");
 
-const handler = schedule("0 0-23/6 * * *", async () => {
+const handler = schedule("0 0-23/12 * * *", async () => {
 	await fetch(process.env.BUILD_HOOK, {
 		method: "POST",
 		body: params,
