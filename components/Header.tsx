@@ -20,10 +20,11 @@ export function SiteLogo() {
 	return (
 		<a href="/" className="flex items-center pl-5 space-x-2">
 			<div>
-				<Girl
+				{/* <Girl
 					fill="black"
 					className="w-[30px] outline-2 border border-black rounded-full"
-				/>
+				/> */}
+				<img src="/logo_w.png" alt="" className="w-[30px] " />
 			</div>
 			<p className="text-black text-[10px] font-bold tracking-[4px]">
 				LIUXIN.EXPRESS

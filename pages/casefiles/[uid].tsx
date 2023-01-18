@@ -26,9 +26,16 @@ function countText(casefile: CaseFile): number {
 	return total;
 }
 
-function infer_image_size(image_url: string) {
-	const height = Number(image_url.match(/height=[0-9]+/g)![0].split("=")[1]);
-	const width = Number(image_url.match(/width=[0-9]+/g)![0].split("=")[1]);
+function infer_image_size(image_url: ImageUrl) {
+	let height;
+	let width;
+
+	height = image_url.height
+		? image_url.height
+		: Number(image_url.urlField.match(/height=[0-9]+/g)![0].split("=")[1]);
+	width = image_url.width
+		? image_url.width
+		: Number(image_url.urlField.match(/width=[0-9]+/g)![0].split("=")[1]);
 	return [height, width];
 }
 
@@ -52,9 +59,7 @@ function ImageGallery({ image_urls }: { image_urls: ImageUrl[] }) {
 					}}
 				>
 					{image_urls.map((image_url, index) => {
-						const [height, width] = infer_image_size(
-							image_url.urlField
-						);
+						const [height, width] = infer_image_size(image_url);
 						return (
 							<Item
 								cropped

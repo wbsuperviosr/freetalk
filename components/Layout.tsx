@@ -6,8 +6,8 @@ function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="max-w-3xl mx-auto">
 			<Head>
-				<title>Express</title>
-				<link rel="icon" href="/coca-leaves.png" />
+				<title>书笺图书馆</title>
+				<link rel="icon" href="/logo_w.png" />
 			</Head>
 
 			<Script

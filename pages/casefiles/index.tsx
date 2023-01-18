@@ -156,7 +156,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const casefiles: CaseFile[] = await client.fetch(post_query);
 	casefiles.sort((a, b) => {
 		return (
-			new Date(b.writtenAt).getTime() - new Date(a.writtenAt).getTime()
+			new Date(b.publishedAt).getTime() -
+			new Date(a.publishedAt).getTime()
 		);
 	});
 	return {

@@ -20,6 +20,8 @@ export interface ImageUrl {
 	_type: string;
 	urlField: string;
 	url_title: string;
+	height?: string;
+	width?: string;
 }
 
 export interface Slug {
