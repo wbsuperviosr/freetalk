@@ -144,22 +144,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const client = getClient(true);
 
 	const post_query = `
-    *[_type=="casefiles" &&!(_id in path("drafts.**"))]|order(_updatedAt desc){
+    *[_type=="casefiles" &&!(_id in path("drafts.**"))]|order(order asc){
 		title,
 		writtenAt,
 		mainImageUrl,
 		description,
 		slug,
+		order,
 		classification
 	}
   `;
 	const casefiles: CaseFile[] = await client.fetch(post_query);
-	casefiles.sort((a, b) => {
-		return (
-			new Date(b.publishedAt).getTime() -
-			new Date(a.publishedAt).getTime()
-		);
-	});
+	// casefiles.sort((a, b) => {
+	// 	return (
+	// 		new Date(b.publishedAt).getTime() -
+	// 		new Date(a.publishedAt).getTime()
+	// 	);
+	// });
 	return {
 		props: {
 			casefiles: casefiles,

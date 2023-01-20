@@ -40,6 +40,7 @@ export interface CaseFile {
 	description: string;
 	featured: boolean;
 	header: string;
+	order?: number;
 	image_urls: ImageUrl[];
 	imageonly: boolean;
 	mainImageUrl: string;
