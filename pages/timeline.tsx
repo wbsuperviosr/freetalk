@@ -90,8 +90,8 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 	const list_header = {
 		title: "江刘案相关事件时间线 ：2017-2022",
 		description:
-			"时间线可以根据不同的方式进行筛选。例如，按时间年份查看，按事件人物查看，按事件性质查看，和按事件信息来源查看。感谢：知乎@知裁 进行整理！。",
-		last_update: "更新：2022年12月22日 | 第0.1版[日志]",
+			"时间线可以根据不同的方式进行筛选。例如，按时间年份查看，按事件人物查看，按事件性质查看，和按事件信息来源查看。感谢各位网友进行整理！。",
+		last_update: "更新：2023年1月22日 | 第0.1版[日志]",
 		menus: menus,
 		show_active: false,
 		post_link: "https://wj.qq.com/s2/11424513/d27e",
