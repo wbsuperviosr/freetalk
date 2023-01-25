@@ -97,7 +97,7 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 	const date_string = getDate(select_date);
 	const num_words = countText(casefile);
 	const time = Math.ceil(num_words / 300);
-	const headers = casefile.header.split("\n");
+	const headers = casefile.header && casefile.header.split("\n");
 	const bottomToTop = () => {
 		window.scrollTo({
 			top: 0,
@@ -166,20 +166,22 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 					</span>
 				</div>
 
-				<div className="border-[1px] rounded-lg border-gray-300 w-60 mx-auto py-5 px-5 my-10">
-					{headers.map((header, index) => {
-						return (
-							<p
-								key={index}
-								className={`text-center ${
-									header == "" ? "pb-4" : ""
-								}`}
-							>
-								{header}
-							</p>
-						);
-					})}
-				</div>
+				{headers && (
+					<div className="border-[1px] rounded-lg border-gray-300 w-60 mx-auto py-5 px-5 my-10">
+						{headers.map((header, index) => {
+							return (
+								<p
+									key={index}
+									className={`text-center ${
+										header == "" ? "pb-4" : ""
+									}`}
+								>
+									{header}
+								</p>
+							);
+						})}
+					</div>
+				)}
 
 				<div className="pb-5 space-y-3 text-justify">
 					<PortableText
