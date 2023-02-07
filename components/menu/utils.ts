@@ -41,7 +41,7 @@ export function getCurrentSelectString(states: DropDownProps[]) {
 export function inferTarget(
 	obj: any,
 	menus: DropDownProps[],
-	search: SearchProps
+	search?: SearchProps
 ): boolean {
 	let isTarget = true;
 	menus.map((menu) => {
@@ -63,15 +63,19 @@ export function inferTarget(
 		return;
 	});
 
-	const texts = search.mapping_fn!(obj);
-	if (Array.isArray(texts)) {
-		const contains = texts.map((text) => text.includes(search.state.key));
-		if (contains.every((v) => v === false)) {
-			isTarget = false;
-		}
-	} else {
-		if (!texts.includes(search.state.key)) {
-			isTarget = false;
+	if (search) {
+		const texts = search.mapping_fn!(obj);
+		if (Array.isArray(texts)) {
+			const contains = texts.map((text) =>
+				text.includes(search.state.key)
+			);
+			if (contains.every((v) => v === false)) {
+				isTarget = false;
+			}
+		} else {
+			if (!texts.includes(search.state.key)) {
+				isTarget = false;
+			}
 		}
 	}
 
