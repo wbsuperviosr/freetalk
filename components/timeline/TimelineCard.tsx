@@ -16,6 +16,7 @@ import ExternalEvidence from "./ExternalEvidence";
 import { ImageEvidence } from "./ImageEvidenceNew";
 import { DropDownProps } from "../menu/DropDownSelect";
 import { time } from "console";
+import { SearchProps } from "../menu/SearchBar";
 
 function find_breakpoint(eventText: Event[], threhold: number = 140) {
 	let count = 0;
@@ -59,9 +60,11 @@ function makeSummary(eventText: Event[], threhold: number = 50) {
 export function TimelineCard({
 	timeline,
 	menus,
+	search,
 }: {
 	timeline: Timeline;
 	menus: DropDownProps[];
+	search: SearchProps;
 }) {
 	const [expand, setExpand] = React.useState(false);
 	let summary: any;
@@ -70,7 +73,7 @@ export function TimelineCard({
 		[summary, isSummarized] = makeSummary(timeline.event);
 	}
 
-	const isTarget = inferTarget(timeline, menus);
+	const isTarget = inferTarget(timeline, menus, search);
 
 	return (
 		<>

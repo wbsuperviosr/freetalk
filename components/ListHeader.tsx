@@ -1,5 +1,6 @@
 import { sum } from "../utils/ArrayOps";
 import { DropDownProps, DropDownSelect } from "./menu/DropDownSelect";
+import { SearchBar, SearchProps } from "./menu/SearchBar";
 import { calcMapSum, getCurrentSelectString } from "./menu/utils";
 
 type ListHeaderProps = {
@@ -9,6 +10,7 @@ type ListHeaderProps = {
 	menus?: DropDownProps[];
 	show_active: boolean;
 	post_link?: string;
+	search?: SearchProps;
 };
 
 export function ListHeader({
@@ -18,6 +20,7 @@ export function ListHeader({
 	menus,
 	show_active,
 	post_link,
+	search,
 }: ListHeaderProps) {
 	const isActive =
 		menus && sum(menus!.map((menu) => calcMapSum(menu.options.state)));
@@ -57,6 +60,8 @@ export function ListHeader({
 							{getCurrentSelectString(menus!)}
 						</div>
 					)}
+
+					{search && <SearchBar search={search} />}
 				</div>
 			</div>
 		</div>

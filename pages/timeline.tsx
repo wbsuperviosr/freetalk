@@ -24,13 +24,17 @@ import {
 } from "@heroicons/react/24/outline";
 import { ListHeader } from "../components/ListHeader";
 import { getCurrentSelectString } from "../components/menu/utils";
+import { makeSearchState, SearchProps } from "../components/menu/SearchBar";
+import { extractText } from "../components/PortableText";
 
 function TimelineList({
 	timelines,
 	menus,
+	search,
 }: {
 	timelines: Timeline[];
 	menus: DropDownProps[];
+	search: SearchProps;
 }) {
 	const string = getCurrentSelectString(menus);
 	return (
@@ -49,6 +53,7 @@ function TimelineList({
 							timeline={timeline}
 							menus={menus}
 							key={index}
+							search={search}
 						/>
 					);
 				})}
@@ -86,6 +91,13 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 	);
 
 	const menus = [years, names, types];
+	const search = makeSearchState(
+		(timeline: Timeline) => {
+			return [timeline.title, extractText(timeline.event)];
+		},
+		"搜索",
+		"例如: 微博热搜"
+	);
 
 	const list_header = {
 		title: "江刘案相关事件时间线 ：2017-2022",
@@ -95,6 +107,7 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 		menus: menus,
 		show_active: false,
 		post_link: "https://wj.qq.com/s2/11424513/d27e",
+		search: search,
 	};
 
 	return (
@@ -103,7 +116,11 @@ export default function TimelinePage({ timelines }: { timelines: Timeline[] }) {
 			<div className="bg-gray-100 p-3 ">
 				<ListHeader {...list_header} />
 
-				<TimelineList timelines={timelines} menus={menus} />
+				<TimelineList
+					timelines={timelines}
+					menus={menus}
+					search={search}
+				/>
 				<Footer />
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 import { DropDownProps } from "./DropDownSelect";
+import { SearchProps } from "./SearchBar";
 
 export const calcMapSum = (map: Map<string, boolean>) => {
 	return Array.from(map.values()).reduce((a, b) => Number(a) + Number(b), 0);
@@ -37,7 +38,11 @@ export function getCurrentSelectString(states: DropDownProps[]) {
 	return text.join(" ");
 }
 
-export function inferTarget(obj: any, menus: DropDownProps[]): boolean {
+export function inferTarget(
+	obj: any,
+	menus: DropDownProps[],
+	search: SearchProps
+): boolean {
 	let isTarget = true;
 	menus.map((menu) => {
 		const num_active = calcMapSum(menu.options.state);
@@ -57,6 +62,18 @@ export function inferTarget(obj: any, menus: DropDownProps[]): boolean {
 		}
 		return;
 	});
+
+	const texts = search.mapping_fn!(obj);
+	if (Array.isArray(texts)) {
+		const contains = texts.map((text) => text.includes(search.state.key));
+		if (contains.every((v) => v === false)) {
+			isTarget = false;
+		}
+	} else {
+		if (!texts.includes(search.state.key)) {
+			isTarget = false;
+		}
+	}
 
 	return isTarget;
 }

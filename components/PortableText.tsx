@@ -1,4 +1,5 @@
 import { PortableTextComponents } from "@portabletext/react";
+import { Body } from "../models/postModel";
 
 const domain = "https://assets.wbavengers.com";
 interface PTC extends PortableTextComponents {
@@ -119,3 +120,16 @@ export const LXPortableTextComponents: PTC = {
 		},
 	},
 };
+
+export function extractText(bodies: any) {
+	let text = "";
+
+	if (bodies) {
+		for (const body of bodies) {
+			for (const child of body.children) {
+				text += child.text;
+			}
+		}
+	}
+	return text;
+}
