@@ -19,6 +19,7 @@ import { BiCategory } from "react-icons/bi";
 import { casfile_text } from "../../components/HeroText";
 import { ListHeader } from "../../components/ListHeader";
 import { sum, unique } from "../../utils/ArrayOps";
+import { AiOutlineDownload } from "react-icons/ai";
 
 function CaseCard({
 	casefile,
@@ -78,7 +79,13 @@ function CaseFilesList({
 				<div className="flex space-x-3  pb-1 items-center border-b-2">
 					<p className="text-lxd">卷宗</p>
 					<p>|</p>
-					<p className="text-sm">{getCurrentSelectString(menus)}</p>
+					{/* <p className="text-sm">{getCurrentSelectString(menus)}</p> */}
+					<a href="https://assets.wbavengers.com/6部分卷宗/all.7z">
+						<p className="flex items-center space-x-1">
+							<span className="text-lxd">下载全部</span>
+							<AiOutlineDownload className="w-5 text-lxd" />
+						</p>
+					</a>
 				</div>
 				<p className="text-[12px] mt-3">总共筛选出{num_active}份卷宗</p>
 

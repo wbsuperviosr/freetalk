@@ -13,6 +13,7 @@ import { CaseFile, ImageUrl } from "../../models/casefilesModel";
 import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
 import { casfile_text } from "../../components/HeroText";
+import { AiOutlineDownload } from "react-icons/ai";
 
 function countText(casefile: CaseFile): number {
 	const body = casefile.body;
@@ -136,7 +137,17 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 						<div>
 							<ClockIcon className="w-3" />
 						</div>
-						<p className="text-xs">{time}分钟</p>
+						<p className="text-xs pr-2">{time}分钟</p>
+						<div>
+							<AiOutlineDownload className="w-4 text-lxd" />
+						</div>
+						<p className="text-xs text-lxd pr-2">
+							<a
+								href={`https://assets.wbavengers.com/6部分卷宗/${casefile.order}${casefile.title}.pdf`}
+							>
+								下载
+							</a>
+						</p>
 					</div>
 					<div className="flex space-x-2">
 						{casefile.tags &&
