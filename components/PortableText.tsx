@@ -1,5 +1,5 @@
 import { PortableTextComponents } from "@portabletext/react";
-import { Body } from "../models/postModel";
+import { Body, Reference } from "../models/postModel";
 
 const domain = "https://assets.wbavengers.com";
 interface PTC extends PortableTextComponents {
@@ -71,6 +71,27 @@ export const LXPortableTextComponents: PTC = {
 				<video controls>
 					<source src={source} type="video/mp4" />
 				</video>
+			);
+		},
+		Citelink: (props: any) => {
+			const children = props.children[0].split("||");
+			const text: string = children[0];
+			const count: number = Number(children[1]);
+			return (
+				<>
+					<span>{text}</span>
+					{props.value.reference.map(
+						(ref: Reference, index: number) => {
+							return (
+								<span className="text-lxd text-sm" key={index}>
+									<a href={`#${ref._key}`}>
+										[{index + count}]
+									</a>
+								</span>
+							);
+						}
+					)}
+				</>
 			);
 		},
 		u: (props: any) => {

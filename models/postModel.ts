@@ -9,11 +9,19 @@ export interface Child {
 	_type: string;
 	marks: string[];
 	text: string;
+	references?: number[];
 }
 
+export interface Reference {
+	_key: string;
+	_type: string;
+	title: string;
+	urlField: string;
+}
 export interface MarkDef {
 	_key: string;
 	_type: string;
+	reference: Reference[];
 	href: string;
 }
 
@@ -30,6 +38,12 @@ export interface Body {
 export interface Slug {
 	_type: string;
 	current: string;
+}
+
+export interface Related {
+	title: string;
+	urlField: string;
+	category: string;
 }
 
 export interface Post {
@@ -50,4 +64,5 @@ export interface Post {
 	writtenAt: Date;
 	theme: string;
 	featured?: boolean;
+	related?: Related[];
 }

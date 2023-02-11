@@ -67,6 +67,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       writtenAt,
       description,
       body,
+	  related,
     }
   `;
 	const posts: Post[] = await client.fetch(post_query, { slug: params?.uid });

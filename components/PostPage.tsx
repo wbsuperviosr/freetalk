@@ -3,7 +3,7 @@ import { ClockIcon, NewspaperIcon } from "@heroicons/react/24/outline";
 import { PortableText } from "@portabletext/react";
 import React from "react";
 import { LXPortableTextComponents } from "./PortableText";
-import { Post } from "../models/postModel";
+import { Body, MarkDef, Post, Reference, Related } from "../models/postModel";
 import { getDate } from "../utils/getDate";
 import QuoteLeft from "../public/icons/quote_left.svg";
 import QuoteRight from "../public/icons/quote_right.svg";
@@ -96,6 +96,82 @@ function PostAbstract({ post }: { post: Post }) {
 	);
 }
 
+function _modifyInplace(body: Body, def: MarkDef, count: number) {
+	for (const child of body.children) {
+		if (child.marks.length != 0) {
+			for (const mark of child.marks) {
+				if (mark == def._key) {
+					if (!child.text.includes("||")) {
+						child.text += `||${count}`;
+					}
+				}
+			}
+		}
+	}
+}
+
+function modifyReference(post: Post) {
+	let count = 1;
+	let references = [];
+	for (const body of post.body) {
+		if (body.markDefs.length != 0) {
+			for (const def of body.markDefs) {
+				if (def._type == "Citelink") {
+					_modifyInplace(body, def, count);
+					count += def.reference.length;
+					references.push(...def.reference);
+				}
+			}
+		}
+	}
+	return references;
+}
+
+function ReferenceRender({ references }: { references: Reference[] }) {
+	return (
+		<div className="px-6">
+			<div className="text-lg text-lxd mt-2">【参考】</div>
+			<ol className="my-2">
+				{references.map((reference, index) => {
+					return (
+						<li id={reference._key} key={index}>
+							<span className="mr-1 text-sm">[{index + 1}]</span>
+							<span className="text-sm text-lxd">
+								<a href={reference.urlField}>
+									{reference.title}
+								</a>
+							</span>
+						</li>
+					);
+				})}
+			</ol>
+		</div>
+	);
+}
+
+export function RelatedArticleRender({ related }: { related: Related[] }) {
+	return (
+		<div className="bg-freeze mt-10 p-4 rounded-lg mx-3 z-0">
+			<div className="flex justify-center items-center text-lg">
+				相关阅读
+			</div>
+			<hr className="h-[2px] my-2 bg-gray-300 rounded border-0 dark:bg-gray-900 z-10 text-black" />
+
+			{related.map((article, index) => {
+				return (
+					<div className="flex pt-1" key={index}>
+						<p className="basis-1/3">[{article.category}]</p>
+
+						<p className="basis-2/3 overflow-clip text-lxd">
+							<a href={article.urlField}>{article.title}</a>
+						</p>
+					</div>
+				);
+			})}
+		</div>
+	);
+}
+
 export default function PostPage({ post }: { post: Post }) {
 	const bottomToTop = () => {
 		window.scrollTo({
@@ -103,7 +179,8 @@ export default function PostPage({ post }: { post: Post }) {
 			behavior: "smooth",
 		});
 	};
-
+	const references = modifyReference(post);
+	console.log(post);
 	return (
 		<div className="m-2">
 			<article className="bg-white border border-gray-200 rounded-lg shadow-sm">
@@ -115,10 +192,18 @@ export default function PostPage({ post }: { post: Post }) {
 						components={LXPortableTextComponents}
 					/>
 				</div>
+				{references.length != 0 && (
+					<ReferenceRender references={references} />
+				)}
+
+				{post.related && (
+					<RelatedArticleRender related={post.related} />
+				)}
+
 				<hr className="mb-4 mx-5 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
 				<div className="flex px-5 justify-end mb-3">
 					<div
-						className="px-[7px] py-[3px] text-[10px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"
+						className="px-[7px] py-[3px] text-[14px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"
 						onClick={bottomToTop}
 					>
 						回到顶部

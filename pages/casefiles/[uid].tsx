@@ -14,6 +14,7 @@ import { getDate } from "../../utils/getDate";
 import { getClient } from "../../utils/sanity";
 import { casfile_text } from "../../components/HeroText";
 import { AiOutlineDownload } from "react-icons/ai";
+import { RelatedArticleRender } from "../../components/PostPage";
 
 function countText(casefile: CaseFile): number {
 	const body = casefile.body;
@@ -202,7 +203,12 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 				</div>
 
 				<ImageGallery image_urls={casefile.image_urls} />
-				<hr className="mb-4 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
+
+				{casefile.related && (
+					<RelatedArticleRender related={casefile.related} />
+				)}
+
+				<hr className="mb-4 mt-5 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
 				<div className="flex justify-end mb-3">
 					<div
 						className="px-[7px] py-[3px] text-[14px] mb-1 rounded-md bg-lxd text-white tracking-[2px] hover:bg-lxd"

@@ -29,6 +29,12 @@ export interface Slug {
 	current: string;
 }
 
+export interface Related {
+	title: string;
+	urlField: string;
+	category: string;
+}
+
 export interface CaseFile {
 	_createdAt: Date;
 	_id: string;
@@ -49,4 +55,5 @@ export interface CaseFile {
 	title: string;
 	tags?: string[];
 	writtenAt: Date;
+	related?: Related[];
 }
