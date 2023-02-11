@@ -36,7 +36,6 @@ export function SearchBar({ search }: { search: SearchProps }) {
 	const handleSubmit = (event: React.SyntheticEvent) => {
 		event.preventDefault();
 		search.state.setKey(keyRef.current!.value);
-		console.log(search.state.key);
 	};
 
 	const handleFocus = (event: React.BaseSyntheticEvent) => {

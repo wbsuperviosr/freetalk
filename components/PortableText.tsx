@@ -118,6 +118,7 @@ export const LXPortableTextComponents: PTC = {
 				</blockquote>
 			);
 		},
+
 		h1: ({ children }: { children: string }) => {
 			return <h1 className="text-4xl font-bold py-2">{children}</h1>;
 		},
@@ -138,6 +139,9 @@ export const LXPortableTextComponents: PTC = {
 		},
 		table: ({ children }: { children: string }) => {
 			return renderTable(children[0]);
+		},
+		normal: (obj: any) => {
+			return <p id={obj.value._key}>{obj.children}</p>;
 		},
 	},
 };

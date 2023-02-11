@@ -106,7 +106,7 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 			behavior: "smooth",
 		});
 	};
-
+	// console.log(casefile);
 	return (
 		<div className="m-[10px] bg-white rounded-lg">
 			<div className="p-[22px]">

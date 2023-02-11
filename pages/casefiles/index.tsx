@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import React from "react";
 import Header from "../../components/Header";
 import { getClient } from "../../utils/sanity";
-import { CaseFile } from "../../models/casefilesModel";
+import { Body, CaseFile } from "../../models/casefilesModel";
 import { getDate } from "../../utils/getDate";
 import Link from "next/link";
 import { Footer } from "../../components/Footer";
@@ -20,15 +20,18 @@ import { casfile_text } from "../../components/HeroText";
 import { ListHeader } from "../../components/ListHeader";
 import { sum, unique } from "../../utils/ArrayOps";
 import { AiOutlineDownload } from "react-icons/ai";
+import { makeSearchState, SearchProps } from "../../components/menu/SearchBar";
 
 function CaseCard({
 	casefile,
 	menus,
+	search,
 }: {
 	casefile: CaseFile;
 	menus: DropDownProps[];
+	search?: SearchProps;
 }) {
-	const isTarget = inferTarget(casefile, menus);
+	const isTarget = inferTarget(casefile, menus, search);
 	return (
 		<>
 			{isTarget && (
@@ -63,16 +66,129 @@ function CaseCard({
 	);
 }
 
+function getBobyText(body: Body): string {
+	let text = "";
+	for (const child of body.children) {
+		text += child.text;
+	}
+	return text;
+}
+
+type SearchTarget = {
+	text: string;
+	key: string;
+};
+
+function inferSearchTarget(
+	isTarget: boolean,
+	casefile: CaseFile,
+	keyword: string
+): SearchTarget[] {
+	let targets: SearchTarget[] = [];
+	if (!isTarget) {
+		return targets;
+	}
+	for (const body of casefile.body) {
+		let text = getBobyText(body);
+		let posIndex = text.indexOf(keyword);
+		if (posIndex != -1) {
+			targets.push({
+				text: text.slice(
+					Math.max(0, posIndex - 5),
+					posIndex + keyword.length + 10
+				),
+				key: body._key,
+			});
+		}
+	}
+
+	return targets;
+}
+
+function CaseCardWithSearch({
+	casefile,
+	menus,
+	search,
+}: {
+	casefile: CaseFile;
+	menus: DropDownProps[];
+	search?: SearchProps;
+}) {
+	const keyword = search!.state.key;
+	const keyLength = keyword.length;
+	const isTarget = inferTarget(casefile, menus);
+	const targets = inferSearchTarget(isTarget, casefile, keyword);
+	return (
+		<div>
+			{isTarget && targets.length != 0 && (
+				<div className="bg-white py-3 justify-between rounded-lg shadow-sm">
+					<Link href={`/casefiles/${casefile.slug.current}`}>
+						<div className="flex justify-between">
+							<div className="flex items-center space-x-3">
+								<div className="w-4 h-4 bg-lxl rounded-full"></div>
+								<p className="text-md font-bold text-lxd">
+									{casefile.title}
+								</p>
+							</div>
+							<p className="text-black">
+								{casefile.classification}
+							</p>
+						</div>
+					</Link>
+					<ul>
+						{targets.map((target, index) => {
+							const posIndex = target.text.indexOf(keyword);
+							return (
+								<Link
+									href={`/casefiles/${casefile.slug.current}#${target.key}`}
+									key={index}
+								>
+									<li
+										className="text-gray-400 text-sm"
+										key={index}
+									>
+										{posIndex != 0 && <span>...</span>}
+										<span>
+											{target.text.slice(0, posIndex)}
+										</span>
+										<span className="text-lxd">
+											{target.text.slice(
+												posIndex,
+												posIndex + keyLength
+											)}
+										</span>
+										<span>
+											{target.text.slice(
+												posIndex + keyLength
+											)}
+										</span>
+										{posIndex + keyLength !=
+											target.text.length && (
+											<span>...</span>
+										)}
+									</li>
+								</Link>
+							);
+						})}
+					</ul>
+				</div>
+			)}
+		</div>
+	);
+}
+
 function CaseFilesList({
 	casefiles,
 	menus,
+	search,
 }: {
 	casefiles: CaseFile[];
 	menus: DropDownProps[];
+	search?: SearchProps;
 }) {
-	const num_active = sum(
-		casefiles.map((casefile) => inferTarget(casefile, menus))
-	);
+	// const num_active = sum(
+	// 	casefiles.map((casefile) => inferTarget(casefile, menus))
+	// );
 	return (
 		<div className="bg-white rounded-lg m-[10px] border shadow-sm">
 			<div className="m-6">
@@ -87,17 +203,29 @@ function CaseFilesList({
 						</p>
 					</a>
 				</div>
-				<p className="text-[12px] mt-3">总共筛选出{num_active}份卷宗</p>
+				{/* <p className="text-[12px] mt-3">总共筛选出{num_active}份卷宗</p> */}
 
-				{casefiles.map((casefile, index) => {
-					return (
-						<CaseCard
-							key={index}
-							casefile={casefile}
-							menus={menus}
-						/>
-					);
-				})}
+				{search?.state.key == ""
+					? casefiles.map((casefile, index) => {
+							return (
+								<CaseCard
+									key={index}
+									casefile={casefile}
+									menus={menus}
+									search={search}
+								/>
+							);
+					  })
+					: casefiles.map((casefile, index) => {
+							return (
+								<CaseCardWithSearch
+									key={index}
+									casefile={casefile}
+									menus={menus}
+									search={search}
+								/>
+							);
+					  })}
 			</div>
 		</div>
 	);
@@ -125,6 +253,13 @@ function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 		classesList,
 		(casefile) => casefile.classification
 	);
+	const search = makeSearchState(
+		(casefile: CaseFile) => {
+			return [casefile.title];
+		},
+		"搜索",
+		"例如: 法医"
+	);
 	const list_header = {
 		title: "部分卷宗展示",
 		description:
@@ -133,12 +268,17 @@ function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 		menus: [years, classes],
 		show_active: false,
 		post_link: "https://wj.qq.com/s2/11424516/0a97",
+		search: search,
 	};
 	return (
 		<div className="bg-gray-100">
 			<Header {...casfile_text} />
 			<ListHeader {...list_header} />
-			<CaseFilesList casefiles={casefiles} menus={[years, classes]} />
+			<CaseFilesList
+				casefiles={casefiles}
+				menus={[years, classes]}
+				search={search}
+			/>
 
 			<Footer />
 		</div>
@@ -158,6 +298,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		description,
 		slug,
 		order,
+		body,
 		classification
 	}
   `;

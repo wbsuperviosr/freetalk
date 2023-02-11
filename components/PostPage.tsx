@@ -180,7 +180,7 @@ export default function PostPage({ post }: { post: Post }) {
 		});
 	};
 	const references = modifyReference(post);
-	console.log(post);
+	// console.log(post);
 	return (
 		<div className="m-2">
 			<article className="bg-white border border-gray-200 rounded-lg shadow-sm">
