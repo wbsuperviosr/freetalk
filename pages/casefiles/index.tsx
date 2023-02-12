@@ -142,6 +142,8 @@ function CaseCardWithSearch({
 								<Link
 									href={`/casefiles/${casefile.slug.current}#${target.key}`}
 									key={index}
+									target="_blank"
+									rel="noopener"
 								>
 									<li
 										className="text-gray-400 text-sm"
