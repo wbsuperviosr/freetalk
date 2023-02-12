@@ -15,6 +15,9 @@ import { getClient } from "../../utils/sanity";
 import { casfile_text } from "../../components/HeroText";
 import { AiOutlineDownload } from "react-icons/ai";
 import { RelatedArticleRender } from "../../components/PostPage";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { BsArrowUpCircleFill, BsArrowDownCircleFill } from "react-icons/bs";
 
 function countText(casefile: CaseFile): number {
 	const body = casefile.body;
@@ -91,6 +94,25 @@ function ImageGallery({ image_urls }: { image_urls: ImageUrl[] }) {
 	);
 }
 
+function highlightText(
+	element: Element,
+	keyword: string,
+	activeElems: (Element | null)[]
+) {
+	let innerHTML = element?.innerHTML;
+	const index = innerHTML!.indexOf(keyword);
+	if (index >= 0) {
+		innerHTML =
+			innerHTML!.substring(0, index) +
+			"<span class='bg-lxd text-white'>" +
+			innerHTML!.substring(index, index + keyword.length) +
+			"</span>" +
+			innerHTML!.substring(index + keyword.length);
+		element!.innerHTML = innerHTML;
+		activeElems.push(element);
+	}
+}
+
 function CaseBody({ casefile }: { casefile: CaseFile }) {
 	const select = casefile.writtenAt
 		? casefile.writtenAt
@@ -106,7 +128,63 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 			behavior: "smooth",
 		});
 	};
-	// console.log(casefile);
+	const router = useRouter();
+	const [queryActive, setQueryActive] = React.useState(false);
+
+	const [activeElems, setActiveElems] = React.useState<(Element | null)[]>(
+		[]
+	);
+	const [currentPos, setcurrentPos] = React.useState<number>(0);
+	const [currentY, setCurrentY] = React.useState<number>(0);
+
+	const [maxHeight, setMaxHeight] = React.useState<number>(1);
+
+	useEffect(() => {
+		window.addEventListener("scroll", function () {
+			setCurrentY(this.scrollY);
+		});
+		setMaxHeight(
+			document.documentElement.scrollHeight -
+				document.documentElement.clientHeight
+		);
+
+		const params = router.query;
+		console.log(params);
+		if (params.hasOwnProperty("id")) {
+			const id = params.id as string;
+			let elem = document.getElementById(id);
+			elem?.scrollIntoView({ behavior: "smooth" });
+		}
+
+		if (params.hasOwnProperty("keyword")) {
+			const keyword = params.keyword as string;
+			setQueryActive(true);
+			let activeElems: (Element | null)[] = [];
+			if (!params.hasOwnProperty("ids")) {
+				const main = document.getElementById("main_text");
+				for (const p of main!.children) {
+					highlightText(p, keyword, activeElems);
+				}
+			} else {
+				const ids_query = params.ids as string;
+				const ids = ids_query.split(",");
+				for (const id of ids) {
+					const elem = document.getElementById(id);
+					highlightText(elem!, keyword, activeElems);
+				}
+			}
+			setActiveElems(activeElems);
+		}
+	}, [router.query, queryActive]);
+
+	const handleJump = (incre: number) => {
+		let currentPosTo = currentPos + incre;
+		currentPosTo = Math.min(currentPosTo, activeElems.length);
+		currentPosTo = Math.max(0, currentPosTo);
+		setcurrentPos(currentPosTo);
+		activeElems[currentPos]?.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
 		<div className="m-[10px] bg-white rounded-lg">
 			<div className="p-[22px]">
@@ -195,7 +273,7 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 					</div>
 				)}
 
-				<div className="pb-5 space-y-3 text-justify">
+				<div className="pb-5 space-y-3 text-justify" id="main_text">
 					<PortableText
 						value={casefile.body!}
 						components={LXPortableTextComponents}
@@ -204,10 +282,21 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 
 				<ImageGallery image_urls={casefile.image_urls} />
 
+				{queryActive && currentY / maxHeight < 0.98 && (
+					<div className="fixed bottom-0 w-[85%]">
+						<BsArrowUpCircleFill
+							className="bottom-0 my-8 bg-white text-lxd text-5xl font-bold tracking-wide cursor-pointer rounded-full focus:outline-none"
+							onClick={() => handleJump(-1)}
+						/>
+						<BsArrowDownCircleFill
+							className="my-8 bg-white text-lxd text-5xl font-bold tracking-wide rounded-full cursor-pointer focus:outline-none"
+							onClick={() => handleJump(1)}
+						/>
+					</div>
+				)}
 				{casefile.related && (
 					<RelatedArticleRender related={casefile.related} />
 				)}
-
 				<hr className="mb-4 mt-5 h-[2px] bg-gray-200 rounded border-0 dark:bg-gray-700" />
 				<div className="flex justify-end mb-3">
 					<div

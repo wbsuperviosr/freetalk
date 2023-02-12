@@ -18,9 +18,12 @@ import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 import { BiCategory } from "react-icons/bi";
 import { casfile_text } from "../../components/HeroText";
 import { ListHeader } from "../../components/ListHeader";
-import { sum, unique } from "../../utils/ArrayOps";
+import { unique } from "../../utils/ArrayOps";
 import { AiOutlineDownload } from "react-icons/ai";
 import { makeSearchState, SearchProps } from "../../components/menu/SearchBar";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { FiSearch } from "react-icons/fi";
 
 function CaseCard({
 	casefile,
@@ -140,7 +143,7 @@ function CaseCardWithSearch({
 							const posIndex = target.text.indexOf(keyword);
 							return (
 								<Link
-									href={`/casefiles/${casefile.slug.current}#${target.key}`}
+									href={`/casefiles/${casefile.slug.current}?id=${target.key}&keyword=${keyword}`}
 									key={index}
 									target="_blank"
 									rel="noopener"
@@ -234,6 +237,17 @@ function CaseFilesList({
 }
 
 function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
+	const router = useRouter();
+	const [keyword, setKeyword] = React.useState("");
+	useEffect(() => {
+		const query = router.query;
+		if (query.hasOwnProperty("keyword")) {
+			let keyword = query.keyword as string;
+			setKeyword(keyword);
+			search.state.setKey(keyword);
+		}
+	}, [router.query]);
+
 	const yearsList = unique<string>(
 		casefiles,
 		(casefile: CaseFile) => `${new Date(casefile.writtenAt).getFullYear()}`
@@ -255,13 +269,17 @@ function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 		classesList,
 		(casefile) => casefile.classification
 	);
+	// console.log("in index", keyword);
 	const search = makeSearchState(
 		(casefile: CaseFile) => {
 			return [casefile.title];
 		},
 		"搜索",
-		"例如: 法医"
+		"例如: 法医",
+		<FiSearch className="w-10" />,
+		keyword
 	);
+
 	const list_header = {
 		title: "部分卷宗展示",
 		description:
@@ -305,12 +323,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	}
   `;
 	const casefiles: CaseFile[] = await client.fetch(post_query);
-	// casefiles.sort((a, b) => {
-	// 	return (
-	// 		new Date(b.publishedAt).getTime() -
-	// 		new Date(a.publishedAt).getTime()
-	// 	);
-	// });
 	return {
 		props: {
 			casefiles: casefiles,

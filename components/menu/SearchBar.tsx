@@ -1,5 +1,6 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
+import { useRouter } from "next/router";
 
 export type SearchState = {
 	key: string;
@@ -18,9 +19,11 @@ export function makeSearchState(
 	mapping_fn: (obj: any) => string | string[] = () => "null",
 	title: string = "Search",
 	placeholder: string = "例如: 微博热搜",
-	icon: React.ReactElement = <FiSearch className="w-10" />
+	icon: React.ReactElement = <FiSearch className="w-10" />,
+	default_search: string = ""
 ) {
-	const [key, setKey] = React.useState("");
+	const [key, setKey] = React.useState<string>(default_search);
+
 	const search = {
 		title: title,
 		icon: icon,
@@ -32,10 +35,21 @@ export function makeSearchState(
 }
 export function SearchBar({ search }: { search: SearchProps }) {
 	const keyRef = React.useRef<HTMLInputElement>(null);
+	const router = useRouter();
 
 	const handleSubmit = (event: React.SyntheticEvent) => {
 		event.preventDefault();
 		search.state.setKey(keyRef.current!.value);
+		router.push(
+			{
+				pathname: router.pathname,
+				query: { keyword: keyRef.current!.value },
+			},
+			undefined,
+			{
+				shallow: true,
+			}
+		);
 	};
 
 	const handleFocus = (event: React.BaseSyntheticEvent) => {
@@ -43,7 +57,7 @@ export function SearchBar({ search }: { search: SearchProps }) {
 		// event.target.value = "";
 		// search.state.setKey("");
 	};
-
+	// console.log(search.state);
 	return (
 		<form onSubmit={handleSubmit} className="w-full">
 			<div className="flex border-gray-300 rounded-lg border-2 items-center justify-center p-1">
