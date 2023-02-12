@@ -13,6 +13,7 @@ export type SearchProps = {
 	icon: React.ReactNode;
 	placeholder?: string;
 	mapping_fn?: (obj: any) => string | Array<string>;
+	ref: React.RefObject<HTMLInputElement>;
 };
 
 export function makeSearchState(
@@ -23,27 +24,28 @@ export function makeSearchState(
 	default_search: string = ""
 ) {
 	const [key, setKey] = React.useState<string>(default_search);
-
+	const keyRef = React.useRef<HTMLInputElement>(null);
 	const search = {
 		title: title,
 		icon: icon,
 		state: { key: key, setKey: setKey },
 		placeholder: placeholder,
 		mapping_fn: mapping_fn,
+		ref: keyRef,
 	};
 	return search;
 }
 export function SearchBar({ search }: { search: SearchProps }) {
-	const keyRef = React.useRef<HTMLInputElement>(null);
+	// const keyRef = React.useRef<HTMLInputElement>(null);
 	const router = useRouter();
 
 	const handleSubmit = (event: React.SyntheticEvent) => {
 		event.preventDefault();
-		search.state.setKey(keyRef.current!.value);
+		search.state.setKey(search.ref.current!.value);
 		router.push(
 			{
 				pathname: router.pathname,
-				query: { keyword: keyRef.current!.value },
+				query: { keyword: search.ref.current!.value },
 			},
 			undefined,
 			{
@@ -70,7 +72,7 @@ export function SearchBar({ search }: { search: SearchProps }) {
 				<input
 					type="text"
 					title={search.title}
-					ref={keyRef}
+					ref={search.ref}
 					onFocus={handleFocus}
 					placeholder={search.placeholder}
 					className="w-full flex-1 rounded-none rounded-r-md sm:text-sm"

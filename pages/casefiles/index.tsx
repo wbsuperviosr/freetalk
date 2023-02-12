@@ -245,6 +245,7 @@ function CaseFileIndex({ casefiles }: { casefiles: CaseFile[] }) {
 			let keyword = query.keyword as string;
 			setKeyword(keyword);
 			search.state.setKey(keyword);
+			search.ref.current!.value = keyword;
 		}
 	}, [router.query]);
 
