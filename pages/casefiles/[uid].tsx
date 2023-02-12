@@ -149,12 +149,6 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 		);
 
 		const params = router.query;
-		console.log(params);
-		if (params.hasOwnProperty("id")) {
-			const id = params.id as string;
-			let elem = document.getElementById(id);
-			elem?.scrollIntoView({ behavior: "smooth" });
-		}
 
 		if (params.hasOwnProperty("keyword")) {
 			const keyword = params.keyword as string;
@@ -175,6 +169,17 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 			}
 			setActiveElems(activeElems);
 		}
+
+		if (params.hasOwnProperty("id")) {
+			const id = params.id as string;
+			let elem = document.getElementById(id);
+			elem?.scrollIntoView({ behavior: "smooth" });
+			for (const [index, e] of activeElems.entries()) {
+				if (e?.id == id) {
+					setcurrentPos(index);
+				}
+			}
+		}
 	}, [router.query, queryActive]);
 
 	const handleJump = (incre: number) => {
@@ -182,7 +187,7 @@ function CaseBody({ casefile }: { casefile: CaseFile }) {
 		currentPosTo = Math.min(currentPosTo, activeElems.length);
 		currentPosTo = Math.max(0, currentPosTo);
 		setcurrentPos(currentPosTo);
-		activeElems[currentPos]?.scrollIntoView({ behavior: "smooth" });
+		activeElems[currentPosTo]?.scrollIntoView({ behavior: "smooth" });
 	};
 
 	return (

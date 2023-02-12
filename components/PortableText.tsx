@@ -99,16 +99,38 @@ export const LXPortableTextComponents: PTC = {
 		},
 	},
 	list: {
-		bullet: ({ children }) => (
-			<ul className="py-0 ml-1 list-disc list-inside">{children}</ul>
-		),
-		number: ({ children }) => (
-			<ol className="py-0 ml-1 list-decimal list-inside">{children}</ol>
-		),
+		bullet: (obj) => {
+			return (
+				<ul
+					className="py-0 ml-1 list-disc list-inside"
+					id={obj.value._key}
+				>
+					{obj.children}
+				</ul>
+			);
+		},
+		number: (obj) => {
+			return (
+				<ol
+					className="py-0 ml-1 list-decimal list-inside"
+					id={obj.value._key}
+				>
+					{obj.children}
+				</ol>
+			);
+		},
 	},
 	listItem: {
-		bullet: ({ children }) => <li className="pb-2">{children}</li>,
-		number: ({ children }) => <li className="pb-2">{children}</li>,
+		bullet: (obj) => (
+			<li className="pb-2" id={obj.value._key}>
+				{obj.children}
+			</li>
+		),
+		number: (obj) => (
+			<li className="pb-2" id={obj.value._key}>
+				{obj.children}
+			</li>
+		),
 	},
 	block: {
 		blockquote: ({ children }: { children: string }) => {
@@ -119,23 +141,47 @@ export const LXPortableTextComponents: PTC = {
 			);
 		},
 
-		h1: ({ children }: { children: string }) => {
-			return <h1 className="text-4xl font-bold py-2">{children}</h1>;
+		h1: (obj: any) => {
+			return (
+				<h1 className="text-4xl font-bold py-2" id={obj.value._key}>
+					{obj.children}
+				</h1>
+			);
 		},
-		h2: ({ children }: { children: string }) => {
-			return <h2 className="text-3xl font-bold py-2">{children}</h2>;
+		h2: (obj: any) => {
+			return (
+				<h2 className="text-3xl font-bold py-2" id={obj.value._key}>
+					{obj.children}
+				</h2>
+			);
 		},
-		h3: ({ children }: { children: string }) => {
-			return <h3 className="text-2xl font-bold py-2">{children}</h3>;
+		h3: (obj: any) => {
+			return (
+				<h3 className="text-2xl font-bold py-2" id={obj.value._key}>
+					{obj.children}
+				</h3>
+			);
 		},
-		h4: ({ children }: { children: string }) => {
-			return <h4 className="text-xl font-bold py-2">{children}</h4>;
+		h4: (obj: any) => {
+			return (
+				<h4 className="text-xl font-bold py-2" id={obj.value._key}>
+					{obj.children}
+				</h4>
+			);
 		},
-		h5: ({ children }: { children: string }) => {
-			return <h5 className="text-lg font-bold py-2">{children}</h5>;
+		h5: (obj: any) => {
+			return (
+				<h5 className="text-lg font-bold py-2" id={obj.value._key}>
+					{obj.children}
+				</h5>
+			);
 		},
-		h6: ({ children }: { children: string }) => {
-			return <h6 className="text-md font-bold py-2">{children}</h6>;
+		h6: (obj: any) => {
+			return (
+				<h6 className="text-md font-bold py-2" id={obj.value._key}>
+					{obj.children}
+				</h6>
+			);
 		},
 		table: ({ children }: { children: string }) => {
 			return renderTable(children[0]);
