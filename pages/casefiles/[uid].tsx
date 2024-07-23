@@ -71,11 +71,16 @@ function ImageGallery({ image_urls }: { image_urls: ImageUrl[] }) {
 				>
 					{image_urls.map((image_url, index) => {
 						const [height, width] = infer_image_size(image_url);
+						const resolved_url = image_url.urlField.startsWith(
+							"https://"
+						)
+							? image_url.urlField
+							: `https://assets.wbavengers.com/${image_url.urlField}`;
 						return (
 							<Item
 								cropped
-								original={image_url.urlField}
-								thumbnail={image_url.urlField}
+								original={resolved_url}
+								thumbnail={resolved_url}
 								width={width}
 								height={height}
 								key={index}
@@ -83,7 +88,7 @@ function ImageGallery({ image_urls }: { image_urls: ImageUrl[] }) {
 								{({ ref, open }) => (
 									<img
 										style={smallItemStyles}
-										src={image_url.urlField}
+										src={resolved_url}
 										ref={
 											ref as React.MutableRefObject<HTMLImageElement>
 										}
