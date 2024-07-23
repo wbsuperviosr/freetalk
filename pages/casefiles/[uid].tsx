@@ -34,13 +34,19 @@ function countText(casefile: CaseFile): number {
 function infer_image_size(image_url: ImageUrl) {
 	let height;
 	let width;
-
-	height = image_url.height
-		? image_url.height
-		: Number(image_url.urlField.match(/height=[0-9]+/g)![0].split("=")[1]);
-	width = image_url.width
-		? image_url.width
-		: Number(image_url.urlField.match(/width=[0-9]+/g)![0].split("=")[1]);
+	console.log(`height ${image_url.height}, width: ${image_url.width}`);
+	height =
+		image_url.height == undefined
+			? image_url.height
+			: Number(
+					image_url.urlField.match(/height=[0-9]+/g)![0].split("=")[1]
+			  );
+	width =
+		image_url.width == undefined
+			? image_url.width
+			: Number(
+					image_url.urlField.match(/width=[0-9]+/g)![0].split("=")[1]
+			  );
 	return [height, width];
 }
 
