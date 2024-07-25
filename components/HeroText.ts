@@ -38,7 +38,7 @@ export const common_voice = {
 	title: "「观者评说」",
 	text: ["那些是我人生最灰暗时刻的微光", "是我能取暖燃烧着的篝火"],
 	subtext: ["观者看法众多，并不等于本站立场", "愿君子合而不同，求同存异"],
-	link: "https://assets.wbavengers.com/Resource/background_imgs/header_watcher.jpg",
+	link: "https://assets.wbavengers.com/Resource/background_imgs/header_watchers.jpg",
 };
 
 export const nuanxi_voice = {
